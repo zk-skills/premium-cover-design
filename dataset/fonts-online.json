@@ -1,0 +1,2473 @@
+{
+ "version": 2,
+ "updated": "2026-11-11",
+ "policy": {
+  "defaultMode": "online",
+  "note": "封面默认从在线字体库选字，不下载、不内嵌本地字体。交付 HTML 打开时需联网加载字体；导出 PNG/PDF 时必须等待 document.fonts.ready。",
+  "allowHosts": [
+   "fonts.googleapis.com",
+   "fonts.gstatic.com",
+   "cdn.jsdelivr.net"
+  ],
+  "localFallback": false
+ },
+ "coverageLevels": {
+  "sc": "简体中文全覆盖（实测 59 个常用简体字 100%）",
+  "han": "东亚汉字覆盖（日文字体），个别简体字缺失，标题使用前必须跑缺字检测",
+  "tc": "繁体中文覆盖，简体字缺失较多，仅用于港台版或繁体文本",
+  "latin": "仅拉丁字符，中文自动回退到 fallbackCn 指定的中文字体"
+ },
+ "chineseFallbacks": {
+  "sans": [
+   "Noto Sans SC",
+   "PingFang SC",
+   "Microsoft YaHei",
+   "sans-serif"
+  ],
+  "serif": [
+   "Noto Serif SC",
+   "Songti SC",
+   "SimSun",
+   "serif"
+  ],
+  "mono": [
+   "Noto Sans SC",
+   "Menlo",
+   "Consolas",
+   "monospace"
+  ]
+ },
+ "fonts": [
+  {
+   "id": "noto-sans-sc",
+   "name": "思源黑体",
+   "family": "Noto Sans SC",
+   "script": "sc",
+   "coverage": "sc",
+   "roles": [
+    "display",
+    "body",
+    "meta",
+    "all"
+   ],
+   "source": "google",
+   "traits": "现代 理性 中性 高可读",
+   "use": "无衬线全能：报告、商业、科技、机构。九档字重可做极细到极粗",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400&display=swap",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ]
+  },
+  {
+   "id": "noto-serif-sc",
+   "name": "思源宋体",
+   "family": "Noto Serif SC",
+   "script": "sc",
+   "coverage": "sc",
+   "roles": [
+    "display",
+    "body",
+    "meta",
+    "all"
+   ],
+   "source": "google",
+   "traits": "书卷 庄重 可归档 高可读",
+   "use": "衬线全能：文学、学术、年鉴、白皮书。九档字重",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400&display=swap",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ]
+  },
+  {
+   "id": "zcool-xiaowei",
+   "name": "站酷小薇",
+   "family": "ZCOOL XiaoWei",
+   "script": "sc",
+   "coverage": "sc",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "高对比 文艺 克制 东方现代",
+   "use": "高对比美术宋，横细竖粗，机构与文化类标题",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "zcool-qingke",
+   "name": "站酷庆科黄油",
+   "family": "ZCOOL QingKe HuangYou",
+   "script": "sc",
+   "coverage": "sc",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "粗圆 亲切 有分量 商业",
+   "use": "粗圆黑，笔画厚实，大众商业与活动标题",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "zcool-kuaile",
+   "name": "站酷快乐",
+   "family": "ZCOOL KuaiLe",
+   "script": "sc",
+   "coverage": "sc",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "轻松 童趣 手绘 亲和",
+   "use": "轻松手写感，儿童、生活方式、轻科普",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "mashan",
+   "name": "马善政楷书",
+   "family": "Ma Shan Zheng",
+   "script": "sc",
+   "coverage": "sc",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "毛笔 楷书 东方 手写",
+   "use": "毛笔楷书，东方、文化、宣言、题字",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "longcang",
+   "name": "龙藏体",
+   "family": "Long Cang",
+   "script": "sc",
+   "coverage": "sc",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "书法 硬朗 江湖 传统",
+   "use": "硬朗毛笔行楷，笔画有刀刻感",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Long+Cang:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "zhimangxing",
+   "name": "志莽行书",
+   "family": "Zhi Mang Xing",
+   "script": "sc",
+   "coverage": "sc",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "行书 流动 文人 抒情",
+   "use": "流动行书，适合诗意、文化、纪念",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "liujianmaocao",
+   "name": "柳建毛草",
+   "family": "Liu Jian Mao Cao",
+   "script": "sc",
+   "coverage": "sc",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "狂草 气势 传统 艺术",
+   "use": "狂草毛笔，极强气势，适合宣言与限定版",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Liu+Jian+Mao+Cao:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "lxgw-wenkai",
+   "name": "霞鹜文楷",
+   "family": "LXGW WenKai TC",
+   "script": "sc",
+   "coverage": "sc",
+   "roles": [
+    "display",
+    "body"
+   ],
+   "source": "google",
+   "traits": "楷体 温润 人文 耐读",
+   "use": "开源楷体，温润耐读，适合文学与长副标题",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400&display=swap",
+   "weights": [
+    300,
+    400,
+    700
+   ]
+  },
+  {
+   "id": "lxgw-wenkai-mono",
+   "name": "霞鹜文楷等宽",
+   "family": "LXGW WenKai Mono TC",
+   "script": "sc",
+   "coverage": "sc",
+   "roles": [
+    "body",
+    "meta"
+   ],
+   "source": "google",
+   "traits": "等宽 楷体 技术 人文",
+   "use": "等宽楷体，代码感与书卷气并存",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC:wght@400&display=swap",
+   "weights": [
+    300,
+    400,
+    700
+   ]
+  },
+  {
+   "id": "shippori-mincho",
+   "name": "Shippori 明朝",
+   "family": "Shippori Mincho",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display",
+    "body"
+   ],
+   "source": "google",
+   "traits": "明朝 优雅 日本设计 高端",
+   "use": "高品味明朝体，横竖对比柔和，适合文学与机构",
+   "avoid": "长简体标题；使用前必须跑缺字检测",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400&display=swap",
+   "weights": [
+    400,
+    500,
+    600,
+    700,
+    800
+   ]
+  },
+  {
+   "id": "shippori-antique",
+   "name": "Shippori Antique",
+   "family": "Shippori Antique",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display",
+    "body"
+   ],
+   "source": "google",
+   "traits": "古董 安静 档案 中性",
+   "use": "低对比古董黑体，安静、档案感",
+   "avoid": "长简体标题；使用前必须跑缺字检测",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Shippori+Antique:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "dela-gothic",
+   "name": "Dela Gothic",
+   "family": "Dela Gothic One",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "超粗 海报 高声量 冲击",
+   "use": "超粗黑，单字重，海报与货架强首读",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Dela+Gothic+One:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "hina-mincho",
+   "name": "雏明朝",
+   "family": "Hina Mincho",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "纤细 明朝 安静 诗意",
+   "use": "细笔明朝，纤细安静，文学与诗",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Hina+Mincho:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "kaisei-decol",
+   "name": "Kaisei Decol",
+   "family": "Kaisei Decol",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "装饰 明朝 柔和 生活",
+   "use": "装饰明朝，圆润笔触，生活方式",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400&display=swap",
+   "weights": [
+    400,
+    500,
+    700
+   ]
+  },
+  {
+   "id": "kaisei-tokumin",
+   "name": "Kaisei Tokumin",
+   "family": "Kaisei Tokumin",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "端正 明朝 厚重 纪实",
+   "use": "端正明朝，笔画厚重，适合传记与历史",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400&display=swap",
+   "weights": [
+    400,
+    500,
+    700,
+    800
+   ]
+  },
+  {
+   "id": "kaisei-harunoumi",
+   "name": "Kaisei HarunoUmi",
+   "family": "Kaisei HarunoUmi",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "温和 明朝 呼吸 文艺",
+   "use": "春之海明朝，温和有呼吸感",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Kaisei+HarunoUmi:wght@400&display=swap",
+   "weights": [
+    400,
+    500,
+    700
+   ]
+  },
+  {
+   "id": "zen-old-mincho",
+   "name": "Zen 古明朝",
+   "family": "Zen Old Mincho",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display",
+    "body"
+   ],
+   "source": "google",
+   "traits": "经典 明朝 传统 出版",
+   "use": "经典明朝，适合传统文化与出版",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400&display=swap",
+   "weights": [
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ]
+  },
+  {
+   "id": "zen-kaku-gothic",
+   "name": "Zen 角黑",
+   "family": "Zen Kaku Gothic New",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display",
+    "body"
+   ],
+   "source": "google",
+   "traits": "角黑 现代 锐利 中性",
+   "use": "现代角黑，锐利中性，科技与机构",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400&display=swap",
+   "weights": [
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ]
+  },
+  {
+   "id": "zen-antique",
+   "name": "Zen 古董",
+   "family": "Zen Antique",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "古董 书写 文化 品牌",
+   "use": "古董黑体带书写味，适合文化品牌",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Zen+Antique:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "zen-antique-soft",
+   "name": "Zen 古董柔",
+   "family": "Zen Antique Soft",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "柔和 古董 亲和 生活",
+   "use": "柔化古董黑体，亲和但不幼稚",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Zen+Antique+Soft:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "zen-kurenaido",
+   "name": "Zen 红内道",
+   "family": "Zen Kurenaido",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "手写 黑体 随性 生活",
+   "use": "手写味黑体，随笔与生活提案",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Zen+Kurenaido:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "zen-maru-gothic",
+   "name": "Zen 丸黑",
+   "family": "Zen Maru Gothic",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "圆体 友好 大众 青春",
+   "use": "圆体黑，圆润友好，适合大众与青少年",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400&display=swap",
+   "weights": [
+    300,
+    400,
+    500,
+    700,
+    900
+   ]
+  },
+  {
+   "id": "sawarabi-mincho",
+   "name": "Sawarabi 明朝",
+   "family": "Sawarabi Mincho",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display",
+    "body"
+   ],
+   "source": "google",
+   "traits": "清秀 明朝 自然 散文",
+   "use": "清秀明朝，适合散文与自然主题",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Sawarabi+Mincho:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "sawarabi-gothic",
+   "name": "Sawarabi 黑",
+   "family": "Sawarabi Gothic",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display",
+    "body"
+   ],
+   "source": "google",
+   "traits": "清瘦 黑体 留白 极简",
+   "use": "清瘦黑体，留白感强，适合极简",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Sawarabi+Gothic:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "yuji-boku",
+   "name": "Yuji 朴",
+   "family": "Yuji Boku",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "毛笔 松弛 文化 随笔",
+   "use": "毛笔楷书，松弛自然，适合文化随笔",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Yuji+Boku:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "yuji-mai",
+   "name": "Yuji 舞",
+   "family": "Yuji Mai",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "毛笔 轻盈 流动 诗意",
+   "use": "毛笔行书，轻盈流动",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Yuji+Mai:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "yuji-syuku",
+   "name": "Yuji 俶",
+   "family": "Yuji Syuku",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "毛笔 工整 端正 传统",
+   "use": "工整毛笔楷，端正克制",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Yuji+Syuku:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "klee-one",
+   "name": "Klee One",
+   "family": "Klee One",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display",
+    "body"
+   ],
+   "source": "google",
+   "traits": "教科书 手写 温和 教育",
+   "use": "教科书体，铅笔书写感，适合教育与人情味",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Klee+One:wght@400&display=swap",
+   "weights": [
+    400,
+    600
+   ]
+  },
+  {
+   "id": "dotgothic16",
+   "name": "DotGothic16",
+   "family": "DotGothic16",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display",
+    "meta"
+   ],
+   "source": "google",
+   "traits": "像素 点阵 科技 怀旧",
+   "use": "点阵像素体，数字、游戏、科技怀旧",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=DotGothic16:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "rocknroll-one",
+   "name": "RocknRoll One",
+   "family": "RocknRoll One",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "摇滚 青年 活动 有力",
+   "use": "摇滚味圆黑，青年文化与活动",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=RocknRoll+One:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "hachi-maru-pop",
+   "name": "Hachi Maru Pop",
+   "family": "Hachi Maru Pop",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "手账 可爱 生活 轻快",
+   "use": "手账圆体，可爱、生活方式",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "kosugi",
+   "name": "Kosugi",
+   "family": "Kosugi",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display",
+    "body"
+   ],
+   "source": "google",
+   "traits": "清瘦 中性 安静 极简",
+   "use": "清瘦无衬，安静中性，适合正文标题",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Kosugi:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "kosugi-maru",
+   "name": "Kosugi Maru",
+   "family": "Kosugi Maru",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display",
+    "body"
+   ],
+   "source": "google",
+   "traits": "圆体 清瘦 柔和 技术",
+   "use": "清瘦圆体，柔和技术感",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Kosugi+Maru:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "mplus-1p",
+   "name": "M PLUS 1p",
+   "family": "M PLUS 1p",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display",
+    "body"
+   ],
+   "source": "google",
+   "traits": "几何 现代 中性 排版",
+   "use": "几何无衬，现代主义排版",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400&display=swap",
+   "weights": [
+    100,
+    300,
+    400,
+    500,
+    700,
+    800,
+    900
+   ]
+  },
+  {
+   "id": "mplus-rounded-1c",
+   "name": "M PLUS Rounded 1c",
+   "family": "M PLUS Rounded 1c",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display",
+    "body"
+   ],
+   "source": "google",
+   "traits": "几何 圆体 温和 科技",
+   "use": "几何圆体，温和科技",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400&display=swap",
+   "weights": [
+    100,
+    300,
+    400,
+    500,
+    700,
+    800,
+    900
+   ]
+  },
+  {
+   "id": "mplus-1",
+   "name": "M PLUS 1",
+   "family": "M PLUS 1",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display",
+    "body"
+   ],
+   "source": "google",
+   "traits": "几何 可变 现代 中性",
+   "use": "可变几何无衬，粗细跨度大",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@400&display=swap",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ]
+  },
+  {
+   "id": "mplus-2",
+   "name": "M PLUS 2",
+   "family": "M PLUS 2",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display",
+    "body"
+   ],
+   "source": "google",
+   "traits": "几何 可变 宽字面 现代",
+   "use": "可变几何无衬，字面略宽",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@400&display=swap",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ]
+  },
+  {
+   "id": "biz-udpgothic",
+   "name": "BIZ UDP 黑",
+   "family": "BIZ UDPGothic",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display",
+    "body"
+   ],
+   "source": "google",
+   "traits": "通用设计 清晰 中性 机构",
+   "use": "通用设计黑体，清晰度优先",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400&display=swap",
+   "weights": [
+    400,
+    700
+   ]
+  },
+  {
+   "id": "biz-udpmincho",
+   "name": "BIZ UDP 明朝",
+   "family": "BIZ UDPMincho",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display",
+    "body"
+   ],
+   "source": "google",
+   "traits": "通用设计 明朝 可读 机构",
+   "use": "通用设计明朝，长文可读性优先",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=BIZ+UDPMincho:wght@400&display=swap",
+   "weights": [
+    400,
+    700
+   ]
+  },
+  {
+   "id": "biz-udgothic",
+   "name": "BIZ UD 黑",
+   "family": "BIZ UDGothic",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display",
+    "body"
+   ],
+   "source": "google",
+   "traits": "通用设计 清晰 中性 教育",
+   "use": "通用设计黑体，笔画区分明确",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=BIZ+UDGothic:wght@400&display=swap",
+   "weights": [
+    400,
+    700
+   ]
+  },
+  {
+   "id": "biz-udmincho",
+   "name": "BIZ UD 明朝",
+   "family": "BIZ UDMincho",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display",
+    "body"
+   ],
+   "source": "google",
+   "traits": "通用设计 明朝 端正 教育",
+   "use": "通用设计明朝，端正易读",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=BIZ+UDMincho:wght@400&display=swap",
+   "weights": [
+    400,
+    700
+   ]
+  },
+  {
+   "id": "new-tegomin",
+   "name": "New Tegomin",
+   "family": "New Tegomin",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "手写 明朝 纸感 文艺",
+   "use": "手写明朝，带有纸笔温度",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=New+Tegomin:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "yomogi",
+   "name": "Yomogi",
+   "family": "Yomogi",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "手写 细笔 轻盈 生活",
+   "use": "细笔手写体，轻盈少女感",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Yomogi:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "murecho",
+   "name": "Murecho",
+   "family": "Murecho",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display",
+    "body"
+   ],
+   "source": "google",
+   "traits": "可变 收紧 现代 标题",
+   "use": "可变无衬，字形收紧，适合现代标题",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Murecho:wght@400&display=swap",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ]
+  },
+  {
+   "id": "kiwi-maru",
+   "name": "Kiwi Maru",
+   "family": "Kiwi Maru",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "圆润 手写 亲和 食物",
+   "use": "圆润手写体，亲和、食物与生活",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400&display=swap",
+   "weights": [
+    300,
+    400,
+    500
+   ]
+  },
+  {
+   "id": "stick",
+   "name": "Stick",
+   "family": "Stick",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "手写 硬朗 青年 运动",
+   "use": "硬朗手写黑，青年与运动",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Stick:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "rampart-one",
+   "name": "Rampart One",
+   "family": "Rampart One",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "立体 描边 活动 潮流",
+   "use": "立体描边装饰体，活动与潮流",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Rampart+One:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "reggae-one",
+   "name": "Reggae One",
+   "family": "Reggae One",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "复古 招牌 厚重 个性",
+   "use": "复古招牌体，厚重有个性",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Reggae+One:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "potta-one",
+   "name": "Potta One",
+   "family": "Potta One",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "招牌 粗笔 包装 有力",
+   "use": "粗笔招牌体，适合标题与包装",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Potta+One:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "train-one",
+   "name": "Train One",
+   "family": "Train One",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "描边 装饰 活动 短标题",
+   "use": "描边装饰体，适合短标题与活动",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Train+One:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "yusei-magic",
+   "name": "Yusei Magic",
+   "family": "Yusei Magic",
+   "script": "han",
+   "coverage": "han",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "马克笔 手写 活力 生活",
+   "use": "马克笔手写体，轻松有活力",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Yusei+Magic:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "noto-sans-tc",
+   "name": "思源黑体（繁）",
+   "family": "Noto Sans TC",
+   "script": "tc",
+   "coverage": "tc",
+   "roles": [
+    "display",
+    "body",
+    "meta",
+    "all"
+   ],
+   "source": "google",
+   "traits": "繁体 现代 中性 高可读",
+   "use": "繁体无衬线，适合港台版封面",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400&display=swap",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ]
+  },
+  {
+   "id": "noto-serif-tc",
+   "name": "思源宋体（繁）",
+   "family": "Noto Serif TC",
+   "script": "tc",
+   "coverage": "tc",
+   "roles": [
+    "display",
+    "body",
+    "meta",
+    "all"
+   ],
+   "source": "google",
+   "traits": "繁体 书卷 庄重 可归档",
+   "use": "繁体衬线，适合港台文学与学术",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400&display=swap",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ]
+  },
+  {
+   "id": "noto-sans-hk",
+   "name": "思源黑体（港）",
+   "family": "Noto Sans HK",
+   "script": "tc",
+   "coverage": "tc",
+   "roles": [
+    "display",
+    "body",
+    "meta",
+    "all"
+   ],
+   "source": "google",
+   "traits": "繁体 香港字形 现代 中性",
+   "use": "香港字形无衬线",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@400&display=swap",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ]
+  },
+  {
+   "id": "noto-serif-hk",
+   "name": "思源宋体（港）",
+   "family": "Noto Serif HK",
+   "script": "tc",
+   "coverage": "tc",
+   "roles": [
+    "display",
+    "body",
+    "meta",
+    "all"
+   ],
+   "source": "google",
+   "traits": "繁体 香港字形 书卷 庄重",
+   "use": "香港字形衬线",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Noto+Serif+HK:wght@400&display=swap",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ]
+  },
+  {
+   "id": "playfair-display",
+   "name": "Playfair Display",
+   "family": "Playfair Display",
+   "script": "latin",
+   "coverage": "latin",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "高对比 迪多 时尚 编辑",
+   "use": "高对比迪多系，时尚、人物、文化",
+   "avoid": "",
+   "fallbackCn": "noto-serif-sc",
+   "css": "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400&display=swap",
+   "weights": [
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ]
+  },
+  {
+   "id": "bodoni-moda",
+   "name": "Bodoni Moda",
+   "family": "Bodoni Moda",
+   "script": "latin",
+   "coverage": "latin",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "迪多 锋利 优雅 高定",
+   "use": "经典 Bodoni，锋利优雅，高定感",
+   "avoid": "",
+   "fallbackCn": "noto-serif-sc",
+   "css": "https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400&display=swap",
+   "weights": [
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ]
+  },
+  {
+   "id": "dm-serif-display",
+   "name": "DM Serif Display",
+   "family": "DM Serif Display",
+   "script": "latin",
+   "coverage": "latin",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "展示 衬线 厚实 友好",
+   "use": "现代展示衬线，厚实友好",
+   "avoid": "",
+   "fallbackCn": "noto-serif-sc",
+   "css": "https://fonts.googleapis.com/css2?family=DM+Serif+Display:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "cormorant-garamond",
+   "name": "Cormorant Garamond",
+   "family": "Cormorant Garamond",
+   "script": "latin",
+   "coverage": "latin",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "古典 加拉蒙 纤细 文学",
+   "use": "古典加拉蒙，纤细文学感",
+   "avoid": "",
+   "fallbackCn": "noto-serif-sc",
+   "css": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&display=swap",
+   "weights": [
+    300,
+    400,
+    500,
+    600,
+    700
+   ]
+  },
+  {
+   "id": "libre-baskerville",
+   "name": "Libre Baskerville",
+   "family": "Libre Baskerville",
+   "script": "latin",
+   "coverage": "latin",
+   "roles": [
+    "display",
+    "body"
+   ],
+   "source": "google",
+   "traits": "经典 衬线 可读 学术",
+   "use": "经典巴斯克维尔，长文可读",
+   "avoid": "",
+   "fallbackCn": "noto-serif-sc",
+   "css": "https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400&display=swap",
+   "weights": [
+    400,
+    700
+   ]
+  },
+  {
+   "id": "fraunces",
+   "name": "Fraunces",
+   "family": "Fraunces",
+   "script": "latin",
+   "coverage": "latin",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "复古 软衬线 品牌 个性",
+   "use": "复古软衬线，个性强，适合品牌",
+   "avoid": "",
+   "fallbackCn": "noto-serif-sc",
+   "css": "https://fonts.googleapis.com/css2?family=Fraunces:wght@400&display=swap",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ]
+  },
+  {
+   "id": "instrument-serif",
+   "name": "Instrument Serif",
+   "family": "Instrument Serif",
+   "script": "latin",
+   "coverage": "latin",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "窄体 展示 编辑 时尚",
+   "use": "窄体展示衬线，编辑设计常用",
+   "avoid": "",
+   "fallbackCn": "noto-serif-sc",
+   "css": "https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "bebas-neue",
+   "name": "Bebas Neue",
+   "family": "Bebas Neue",
+   "script": "latin",
+   "coverage": "latin",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "压缩 大写 海报 高声量",
+   "use": "全大写压缩无衬，海报与货架",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "anton",
+   "name": "Anton",
+   "family": "Anton",
+   "script": "latin",
+   "coverage": "latin",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "超粗 压缩 冲击 海报",
+   "use": "超粗压缩无衬，冲击力强",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Anton:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "archivo-black",
+   "name": "Archivo Black",
+   "family": "Archivo Black",
+   "script": "latin",
+   "coverage": "latin",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "厚重 无衬 粗野 现代",
+   "use": "厚重无衬，现代粗野主义",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Archivo+Black:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "oswald",
+   "name": "Oswald",
+   "family": "Oswald",
+   "script": "latin",
+   "coverage": "latin",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "窄体 无衬 混排 标题",
+   "use": "窄体无衬，适合中英混排标题",
+   "avoid": "",
+   "fallbackCn": "noto-sans-sc",
+   "css": "https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap",
+   "weights": [
+    200,
+    300,
+    400,
+    500,
+    600,
+    700
+   ]
+  },
+  {
+   "id": "archivo-narrow",
+   "name": "Archivo Narrow",
+   "family": "Archivo Narrow",
+   "script": "latin",
+   "coverage": "latin",
+   "roles": [
+    "display",
+    "body"
+   ],
+   "source": "google",
+   "traits": "窄体 无衬 信息密度 编辑",
+   "use": "窄体无衬，信息密度高",
+   "avoid": "",
+   "fallbackCn": "noto-sans-sc",
+   "css": "https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400&display=swap",
+   "weights": [
+    400,
+    500,
+    600,
+    700
+   ]
+  },
+  {
+   "id": "rubik-mono-one",
+   "name": "Rubik Mono One",
+   "family": "Rubik Mono One",
+   "script": "latin",
+   "coverage": "latin",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "等宽 粗体 数字 科技",
+   "use": "等宽粗体，数字与科技",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Rubik+Mono+One:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "monoton",
+   "name": "Monoton",
+   "family": "Monoton",
+   "script": "latin",
+   "coverage": "latin",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "霓虹 线条 装饰 活动",
+   "use": "霓虹线条体，装饰性强",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Monoton:wght@400&display=swap",
+   "weights": [
+    400
+   ]
+  },
+  {
+   "id": "space-grotesk",
+   "name": "Space Grotesk",
+   "family": "Space Grotesk",
+   "script": "latin",
+   "coverage": "latin",
+   "roles": [
+    "display",
+    "body"
+   ],
+   "source": "google",
+   "traits": "几何 怪诞 科技 编辑",
+   "use": "几何怪诞体，科技编辑",
+   "avoid": "",
+   "fallbackCn": "noto-sans-sc",
+   "css": "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400&display=swap",
+   "weights": [
+    300,
+    400,
+    500,
+    600,
+    700
+   ]
+  },
+  {
+   "id": "syne",
+   "name": "Syne",
+   "family": "Syne",
+   "script": "latin",
+   "coverage": "latin",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "实验 几何 艺术 时尚",
+   "use": "实验几何体，艺术与时尚",
+   "avoid": "",
+   "fallbackCn": "noto-sans-sc",
+   "css": "https://fonts.googleapis.com/css2?family=Syne:wght@400&display=swap",
+   "weights": [
+    400,
+    500,
+    600,
+    700,
+    800
+   ]
+  },
+  {
+   "id": "unbounded",
+   "name": "Unbounded",
+   "family": "Unbounded",
+   "script": "latin",
+   "coverage": "latin",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "圆角 未来 潮流 科技",
+   "use": "圆角未来体，Web3 与潮流",
+   "avoid": "",
+   "fallbackCn": "noto-sans-sc",
+   "css": "https://fonts.googleapis.com/css2?family=Unbounded:wght@400&display=swap",
+   "weights": [
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ]
+  },
+  {
+   "id": "chakra-petch",
+   "name": "Chakra Petch",
+   "family": "Chakra Petch",
+   "script": "latin",
+   "coverage": "latin",
+   "roles": [
+    "display",
+    "body"
+   ],
+   "source": "google",
+   "traits": "方角 科技 数据 硬件",
+   "use": "方角科技体，数据与硬件",
+   "avoid": "",
+   "fallbackCn": "noto-sans-sc",
+   "css": "https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400&display=swap",
+   "weights": [
+    300,
+    400,
+    500,
+    600,
+    700
+   ]
+  },
+  {
+   "id": "inter-tight",
+   "name": "Inter Tight",
+   "family": "Inter Tight",
+   "script": "latin",
+   "coverage": "latin",
+   "roles": [
+    "body",
+    "meta"
+   ],
+   "source": "google",
+   "traits": "紧凑 无衬 元信息 界面",
+   "use": "紧凑无衬，元信息与界面感",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400&display=swap",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900
+   ]
+  },
+  {
+   "id": "caveat",
+   "name": "Caveat",
+   "family": "Caveat",
+   "script": "latin",
+   "coverage": "latin",
+   "roles": [
+    "display"
+   ],
+   "source": "google",
+   "traits": "手写 马克笔 笔记 随笔",
+   "use": "手写马克笔，笔记与随笔",
+   "avoid": "",
+   "fallbackCn": "noto-sans-sc",
+   "css": "https://fonts.googleapis.com/css2?family=Caveat:wght@400&display=swap",
+   "weights": [
+    400,
+    500,
+    600,
+    700
+   ]
+  },
+  {
+   "id": "ibm-plex-mono",
+   "name": "IBM Plex Mono",
+   "family": "IBM Plex Mono",
+   "script": "latin",
+   "coverage": "latin",
+   "roles": [
+    "meta",
+    "body"
+   ],
+   "source": "google",
+   "traits": "等宽 工程 数据 编号",
+   "use": "工程感等宽，数据与编号",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&display=swap",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700
+   ]
+  },
+  {
+   "id": "jetbrains-mono",
+   "name": "JetBrains Mono",
+   "family": "JetBrains Mono",
+   "script": "latin",
+   "coverage": "latin",
+   "roles": [
+    "meta",
+    "body"
+   ],
+   "source": "google",
+   "traits": "等宽 代码 技术 数据",
+   "use": "开发者等宽，代码感强",
+   "avoid": "",
+   "fallbackCn": null,
+   "css": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap",
+   "weights": [
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800
+   ]
+  }
+ ],
+ "typepairs": {
+  "T01": {
+   "id": "T01",
+   "name": "硬朗编辑",
+   "en": "Editorial Heavy",
+   "display": "noto-sans-sc",
+   "displayWeight": 900,
+   "body": "noto-sans-sc",
+   "bodyWeight": 400,
+   "meta": "inter-tight",
+   "metaWeight": 500,
+   "tracking": "-0.03em",
+   "lineHeight": 0.92,
+   "tone": "理性、强势、可信",
+   "use": "商业、社会议题、行业报告、经管",
+   "avoid": "诗歌、散文、柔软题材",
+   "comp": [
+    "C01",
+    "C03",
+    "C04"
+   ],
+   "level": "sc"
+  },
+  "T02": {
+   "id": "T02",
+   "name": "文学宋",
+   "en": "Literary Song",
+   "display": "noto-serif-sc",
+   "displayWeight": 600,
+   "body": "noto-sans-sc",
+   "bodyWeight": 300,
+   "meta": "noto-sans-sc",
+   "metaWeight": 500,
+   "tracking": "0.05em",
+   "lineHeight": 1.14,
+   "tone": "安静、有年代感",
+   "use": "文学、散文、传记、人文",
+   "avoid": "数据、科技、强促销",
+   "comp": [
+    "C05",
+    "C06",
+    "C07"
+   ],
+   "level": "sc"
+  },
+  "T03": {
+   "id": "T03",
+   "name": "高定细黑",
+   "en": "Couture Light",
+   "display": "noto-sans-sc",
+   "displayWeight": 200,
+   "body": "noto-sans-sc",
+   "bodyWeight": 300,
+   "meta": "inter-tight",
+   "metaWeight": 300,
+   "tracking": "0.08em",
+   "lineHeight": 1.08,
+   "tone": "昂贵、克制、有距离感",
+   "use": "高端品牌、生活方式、艺术、建筑",
+   "avoid": "畅销书、低价感题材",
+   "comp": [
+    "C01",
+    "C02",
+    "C08"
+   ],
+   "level": "sc"
+  },
+  "T04": {
+   "id": "T04",
+   "name": "粗野宣言",
+   "en": "Brutal Manifesto",
+   "display": "noto-sans-sc",
+   "displayWeight": 900,
+   "body": "noto-sans-sc",
+   "bodyWeight": 700,
+   "meta": "ibm-plex-mono",
+   "metaWeight": 700,
+   "tracking": "-0.055em",
+   "lineHeight": 0.86,
+   "tone": "冲撞、直接、贴墙宣言",
+   "use": "青年文化、音乐、社会运动、实验出版",
+   "avoid": "学术、文学、机构报告",
+   "comp": [
+    "C01",
+    "C03",
+    "C04"
+   ],
+   "level": "sc"
+  },
+  "T05": {
+   "id": "T05",
+   "name": "杂志迪多",
+   "en": "Magazine Didone",
+   "display": "playfair-display",
+   "displayWeight": 700,
+   "body": "noto-sans-sc",
+   "bodyWeight": 300,
+   "meta": "inter-tight",
+   "metaWeight": 400,
+   "tracking": "0.005em",
+   "lineHeight": 1.0,
+   "tone": "锋利、时髦、主编判断力",
+   "use": "时尚、人物、文化、展览",
+   "avoid": "数据密集、亲切感题材",
+   "comp": [
+    "C03",
+    "C04",
+    "C06"
+   ],
+   "level": "latin"
+  },
+  "T06": {
+   "id": "T06",
+   "name": "机构衬线",
+   "en": "Institutional Serif",
+   "display": "noto-serif-sc",
+   "displayWeight": 600,
+   "body": "noto-serif-sc",
+   "bodyWeight": 400,
+   "meta": "noto-sans-sc",
+   "metaWeight": 500,
+   "tracking": "0.08em",
+   "lineHeight": 1.22,
+   "tone": "庄重、正式、可归档",
+   "use": "年鉴、学术、机构报告、白皮书",
+   "avoid": "青年文化、实验出版",
+   "comp": [
+    "C03",
+    "C06"
+   ],
+   "level": "sc"
+  },
+  "T07": {
+   "id": "T07",
+   "name": "数据等宽",
+   "en": "Data Mono",
+   "display": "noto-sans-sc",
+   "displayWeight": 700,
+   "body": "noto-sans-sc",
+   "bodyWeight": 400,
+   "meta": "ibm-plex-mono",
+   "metaWeight": 400,
+   "tracking": "0.02em",
+   "lineHeight": 1.0,
+   "tone": "冷静、可检索、终端输出",
+   "use": "数据、科技、档案、研究报告",
+   "avoid": "文学、生活方式",
+   "comp": [
+    "C03",
+    "C06"
+   ],
+   "level": "sc"
+  },
+  "T08": {
+   "id": "T08",
+   "name": "宋黑对位",
+   "en": "Serif-Sans Duet",
+   "display": "noto-serif-sc",
+   "displayWeight": 600,
+   "body": "noto-sans-sc",
+   "bodyWeight": 300,
+   "meta": "noto-sans-sc",
+   "metaWeight": 500,
+   "tracking": "0.02em",
+   "lineHeight": 1.1,
+   "tone": "有观点、有停顿、长篇评论",
+   "use": "思想、文化评论、设计理论",
+   "avoid": "快消、工具书",
+   "comp": [
+    "C03",
+    "C05",
+    "C06"
+   ],
+   "level": "sc"
+  },
+  "T09": {
+   "id": "T09",
+   "name": "暗调反白",
+   "en": "Nocturne",
+   "display": "noto-sans-sc",
+   "displayWeight": 200,
+   "body": "noto-sans-sc",
+   "bodyWeight": 300,
+   "meta": "noto-sans-sc",
+   "metaWeight": 400,
+   "tracking": "0.08em",
+   "lineHeight": 1.1,
+   "tone": "低调、电影感、让图像说话",
+   "use": "摄影、艺术、高端纪实、暗调静物",
+   "avoid": "浅底封面、儿童题材",
+   "comp": [
+    "C01",
+    "C02",
+    "C08"
+   ],
+   "level": "sc"
+  },
+  "T10": {
+   "id": "T10",
+   "name": "毛笔楷",
+   "en": "Brush Kaiti",
+   "display": "mashan",
+   "displayWeight": 400,
+   "body": "noto-serif-sc",
+   "bodyWeight": 400,
+   "meta": "noto-sans-sc",
+   "metaWeight": 400,
+   "tracking": "0.06em",
+   "lineHeight": 1.2,
+   "tone": "温和、手写、有生活气",
+   "use": "传统文化、散文、茶与生活、地方志",
+   "avoid": "科技、数据、强视觉冲击",
+   "comp": [
+    "C05",
+    "C06",
+    "C07"
+   ],
+   "level": "sc"
+  },
+  "T11": {
+   "id": "T11",
+   "name": "压缩标题",
+   "en": "Condensed",
+   "display": "oswald",
+   "displayWeight": 700,
+   "body": "noto-sans-sc",
+   "bodyWeight": 400,
+   "meta": "ibm-plex-mono",
+   "metaWeight": 400,
+   "tracking": "0.01em",
+   "lineHeight": 0.95,
+   "tone": "速度感、音量感、横向撑满",
+   "use": "海报式封面、活动、宣言、音乐",
+   "avoid": "正式出版物、长标题",
+   "comp": [
+    "C01",
+    "C04"
+   ],
+   "level": "latin"
+  },
+  "T12": {
+   "id": "T12",
+   "name": "现代宋",
+   "en": "Modern Song",
+   "display": "noto-serif-sc",
+   "displayWeight": 700,
+   "body": "noto-sans-sc",
+   "bodyWeight": 400,
+   "meta": "noto-sans-sc",
+   "metaWeight": 500,
+   "tracking": "0em",
+   "lineHeight": 1.05,
+   "tone": "稳重、成熟、书卷兼商业",
+   "use": "商业、传记、经管、历史",
+   "avoid": "诗、实验设计",
+   "comp": [
+    "C03",
+    "C04",
+    "C06"
+   ],
+   "level": "sc"
+  },
+  "T13": {
+   "id": "T13",
+   "name": "霞鹜文楷",
+   "en": "WenKai Humanist",
+   "display": "lxgw-wenkai",
+   "displayWeight": 400,
+   "body": "lxgw-wenkai",
+   "bodyWeight": 400,
+   "meta": "noto-sans-sc",
+   "metaWeight": 400,
+   "tracking": "0.03em",
+   "lineHeight": 1.16,
+   "tone": "温润、耐读、有人情味",
+   "use": "文学、随笔、人物、教育",
+   "avoid": "强促销、科技硬核",
+   "comp": [
+    "C05",
+    "C06",
+    "C07"
+   ],
+   "level": "sc"
+  },
+  "T14": {
+   "id": "T14",
+   "name": "小薇美术宋",
+   "en": "XiaoWei Art Song",
+   "display": "zcool-xiaowei",
+   "displayWeight": 400,
+   "body": "noto-sans-sc",
+   "bodyWeight": 400,
+   "meta": "noto-sans-sc",
+   "metaWeight": 400,
+   "tracking": "0.06em",
+   "lineHeight": 1.12,
+   "tone": "高对比、文艺、东方现代",
+   "use": "文化、艺术、机构、文学",
+   "avoid": "数据、儿童",
+   "comp": [
+    "C03",
+    "C05",
+    "C06"
+   ],
+   "level": "sc"
+  },
+  "T15": {
+   "id": "T15",
+   "name": "庆科黄油",
+   "en": "QingKe Butter",
+   "display": "zcool-qingke",
+   "displayWeight": 400,
+   "body": "noto-sans-sc",
+   "bodyWeight": 400,
+   "meta": "noto-sans-sc",
+   "metaWeight": 400,
+   "tracking": "0.03em",
+   "lineHeight": 1.05,
+   "tone": "粗圆、亲切、有分量",
+   "use": "大众商业、品牌、活动、生活方式",
+   "avoid": "学术、严肃报告",
+   "comp": [
+    "C01",
+    "C04"
+   ],
+   "level": "sc"
+  },
+  "T16": {
+   "id": "T16",
+   "name": "快乐体",
+   "en": "KuaiLe Pop",
+   "display": "zcool-kuaile",
+   "displayWeight": 400,
+   "body": "noto-sans-sc",
+   "bodyWeight": 400,
+   "meta": "noto-sans-sc",
+   "metaWeight": 400,
+   "tracking": "0.02em",
+   "lineHeight": 1.12,
+   "tone": "轻松、童趣、手绘",
+   "use": "儿童、生活方式、轻科普、活动",
+   "avoid": "正式商业书",
+   "comp": [
+    "C02",
+    "C05"
+   ],
+   "level": "sc"
+  },
+  "T17": {
+   "id": "T17",
+   "name": "龙藏书法",
+   "en": "LongCang Brush",
+   "display": "longcang",
+   "displayWeight": 400,
+   "body": "noto-serif-sc",
+   "bodyWeight": 400,
+   "meta": "noto-sans-sc",
+   "metaWeight": 400,
+   "tracking": "0.04em",
+   "lineHeight": 1.18,
+   "tone": "刀刻感、硬朗、江湖气",
+   "use": "传统文化、武侠、地方文化、纪念",
+   "avoid": "科技、儿童",
+   "comp": [
+    "C01",
+    "C04",
+    "C05"
+   ],
+   "level": "sc"
+  },
+  "T18": {
+   "id": "T18",
+   "name": "志莽行书",
+   "en": "ZhiMang Running",
+   "display": "zhimangxing",
+   "displayWeight": 400,
+   "body": "noto-serif-sc",
+   "bodyWeight": 400,
+   "meta": "noto-sans-sc",
+   "metaWeight": 400,
+   "tracking": "0.03em",
+   "lineHeight": 1.2,
+   "tone": "流动、文人、抒情",
+   "use": "诗意、文化、纪念、散文",
+   "avoid": "数据、快消",
+   "comp": [
+    "C05",
+    "C07"
+   ],
+   "level": "sc"
+  },
+  "T19": {
+   "id": "T19",
+   "name": "柳建毛草",
+   "en": "LiuJian Cursive",
+   "display": "liujianmaocao",
+   "displayWeight": 400,
+   "body": "noto-serif-sc",
+   "bodyWeight": 400,
+   "meta": "noto-sans-sc",
+   "metaWeight": 400,
+   "tracking": "0.02em",
+   "lineHeight": 1.22,
+   "tone": "狂草、气势、艺术性",
+   "use": "宣言、限定版、艺术展、文化",
+   "avoid": "长标题、小字号",
+   "comp": [
+    "C01",
+    "C04"
+   ],
+   "level": "sc"
+  },
+  "T20": {
+   "id": "T20",
+   "name": "黑金主义",
+   "en": "Black Gold",
+   "display": "noto-sans-sc",
+   "displayWeight": 900,
+   "body": "noto-serif-sc",
+   "bodyWeight": 300,
+   "meta": "playfair-display",
+   "metaWeight": 400,
+   "tracking": "-0.02em",
+   "lineHeight": 0.94,
+   "tone": "强对比、溢价、机构感",
+   "use": "商业、金融、年报、高端报告",
+   "avoid": "文学、童趣",
+   "comp": [
+    "C03",
+    "C08"
+   ],
+   "level": "sc"
+  },
+  "T21": {
+   "id": "T21",
+   "name": "日式明朝",
+   "en": "Japanese Mincho",
+   "display": "shippori-mincho",
+   "displayWeight": 600,
+   "body": "shippori-mincho",
+   "bodyWeight": 400,
+   "meta": "noto-sans-sc",
+   "metaWeight": 400,
+   "tracking": "0.05em",
+   "lineHeight": 1.14,
+   "tone": "优雅、克制、日本编辑",
+   "use": "文学、设计、文化、机构",
+   "avoid": "强促销、粗野",
+   "comp": [
+    "C05",
+    "C06",
+    "C07"
+   ],
+   "level": "han"
+  },
+  "T22": {
+   "id": "T22",
+   "name": "日式古董",
+   "en": "Japanese Antique",
+   "display": "shippori-antique",
+   "displayWeight": 400,
+   "body": "shippori-antique",
+   "bodyWeight": 400,
+   "meta": "noto-sans-sc",
+   "metaWeight": 400,
+   "tracking": "0.04em",
+   "lineHeight": 1.12,
+   "tone": "安静、档案、低对比",
+   "use": "档案、纪实、文化研究、博物馆",
+   "avoid": "青春、活动",
+   "comp": [
+    "C03",
+    "C06"
+   ],
+   "level": "han"
+  },
+  "T23": {
+   "id": "T23",
+   "name": "现代角黑",
+   "en": "Zen Kaku",
+   "display": "zen-kaku-gothic",
+   "displayWeight": 700,
+   "body": "zen-kaku-gothic",
+   "bodyWeight": 400,
+   "meta": "noto-sans-sc",
+   "metaWeight": 400,
+   "tracking": "-0.01em",
+   "lineHeight": 1.02,
+   "tone": "锐利、中性、现代",
+   "use": "科技、机构、设计、产品",
+   "avoid": "文学、手作",
+   "comp": [
+    "C02",
+    "C03",
+    "C06"
+   ],
+   "level": "han"
+  },
+  "T24": {
+   "id": "T24",
+   "name": "圆体亲和",
+   "en": "Maru Friendly",
+   "display": "zen-maru-gothic",
+   "displayWeight": 500,
+   "body": "noto-sans-sc",
+   "bodyWeight": 400,
+   "meta": "noto-sans-sc",
+   "metaWeight": 400,
+   "tracking": "0.03em",
+   "lineHeight": 1.1,
+   "tone": "圆润、友好、大众",
+   "use": "生活方式、教育、青少年、品牌",
+   "avoid": "严肃学术",
+   "comp": [
+    "C02",
+    "C05"
+   ],
+   "level": "han"
+  },
+  "T25": {
+   "id": "T25",
+   "name": "教科书楷",
+   "en": "Klee Textbook",
+   "display": "klee-one",
+   "displayWeight": 400,
+   "body": "noto-serif-sc",
+   "bodyWeight": 400,
+   "meta": "noto-sans-sc",
+   "metaWeight": 400,
+   "tracking": "0.04em",
+   "lineHeight": 1.18,
+   "tone": "铅笔书写、温和、教育感",
+   "use": "教育、亲子、人文、随笔",
+   "avoid": "科技、金融",
+   "comp": [
+    "C05",
+    "C06"
+   ],
+   "level": "han"
+  },
+  "T26": {
+   "id": "T26",
+   "name": "像素科技",
+   "en": "Dot Matrix",
+   "display": "dotgothic16",
+   "displayWeight": 400,
+   "body": "noto-sans-sc",
+   "bodyWeight": 400,
+   "meta": "dotgothic16",
+   "metaWeight": 400,
+   "tracking": "0.02em",
+   "lineHeight": 1.06,
+   "tone": "像素、数字、怀旧科技",
+   "use": "游戏、数字文化、科技、活动",
+   "avoid": "文学、传统",
+   "comp": [
+    "C02",
+    "C08"
+   ],
+   "level": "han"
+  },
+  "T27": {
+   "id": "T27",
+   "name": "粗圆海报",
+   "en": "Dela Poster",
+   "display": "dela-gothic",
+   "displayWeight": 400,
+   "body": "noto-sans-sc",
+   "bodyWeight": 400,
+   "meta": "ibm-plex-mono",
+   "metaWeight": 400,
+   "tracking": "-0.02em",
+   "lineHeight": 0.92,
+   "tone": "超粗、海报、强首读",
+   "use": "货架书、活动、青年文化、海报",
+   "avoid": "文学、长标题",
+   "comp": [
+    "C01",
+    "C04"
+   ],
+   "level": "han"
+  },
+  "T28": {
+   "id": "T28",
+   "name": "复古招牌",
+   "en": "Reggae Sign",
+   "display": "reggae-one",
+   "displayWeight": 400,
+   "body": "noto-sans-sc",
+   "bodyWeight": 400,
+   "meta": "noto-sans-sc",
+   "metaWeight": 400,
+   "tracking": "0.01em",
+   "lineHeight": 1.02,
+   "tone": "复古招牌、厚重、有个性",
+   "use": "餐饮、地方文化、活动、品牌",
+   "avoid": "学术、机构",
+   "comp": [
+    "C01",
+    "C04"
+   ],
+   "level": "han"
+  },
+  "T29": {
+   "id": "T29",
+   "name": "装饰实验",
+   "en": "Rampart Deco",
+   "display": "rampart-one",
+   "displayWeight": 400,
+   "body": "noto-sans-sc",
+   "bodyWeight": 400,
+   "meta": "ibm-plex-mono",
+   "metaWeight": 400,
+   "tracking": "0.02em",
+   "lineHeight": 1.0,
+   "tone": "立体描边、潮流、活动",
+   "use": "潮流、音乐、展览、限定版",
+   "avoid": "长标题、严肃出版",
+   "comp": [
+    "C02",
+    "C04"
+   ],
+   "level": "han"
+  },
+  "T30": {
+   "id": "T30",
+   "name": "古典西文",
+   "en": "Classical Latin",
+   "display": "cormorant-garamond",
+   "displayWeight": 600,
+   "body": "noto-serif-sc",
+   "bodyWeight": 400,
+   "meta": "inter-tight",
+   "metaWeight": 400,
+   "tracking": "0.04em",
+   "lineHeight": 1.08,
+   "tone": "古典、纤细、文学编辑",
+   "use": "文学、艺术、展览、双语封面",
+   "avoid": "数据、大众商业",
+   "comp": [
+    "C05",
+    "C06"
+   ],
+   "level": "latin"
+  },
+  "T31": {
+   "id": "T31",
+   "name": "未来无衬",
+   "en": "Future Grotesk",
+   "display": "space-grotesk",
+   "displayWeight": 700,
+   "body": "noto-sans-sc",
+   "bodyWeight": 400,
+   "meta": "space-grotesk",
+   "metaWeight": 400,
+   "tracking": "-0.01em",
+   "lineHeight": 1.0,
+   "tone": "几何、未来、科技编辑",
+   "use": "科技、AI、设计、未来研究",
+   "avoid": "传统文化、童趣",
+   "comp": [
+    "C02",
+    "C03",
+    "C08"
+   ],
+   "level": "latin"
+  },
+  "T32": {
+   "id": "T32",
+   "name": "手写西文",
+   "en": "Caveat Notes",
+   "display": "caveat",
+   "displayWeight": 700,
+   "body": "noto-sans-sc",
+   "bodyWeight": 400,
+   "meta": "inter-tight",
+   "metaWeight": 400,
+   "tracking": "0.02em",
+   "lineHeight": 1.05,
+   "tone": "随手笔记、轻松、个人化",
+   "use": "随笔、个人品牌、生活提案、工作坊",
+   "avoid": "正式报告、机构",
+   "comp": [
+    "C05",
+    "C07"
+   ],
+   "level": "latin"
+  }
+ }
+}

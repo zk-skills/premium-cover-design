@@ -1,0 +1,2923 @@
+{
+  "meta": {
+    "title": "高级出版物封面设计语言与组合范式库",
+    "subtitle": "Premium Cover Design Recipes · 组合范式 · 视觉参考库",
+    "version": "V1.0",
+    "recipeCount": 26,
+    "hybridCount": 18,
+    "layoutCount": 16,
+    "fontStacks": {
+      "sans": "'Helvetica Neue',Inter,'Segoe UI','Source Han Sans SC','Noto Sans SC','Microsoft YaHei',sans-serif",
+      "serif": "'Source Han Serif SC','Noto Serif SC','Songti SC',STSong,Georgia,'Times New Roman',serif",
+      "mono": "'JetBrains Mono',SFMono-Regular,Consolas,'Courier New',monospace",
+      "heavy": "'Arial Black','Helvetica Neue',Impact,'Source Han Sans SC','Microsoft YaHei',sans-serif",
+      "display": "Baskerville,Didot,'Source Han Sans SC','Songti SC',Georgia,serif"
+    },
+    "sizes": {
+      "a4": {
+        "label": "A4 竖版",
+        "mm": "210mm 297mm",
+        "w": 1240,
+        "h": 1754
+      },
+      "a4l": {
+        "label": "A4 横版",
+        "mm": "297mm 210mm",
+        "w": 1754,
+        "h": 1240
+      },
+      "book": {
+        "label": "书籍 160x240mm",
+        "mm": "160mm 240mm",
+        "w": 945,
+        "h": 1417
+      },
+      "pub34": {
+        "label": "出版封面 3:4",
+        "mm": "180mm 240mm",
+        "w": 1350,
+        "h": 1800
+      },
+      "square": {
+        "label": "方形 1:1",
+        "mm": "200mm 200mm",
+        "w": 1400,
+        "h": 1400
+      },
+      "story": {
+        "label": "竖版 4:5",
+        "mm": "160mm 200mm",
+        "w": 1080,
+        "h": 1350
+      },
+      "wide": {
+        "label": "宽屏 16:9",
+        "mm": "320mm 180mm",
+        "w": 1920,
+        "h": 1080
+      }
+    },
+    "textures": {
+      "paper": {
+        "f": 0.9,
+        "o": 0.05
+      },
+      "grain": {
+        "f": 0.75,
+        "o": 0.12
+      },
+      "rough": {
+        "f": 0.035,
+        "o": 0.09
+      },
+      "print": {
+        "f": 1.3,
+        "o": 0.14
+      },
+      "none": null
+    }
+  },
+  "categories": [
+    {
+      "name": "现代出版与编辑设计",
+      "id": "c1",
+      "desc": "最值得作为默认设计方向。强调专业性、秩序感、字体表现和信息层级，尤其适合报告、书籍、研究成果和知识文章。"
+    },
+    {
+      "name": "文学与人文艺术",
+      "id": "c2",
+      "desc": "强调意境、象征、叙事和情绪表达。它不需要把内容直接画出来，而是通过视觉隐喻让读者产生联想。"
+    },
+    {
+      "name": "高端商业与专业出版",
+      "id": "c3",
+      "desc": "重视可信度、权威性、信息组织和视觉成熟度。"
+    },
+    {
+      "name": "实验艺术与先锋视觉",
+      "id": "c4",
+      "desc": "不追求传统意义上的规整，而是通过视觉冲突、非传统布局和艺术媒介创造记忆点。"
+    },
+    {
+      "name": "摄影与视觉叙事",
+      "id": "c5",
+      "desc": "适合需要强烈情绪、故事感和真实世界质感的出版物。"
+    },
+    {
+      "name": "自然、科学与专业插画",
+      "id": "c6",
+      "desc": "以知识性、精确度、观察力与科学美学为核心。"
+    }
+  ],
+  "recipes": [
+    {
+      "id": "R01",
+      "no": 1,
+      "name": "Swiss Editorial",
+      "nameCn": "瑞士编辑主义",
+      "category": "现代出版与编辑设计",
+      "tag": "",
+      "positioning": "理性、现代、专业、精确。",
+      "desc": "设计指令： 强调网格秩序、非对称布局、明确的视觉层级。避免装饰性插画和过多渐变，让标题本身成为视觉主体。",
+      "dims": {
+        "风格描述": "国际主义、现代主义、编辑设计",
+        "表现手法": "大字号字体、几何色块、精细分割线、微型编号",
+        "布局方式": "左对齐、非对称网格、模块化布局",
+        "构图方案": "左侧标题、右侧主体；或标题与图形上下错位",
+        "字体": "思源黑体、Helvetica 类无衬线、等宽字体",
+        "色彩": "暖白、黑、朱红；或深蓝、灰白",
+        "材质": "纯色、轻微纸纹、平面矢量",
+        "适合方向": "商业报告、科技文章、研究报告、知识出版物"
+      },
+      "examples": [
+        {
+          "title": "《人工智能时代的知识革命》",
+          "desc": "超大黑体标题，右侧放置红色几何抽象结构，底部以微型文字标注研究机构和出版日期。"
+        },
+        {
+          "title": "《2026 全球数字经济发展报告》",
+          "desc": "采用模块网格，将报告名称、年度、行业分类和抽象数据图形组织成严谨的信息体系。"
+        },
+        {
+          "title": "《实践与认知》",
+          "desc": "白色背景、黑色大标题、一个偏离中心的红色几何圆形，表达实践与认知之间的关系。"
+        }
+      ],
+      "instruction": "强调网格秩序、非对称布局、明确的视觉层级。避免装饰性插画和过多渐变，让标题本身成为视觉主体。",
+      "ref": "",
+      "tokens": {
+        "bg": "#F4F1EA",
+        "ink": "#111111",
+        "accent": "#D62828",
+        "sub": "#6B6B6B",
+        "accent2": "#111111"
+      },
+      "fonts": {
+        "display": "sans",
+        "body": "sans",
+        "meta": "mono"
+      },
+      "texture": "paper",
+      "density": 0.45,
+      "keywords": [
+        "报告",
+        "研究",
+        "科技",
+        "商业",
+        "知识",
+        "专业"
+      ],
+      "vertical": false,
+      "reference": {
+        "title": "Books Covers | Paul Rand: Modernist Master 1914-1996",
+        "url": "https://images.openai.com/static-rsc-4/5wN1BDVINjRau3XINEw7uiyYccskMM4yWYutHqEPg_VRm1D3Sj1GrMrirjXww2ik5SzzmOyYHvYS1MYviaJZoGHCI2pNf7jT3faITE34G067XJOUcbjEtgErEoXiJnxoAqDw4rzWtD9OHeQNFAVcoksT4KqwAOm1Le0ccYTFfW8?purpose=inline",
+        "file": "references/recipes/R01-Books Covers - Paul Rand- Modernist Master 1914-1996.png"
+      },
+      "refAnalysis": {
+        "placement": "左侧大标题与右侧几何主体分置，主体以色块与细线构成，底部微型文字横贯全宽",
+        "medium": "平面矢量：几何色块、精细分割线、大字号字体",
+        "palette": "暖白底、纯黑字、单一朱红强调",
+        "why": "报告类需要一眼建立「秩序与权威」，标题与主体各占一半版面即可形成清晰的阅读入口",
+        "borrow": "严格网格与微型编号的尺度对比；用单一强调色而不是多色",
+        "avoid": "不要照搬具体的红色块比例与线距——应按自身标题长度重新定网格"
+      }
+    },
+    {
+      "id": "R02",
+      "no": 2,
+      "name": "Contemporary Editorial",
+      "nameCn": "当代编辑设计",
+      "category": "现代出版与编辑设计",
+      "tag": "",
+      "positioning": "时尚、成熟、内容感强。",
+      "desc": "设计指令： 像专业杂志主编一样组织视觉信息，强调摄影质量、文字与图像的关系，以及画面节奏。",
+      "dims": {
+        "风格描述": "高级杂志、现代出版、文化编辑",
+        "表现手法": "摄影、超大标题、局部遮挡、图片裁切",
+        "布局方式": "满版图片、左右分栏、标题叠加",
+        "构图方案": "图片占据主要区域，标题沿边缘或留白区布局",
+        "字体": "现代衬线 + 无衬线",
+        "色彩": "根据摄影主体选择，辅助色不超过两种",
+        "材质": "高清摄影、轻微胶片颗粒",
+        "适合方向": "文化、科技、商业、人物、深度文章"
+      },
+      "examples": [
+        {
+          "title": "《重新认识人工智能》",
+          "desc": "一张具有空间感的抽象科技摄影，超大标题跨越画面边缘。"
+        },
+        {
+          "title": "《城市的另一面》",
+          "desc": "建筑摄影占据整页，标题置于左下角，右上角放置小型期刊编号。"
+        },
+        {
+          "title": "《人与自然》",
+          "desc": "人物与自然环境形成视觉对照，标题与人物轮廓局部重叠。"
+        }
+      ],
+      "instruction": "像专业杂志主编一样组织视觉信息，强调摄影质量、文字与图像的关系，以及画面节奏。",
+      "ref": "",
+      "tokens": {
+        "bg": "#F3F2EF",
+        "ink": "#171717",
+        "accent": "#B8412E",
+        "sub": "#7C7A74",
+        "accent2": "#3A3A38"
+      },
+      "fonts": {
+        "display": "serif",
+        "body": "sans",
+        "meta": "sans"
+      },
+      "texture": "grain",
+      "density": 0.6,
+      "keywords": [
+        "杂志",
+        "文化",
+        "人物",
+        "深度",
+        "商业",
+        "访谈"
+      ],
+      "vertical": false,
+      "reference": {
+        "title": "Art Magazine, Ursula: Issue 11, Hauser & Wirth",
+        "url": "https://images.openai.com/static-rsc-4/9uU6DAIh6vk40haGF3ywOk4fRt9Cd4V-0jn2j7ogFDdBJ1rAtX1XO3za8oshOPkgV7hMD927N0k_QNgw8KRBfMNstPJZOfbBeIeKiyRDOEeke6wuY7l_lor9L7KpEHjrD5fG285DR_oTJYP3Mjt2Cx7kS3LRSAbspvwqdKun6fM?purpose=inline",
+        "file": "references/recipes/R02-Art Magazine, Ursula- Issue 11, Hauser & Wirth.png"
+      },
+      "refAnalysis": {
+        "placement": "满版摄影或大幅图占据主体，标题沿画面边缘或留白区排布，允许局部叠压",
+        "medium": "高清摄影 + 超大标题 + 轻微胶片颗粒",
+        "palette": "由摄影主体决定主色，辅助色不超过两种",
+        "why": "深度文章需要画面先建立情绪，文字只做定位而非说明",
+        "borrow": "标题与图片边缘的咬合关系（压住一点比完全分开更亲密）",
+        "avoid": "不要照搬摄影题材与色调——情绪要由自己的主题决定"
+      }
+    },
+    {
+      "id": "R03",
+      "no": 3,
+      "name": "Modernist Minimalism",
+      "nameCn": "现代主义极简",
+      "category": "现代出版与编辑设计",
+      "tag": "",
+      "positioning": "简洁、克制、结构优雅。",
+      "desc": "设计指令： 用最少的元素表达最明确的概念，避免把极简理解成简单的白底加黑字。",
+      "dims": {
+        "风格描述": "现代主义、极简主义、功能美学",
+        "表现手法": "几何图形、单色块、精细线条",
+        "布局方式": "大面积留白、少量信息、偏心布局",
+        "构图方案": "一个核心视觉主体，其余元素围绕主体组织",
+        "字体": "几何无衬线、现代衬线",
+        "色彩": "黑白灰、米白、单一强调色",
+        "材质": "纯色、细腻纸张纹理",
+        "适合方向": "哲学、科学、设计、思想、商业"
+      },
+      "examples": [
+        {
+          "title": "《时间的形状》",
+          "desc": "一个极简圆环和一条细线，配合左下角的小型标题。"
+        },
+        {
+          "title": "《复杂系统》",
+          "desc": "通过大小不同的几何圆形建立系统关系，使用单色调表现复杂与秩序。"
+        },
+        {
+          "title": "《设计的本质》",
+          "desc": "大面积留白，中央放置一个不完整的几何结构，标题采用小字号衬线字体。"
+        }
+      ],
+      "instruction": "用最少的元素表达最明确的概念，避免把极简理解成简单的白底加黑字。",
+      "ref": "",
+      "tokens": {
+        "bg": "#FCFCFB",
+        "ink": "#141414",
+        "accent": "#978E7A",
+        "sub": "#8A8A85",
+        "accent2": "#2A2A28"
+      },
+      "fonts": {
+        "display": "sans",
+        "body": "sans",
+        "meta": "mono"
+      },
+      "texture": "paper",
+      "density": 0.22,
+      "keywords": [
+        "极简",
+        "哲学",
+        "科学",
+        "设计",
+        "思想",
+        "克制"
+      ],
+      "vertical": false,
+      "reference": {
+        "title": "Point Line Plane",
+        "url": "https://images.openai.com/static-rsc-4/Ctqu1xf0WjIrhYI6-6j8bnBglEGf2d1Cy6t4VWKqwgV2iiwYeCXnUvHvboFB_o-TfLTT3m9U6L9-mMR956ITaaPLZzsTmEtcJmBw9Cl9t6gfr2rjlgEvKAutKmw_qfXf4FISJwnvdW2IyJTCvWAdLxsEwsiSYs9CU6g6Jww2Kkk?purpose=inline",
+        "file": "references/recipes/R03-Point Line Plane.png"
+      },
+      "refAnalysis": {
+        "placement": "单一几何主体偏离中心，标题以小字号衬线落在角落，留出大面积空白",
+        "medium": "几何图形、单色块、精细线条",
+        "palette": "黑白灰为主，米白底配单一强调色",
+        "why": "哲学与思想类封面需要「让读者停下来」，空比满更有说服力",
+        "borrow": "极小主体与巨大负空间的比例关系（主体通常不超过版面 25%）",
+        "avoid": "不要把「极简」理解成白底黑字——没有几何主体的极简是空洞"
+      }
+    },
+    {
+      "id": "R04",
+      "no": 4,
+      "name": "Swiss Brutalist",
+      "nameCn": "瑞士粗野主义",
+      "category": "现代出版与编辑设计",
+      "tag": "",
+      "positioning": "强烈、直接、具有思想冲击力。",
+      "desc": "设计指令： 追求强烈的视觉表达，但必须保持设计逻辑。粗野不等于杂乱，所有冲突都应当是有意安排的。",
+      "dims": {
+        "风格描述": "新粗野主义、先锋平面、实验排版",
+        "表现手法": "超粗字体、硬阴影、色块、裁切",
+        "布局方式": "不规则网格、文字跨区、局部溢出",
+        "构图方案": "标题成为主图形，主体作为辅助",
+        "字体": "粗黑体、窄体、超大展示字体",
+        "色彩": "黑、白、红；黑、黄、蓝",
+        "材质": "粗糙纸纹、印刷颗粒",
+        "适合方向": "观点文章、社会议题、设计、创新"
+      },
+      "examples": [
+        {
+          "title": "《打破旧秩序》",
+          "desc": "超大黑色标题跨越画面，红色矩形切割文字区域。"
+        },
+        {
+          "title": "《技术革命》",
+          "desc": "荧光黄色背景，黑色粗体标题，局部数字与符号形成视觉冲击。"
+        },
+        {
+          "title": "《重新定义工作》",
+          "desc": "标题被裁切，文字与人物摄影发生强烈重叠。"
+        }
+      ],
+      "instruction": "追求强烈的视觉表达，但必须保持设计逻辑。粗野不等于杂乱，所有冲突都应当是有意安排的。",
+      "ref": "",
+      "tokens": {
+        "bg": "#FFFFFF",
+        "ink": "#0A0A0A",
+        "accent": "#E8112D",
+        "sub": "#5A5A5A",
+        "accent2": "#FFD400"
+      },
+      "fonts": {
+        "display": "heavy",
+        "body": "sans",
+        "meta": "mono"
+      },
+      "texture": "rough",
+      "density": 0.85,
+      "keywords": [
+        "社会",
+        "议题",
+        "观点",
+        "创新",
+        "先锋",
+        "强烈"
+      ],
+      "vertical": false,
+      "reference": {
+        "title": "Kreis! Quadrat! Progress!: Zürichs konkrete Avantgarde. Max Bill, Camille Graeser, Verena Loewensberg, Richard Paul Lohse und ihr Umfeld von unbekannt",
+        "url": "https://images.openai.com/static-rsc-4/usU0Xyba_2b3lkTgSZN-uCpBQHYgj-54dKiW-Zd8PL5R92mhLFd_Qo3mISjlPS6Tq9hdVWsiubiWxcLd3gecKawmn9wsnn57GGjstwoiP-IiM20I7hIBLi6CjsOl0Uv7o3AbQCwCOU8PYKL0vnusmXYdN0vFVvDGaw9HmY-OPJE?purpose=inline",
+        "file": "references/recipes/R04-Kreis! Quadrat! Progress!- Zürichs konkrete Avantgarde. Max Bill, Cami.png"
+      },
+      "refAnalysis": {
+        "placement": "超大标题本身成为主图形并被裁切或压过，红色矩形切割标题区域",
+        "medium": "超粗字体、硬阴影、色块、裁切",
+        "palette": "黑白为主，红或黄作为唯一冲击色",
+        "why": "社会议题与观点类封面需要先制造不适与冲击，再交付观点",
+        "borrow": "文字与色块的硬边咬合；粗体在极小字号下依然成立",
+        "avoid": "不要滥用裁切——裁切必须与栅格对齐，否则是事故不是设计"
+      }
+    },
+    {
+      "id": "R05",
+      "no": 5,
+      "name": "Modular Editorial",
+      "nameCn": "模块化编辑设计",
+      "category": "文学与人文艺术",
+      "tag": "",
+      "positioning": "系统化、专业、信息丰富。",
+      "desc": "这一类强调意境、象征、叙事和情绪表达。它不需要把内容直接画出来，而是通过视觉隐喻让读者产生联想。",
+      "dims": {
+        "风格描述": "信息设计、编辑设计、系统化排版",
+        "表现手法": "模块色块、网格、编号、信息标签",
+        "布局方式": "2×2、3×3、12 栏网格",
+        "构图方案": "主标题占据一个大型模块，其他区域承担辅助信息",
+        "字体": "无衬线、等宽字体",
+        "色彩": "深蓝、浅灰、白；或米白、黑、橙",
+        "材质": "平面图形、细线、低对比纹理",
+        "适合方向": "年度报告、学术研究、数据分析、行业白皮书"
+      },
+      "examples": [
+        {
+          "title": "《2026 全球 AI 产业研究》",
+          "desc": "主标题占左侧大模块，右侧布置产业数据图形。"
+        },
+        {
+          "title": "《数字经济观察》",
+          "desc": "将年度、行业、研究编号、主题图形分别组织在不同网格中。"
+        },
+        {
+          "title": "《企业年度发展报告》",
+          "desc": "主视觉为企业建筑摄影，外围模块放置年份、业务领域和报告编号。"
+        }
+      ],
+      "instruction": "",
+      "ref": "",
+      "tokens": {
+        "bg": "#F1F4F8",
+        "ink": "#0F1B2D",
+        "accent": "#1B4E9B",
+        "sub": "#6B7A90",
+        "accent2": "#C25E00"
+      },
+      "fonts": {
+        "display": "sans",
+        "body": "sans",
+        "meta": "mono"
+      },
+      "texture": "none",
+      "density": 0.72,
+      "keywords": [
+        "年报",
+        "白皮书",
+        "数据",
+        "行业",
+        "学术",
+        "信息"
+      ],
+      "vertical": false,
+      "reference": {
+        "title": "Abstract minimal geometric background for business annual report book cover brochure flyer poster",
+        "url": "https://images.openai.com/static-rsc-4/VIt5uJCvg6gtl-TzwyCblzXWnR55n7ZyEDg7o6EiDACASXWPEaJNIeZMRD4r7TVcpoiG1GyNAKRdWXSMuslq25HEdZvBTnHF_vVYoCSTi-KbMYInP0OEXUcZ_60c3fBpOuWCaaD1ljMEIXQEntQKYcKsad3pnrMdK6zKPQUYzGswOQcae1Nn-IHs0EQTPORo?purpose=inline",
+        "file": "references/recipes/R05-Abstract minimal geometric background for business annual report book .png"
+      },
+      "refAnalysis": {
+        "placement": "主标题占据一个大模块，其余模块分别放年度、行业分类、编号与抽象数据图形",
+        "medium": "模块色块、网格、编号、信息标签",
+        "palette": "深蓝、浅灰、白，或米白、黑、橙",
+        "why": "数据密集的年报需要读者能快速定位信息块，而不是读一段话",
+        "borrow": "模块的严格对齐与编号系统；同一套网格复用到不同封面",
+        "avoid": "不要让信息模块数量随内容无限增长——模块一多就失去模块的意义"
+      }
+    },
+    {
+      "id": "R06",
+      "no": 6,
+      "name": "Japanese Literary",
+      "nameCn": "日式文学装帧",
+      "category": "文学与人文艺术",
+      "tag": "",
+      "positioning": "含蓄、宁静、诗意、克制。",
+      "desc": "设计指令： 不要直白表达主题。使用一个能够引起联想的自然物件、空间或场景，保持克制的文字与色彩。",
+      "dims": {
+        "风格描述": "日式极简、文学装帧、东方审美",
+        "表现手法": "自然摄影、水彩、纸张纹理、微型文字",
+        "布局方式": "偏心构图、竖排标题、非对称留白",
+        "构图方案": "单一自然意象置于画面偏下或偏侧",
+        "字体": "思源宋体、霞鹜文楷、现代明朝体",
+        "色彩": "米白、灰蓝、浅棕、苔绿",
+        "材质": "和纸、纤维、淡墨、自然颗粒",
+        "适合方向": "文学、散文、哲学、人生感悟、随笔"
+      },
+      "examples": [
+        {
+          "title": "《花开以前》",
+          "desc": "一枝尚未绽放的花朵，置于大面积灰白背景中，标题竖排在右侧。"
+        },
+        {
+          "title": "《时间没有声音》",
+          "desc": "远处的山与薄雾，一棵孤树作为视觉中心，标题采用细宋体。"
+        },
+        {
+          "title": "《在无人经过的地方》",
+          "desc": "一扇半开的旧木门，门外是朦胧的自然景色，文字集中在左上方。"
+        }
+      ],
+      "instruction": "不要直白表达主题。使用一个能够引起联想的自然物件、空间或场景，保持克制的文字与色彩。",
+      "ref": "",
+      "tokens": {
+        "bg": "#F6F3EC",
+        "ink": "#2B2A26",
+        "accent": "#6F8177",
+        "sub": "#8A8578",
+        "accent2": "#3E4A45"
+      },
+      "fonts": {
+        "display": "serif",
+        "body": "serif",
+        "meta": "sans"
+      },
+      "texture": "paper",
+      "density": 0.3,
+      "keywords": [
+        "文学",
+        "散文",
+        "随笔",
+        "哲学",
+        "人生",
+        "诗"
+      ],
+      "vertical": true,
+      "reference": {
+        "title": "庭とエスキース｜奥山淳志 | 本の轍",
+        "url": "https://images.openai.com/static-rsc-4/MV_yWyUo0GvuXh2R_XAZ2TlBNvjXsTxP7CN9M-CM8P5VViquZoyTRwaefwUb3gPi0GPPXpBe7HoPTqz-R8ct2mgXDe0l70GtIx619HwQHJ34P0o8RSi5Dh5GMYC4B1aCVmgniprEabuPLsl2BD8Ot67HKAbD7N-ZxxBzzORUXTk?purpose=inline",
+        "file": "references/recipes/R06-庭とエスキース｜奥山淳志 - 本の轍.png"
+      },
+      "refAnalysis": {
+        "placement": "单一自然意象置于画面偏下或偏侧，标题竖排或窄列排在侧边，其余大面积留白",
+        "medium": "自然摄影、水彩、纸张纹理",
+        "palette": "米白、灰蓝、浅棕、苔绿等低饱和自然色",
+        "why": "文学类封面需要留出读者的想象空间，意象只做暗示不做解释",
+        "borrow": "偏心构图与竖排标题形成的呼吸感；材质的朴素",
+        "avoid": "不要把自然意象拍得太美太满——一旦漂亮就变成了风景明信片"
+      }
+    },
+    {
+      "id": "R07",
+      "no": 7,
+      "name": "Wabi-Sabi",
+      "nameCn": "侘寂美学",
+      "category": "文学与人文艺术",
+      "tag": "",
+      "positioning": "自然、不完美、时间感、朴素。",
+      "desc": "3. 《慢慢来》：一片干枯的叶子置于浅色纸面，标题极小，周围留白。",
+      "dims": {
+        "风格描述": "侘寂、自然主义、东方质朴",
+        "表现手法": "手工纸、陶器、枯枝、自然光摄影",
+        "布局方式": "自由偏心、非对称、极少信息",
+        "构图方案": "一个具有时间痕迹的物体独立呈现",
+        "字体": "宋体、细衬线、手写字体",
+        "色彩": "沙色、灰褐、米白、炭灰",
+        "材质": "旧纸、粗纤维、石材、陶土",
+        "适合方向": "人生、哲学、自然、生活、禅学"
+      },
+      "examples": [
+        {
+          "title": "《不完整的圆》",
+          "desc": "一个有裂纹的陶瓷器皿，放置在粗糙的灰白背景上。"
+        },
+        {
+          "title": "《岁月的痕迹》",
+          "desc": "风化的木头与斑驳墙面，采用自然侧光。"
+        },
+        {
+          "title": "《慢慢来》",
+          "desc": "一片干枯的叶子置于浅色纸面，标题极小，周围留白。"
+        }
+      ],
+      "instruction": "",
+      "ref": "",
+      "tokens": {
+        "bg": "#EDE7DE",
+        "ink": "#3A352F",
+        "accent": "#8C7B6B",
+        "sub": "#7A7266",
+        "accent2": "#5A5148"
+      },
+      "fonts": {
+        "display": "serif",
+        "body": "serif",
+        "meta": "sans"
+      },
+      "texture": "rough",
+      "density": 0.25,
+      "keywords": [
+        "自然",
+        "时间",
+        "禅",
+        "朴素",
+        "人生",
+        "生活"
+      ],
+      "vertical": false,
+      "reference": {
+        "title": "Wabi Sabi by Nobuo Suzuki | Summary, Audio, Quotes, FAQ",
+        "url": "https://images.openai.com/static-rsc-4/bii3HOahPYlc15EFhZ46OVXPIlIPDHemZEfXhkOsBUoQMJRQqqrMM1FkZiARfrYQSBVed2GOv1rPUK4HF7ZRsjejfJYDcHsjbg3GYuj-O02fhm0vsqroEE6GFfyTV8C-1rFra508e86iJIhrV-esYabmz7KBIg1XH025XZuPz5c?purpose=inline",
+        "file": "references/recipes/R07-Wabi Sabi by Nobuo Suzuki - Summary, Audio, Quotes, FAQ.png"
+      },
+      "refAnalysis": {
+        "placement": "一个带时间痕迹的器物独立呈现，标题极小，多余信息几乎全部删除",
+        "medium": "手工纸、陶器、枯枝、自然光摄影",
+        "palette": "沙色、灰褐、米白、炭灰",
+        "why": "人生与禅学类封面要让「不完美」可见，器物比图像更诚实",
+        "borrow": "不规则边缘与自然投影；材质的真实细节",
+        "avoid": "不要修饰成完好无损的样子——痕迹是这个风格的主体"
+      }
+    },
+    {
+      "id": "R08",
+      "no": 8,
+      "name": "Surrealist Narrative",
+      "nameCn": "超现实叙事",
+      "category": "文学与人文艺术",
+      "tag": "",
+      "positioning": "神秘、隐喻、想象、视觉悬念。",
+      "desc": "3. 《看不见的世界》：一颗透明玻璃球内部呈现完整的微缩城市。",
+      "dims": {
+        "风格描述": "超现实主义、概念艺术、梦境叙事",
+        "表现手法": "尺度错位、物体悬浮、空间变形",
+        "布局方式": "中心主体、大片环境空间",
+        "构图方案": "一个异常物体处于真实场景中",
+        "字体": "现代衬线、纤细无衬线",
+        "色彩": "雾蓝、灰紫、沙色、深黑",
+        "材质": "写实摄影、3D、电影光影",
+        "适合方向": "哲学、心理、意识、认知、思想"
+      },
+      "examples": [
+        {
+          "title": "《思维的边界》",
+          "desc": "一扇门悬浮在海面上，门后是另一个天空。"
+        },
+        {
+          "title": "《记忆的形状》",
+          "desc": "一座漂浮的房子，周围散落着不同年代的物件。"
+        },
+        {
+          "title": "《看不见的世界》",
+          "desc": "一颗透明玻璃球内部呈现完整的微缩城市。"
+        }
+      ],
+      "instruction": "",
+      "ref": "",
+      "tokens": {
+        "bg": "#D7DEE4",
+        "ink": "#171A1F",
+        "accent": "#6C5C86",
+        "sub": "#5B6670",
+        "accent2": "#2E3742"
+      },
+      "fonts": {
+        "display": "serif",
+        "body": "sans",
+        "meta": "sans"
+      },
+      "texture": "grain",
+      "density": 0.42,
+      "keywords": [
+        "超现实",
+        "意识",
+        "认知",
+        "心理",
+        "想象",
+        "哲学"
+      ],
+      "vertical": false,
+      "reference": {
+        "title": "OpenSourceGen - Free AI Image and Video Generator | Text to Image & Video AI",
+        "url": "https://images.openai.com/static-rsc-4/6SYKyDp3DkLZFy5lJa3m8FhO1aMFR--Eg1QUjI_eI4ZiVUV-ajdX4Di1BREpk6EsOnbqIDhyiqCGWfUHLpy29D0p2m3isJUGsYFkIyEc4BvRRTaAyqKlIMxbobo68moJCZV3U63JU4M7vdc2Xyw8a4PyOfUJ3ITQMdruuKLWuxk?purpose=inline",
+        "file": "references/recipes/R08-OpenSourceGen - Free AI Image and Video Generator - Text to Image & Vi.png"
+      },
+      "refAnalysis": {
+        "placement": "一个异常物体处于真实场景中，主体悬空或尺度错位，标题在中轴或侧边",
+        "medium": "尺度错位、物体悬浮、空间变形、电影光影",
+        "palette": "雾蓝、灰紫、沙色、深黑",
+        "why": "意识与认知类主题需要制造思考上的张力，而不是解释",
+        "borrow": "悬浮物的投影方向与落点；真实场景与异常物体的比例关系",
+        "avoid": "不要用特效堆砌超现实——一个反常点胜过十个"
+      }
+    },
+    {
+      "id": "R09",
+      "no": 9,
+      "name": "Literary Romanticism",
+      "nameCn": "文学浪漫主义",
+      "category": "文学与人文艺术",
+      "tag": "",
+      "positioning": "情绪、诗意、故事感、温度。",
+      "desc": "3. 《那些没有说出口的话》：雨后的街道，一个背影走向远方。",
+      "dims": {
+        "风格描述": "浪漫主义、文学绘画、古典艺术",
+        "表现手法": "油画、水彩、柔焦摄影、逆光",
+        "布局方式": "满版绘画、标题置于安静区域",
+        "构图方案": "风景作为主要视觉，人物作为比例参照",
+        "字体": "古典衬线、现代宋体",
+        "色彩": "暖金、灰蓝、暗绿、褐色",
+        "材质": "油画笔触、画布纹理",
+        "适合方向": "文学、历史、传记、爱情、人文"
+      },
+      "examples": [
+        {
+          "title": "《远方的灯火》",
+          "desc": "黄昏中的小镇，一盏窗户灯光成为画面中心。"
+        },
+        {
+          "title": "《山河旧梦》",
+          "desc": "古老山脉、云层和河流，采用厚重的油画笔触。"
+        },
+        {
+          "title": "《那些没有说出口的话》",
+          "desc": "雨后的街道，一个背影走向远方。"
+        }
+      ],
+      "instruction": "",
+      "ref": "",
+      "tokens": {
+        "bg": "#E9E0D1",
+        "ink": "#2B241C",
+        "accent": "#A2742A",
+        "sub": "#55604E",
+        "accent2": "#7C3F2E"
+      },
+      "fonts": {
+        "display": "serif",
+        "body": "serif",
+        "meta": "sans"
+      },
+      "texture": "grain",
+      "density": 0.55,
+      "keywords": [
+        "历史",
+        "传记",
+        "爱情",
+        "人文",
+        "文学",
+        "温暖"
+      ],
+      "vertical": false,
+      "reference": {
+        "title": "Ebook Kordian, Juliusz Słowacki - Virtualo.pl",
+        "url": "https://images.openai.com/static-rsc-4/wJKRadFajHrlgXd86kDT9MSBi_i6cat4Vd0bmqY0SpiIyA14KF8wRMUUxjM0KFZ0S6VOtQOtBDVarRF4MqRCsAa-Wrw89hU-Sa6as-A2NIZg_ImF7jRcKBBM5dBzwRPZsmU4YPPsJbZ8nQ2h2hbvja4H9O5tgTq6CRPcOOK9oeQ?purpose=inline",
+        "file": "references/recipes/R09-Ebook Kordian, Juliusz Słowacki - Virtualo.pl.png"
+      },
+      "refAnalysis": {
+        "placement": "风景作为主要视觉，人物仅作比例参照，标题落在画面安静的角落或天际线上",
+        "medium": "油画、水彩、柔焦摄影、逆光",
+        "palette": "暖金、灰蓝、暗绿、褐色等古典色",
+        "why": "历史与传记类封面需要时间感，油画笔触天然带年代",
+        "borrow": "大面积笔触与留白天地的比例；光从侧后打来的方向",
+        "avoid": "不要直接仿摹某幅名作的构图——借鉴笔触语言即可"
+      }
+    },
+    {
+      "id": "R10",
+      "no": 10,
+      "name": "Conceptual Art",
+      "nameCn": "观念艺术",
+      "category": "文学与人文艺术",
+      "tag": "",
+      "positioning": "思想、抽象、象征、独特概念。",
+      "desc": "3. 《从零开始》：一张空白纸上只有一个微小的黑点。",
+      "dims": {
+        "风格描述": "当代艺术、概念摄影、思想隐喻",
+        "表现手法": "物体置换、抽象符号、象征性场景",
+        "布局方式": "孤立主体、偏心、留白",
+        "构图方案": "一个符号性主体占据画面主要位置",
+        "字体": "现代衬线、几何无衬线",
+        "色彩": "单色、黑白、低饱和",
+        "材质": "写实摄影、雕塑、3D",
+        "适合方向": "哲学、思想、心理、科学、文化"
+      },
+      "examples": [
+        {
+          "title": "《选择》",
+          "desc": "两条路在画面中分开，尽头分别是光明与黑暗。"
+        },
+        {
+          "title": "《认知的边界》",
+          "desc": "一面镜子映照出不同于现实的景象。"
+        },
+        {
+          "title": "《从零开始》",
+          "desc": "一张空白纸上只有一个微小的黑点。"
+        }
+      ],
+      "instruction": "",
+      "ref": "",
+      "tokens": {
+        "bg": "#F4F4F2",
+        "ink": "#111111",
+        "accent": "#111111",
+        "sub": "#8A8A84",
+        "accent2": "#5E5E5A"
+      },
+      "fonts": {
+        "display": "serif",
+        "body": "sans",
+        "meta": "mono"
+      },
+      "texture": "none",
+      "density": 0.35,
+      "keywords": [
+        "哲学",
+        "象征",
+        "思想",
+        "心理",
+        "科学",
+        "文化"
+      ],
+      "vertical": false,
+      "reference": {
+        "title": "Grafía Callada, de Pepe Gimeno",
+        "url": "https://images.openai.com/static-rsc-4/XXoRzJI8AhR5jWJCXY1WK0Rae3-wqz7icZfEO88JcI9IqtNRkbVGGPrBpEs5lS_da1jxRlKqSrhWyBGE1i6Atgs4PSlnbUtxcWIEgtR3Q5RiOPv1lAPzPPBRiZb8EZr49EmGz06ERFA7xUY9VtWtK5Uq2dV2XZ9yseomiCS5TQI?purpose=inline",
+        "file": "references/recipes/R10-Grafía Callada, de Pepe Gimeno.png"
+      },
+      "refAnalysis": {
+        "placement": "一个符号性主体孤立在画面中央或偏心位置，周围大面积留白",
+        "medium": "物体置换、抽象符号、象征性场景",
+        "palette": "单色、黑白、低饱和",
+        "why": "思想类封面需要一个可被反复解读的符号，而不是具象插图",
+        "borrow": "符号的唯一性与不可替换性；长投影带来的方向感",
+        "avoid": "不要让符号过于直白——把答案写在封面上，读者就没有翻开的理由"
+      }
+    },
+    {
+      "id": "R11",
+      "no": 11,
+      "name": "Poetic Minimalism",
+      "nameCn": "诗意极简",
+      "category": "高端商业与专业出版",
+      "tag": "",
+      "positioning": "安静、柔和、含蓄、情感。",
+      "desc": "这一类重视可信度、权威性、信息组织和视觉成熟度。",
+      "dims": {
+        "风格描述": "诗意极简、东方抒情",
+        "表现手法": "水彩晕染、细线插画、淡化摄影",
+        "布局方式": "大面积留白、偏心标题",
+        "构图方案": "极小主体与巨大负空间形成比例对比",
+        "字体": "宋体、文楷、细衬线",
+        "色彩": "雾蓝、浅灰、淡粉、暖白",
+        "材质": "水彩纸、轻柔颗粒",
+        "适合方向": "诗歌、散文、情绪、生活感悟"
+      },
+      "examples": [
+        {
+          "title": "《风经过的地方》",
+          "desc": "一片被风吹动的薄纱，画面几乎全部留白。"
+        },
+        {
+          "title": "《春天很慢》",
+          "desc": "一株刚刚发芽的小植物，位于画面右下角。"
+        },
+        {
+          "title": "《无人知晓的温柔》",
+          "desc": "一束落在旧书上的阳光，标题位于左上角。"
+        }
+      ],
+      "instruction": "",
+      "ref": "",
+      "tokens": {
+        "bg": "#FBFAF7",
+        "ink": "#3A3A38",
+        "accent": "#7591A3",
+        "sub": "#8E8E8A",
+        "accent2": "#C9A6A6"
+      },
+      "fonts": {
+        "display": "serif",
+        "body": "serif",
+        "meta": "sans"
+      },
+      "texture": "paper",
+      "density": 0.2,
+      "keywords": [
+        "诗歌",
+        "情绪",
+        "生活",
+        "感悟",
+        "温柔",
+        "散文"
+      ],
+      "vertical": false,
+      "reference": {
+        "title": "Bloom by Adrienne T. Nugent | Goodreads",
+        "url": "https://images.openai.com/static-rsc-4/AcyYiO1_8I-O3Xwv6PjWz69xUsV0anTER9rEfymMSh3Y1SF1k9vJHbcTvjBbtsVdjS1efpgoW9L_uqzu8OChmV4DuiKSK5xey0ATk-BdwgGvglODBaEWNUtly8TSZNyYDgRI68CXC19tOdHGnRnVasYOdyNr-q8LJ1qxTSEk_w0?purpose=inline",
+        "file": "references/recipes/R11-Bloom by Adrienne T. Nugent - Goodreads.png"
+      },
+      "refAnalysis": {
+        "placement": "极小的自然主体位于画面一角，大面积留白承担情绪，标题小而克制",
+        "medium": "水彩晕染、细线插画、淡化摄影",
+        "palette": "雾蓝、浅灰、淡粉、暖白",
+        "why": "诗歌与情绪类封面几乎不需要信息，情绪本身即内容",
+        "borrow": "主体与留白的极端比例；晕染的边缘自然度",
+        "avoid": "不要给这类封面加副标题与元信息条——会立刻破坏气质"
+      }
+    },
+    {
+      "id": "R12",
+      "no": 12,
+      "name": "Institutional Luxury",
+      "nameCn": "机构高端风格",
+      "category": "高端商业与专业出版",
+      "tag": "",
+      "positioning": "权威、稳重、精致、可信。",
+      "desc": "3. 《未来十年的商业战略》：深蓝渐变空间、极简三维几何体、宽边距排版。",
+      "dims": {
+        "风格描述": "高端企业出版、机构报告",
+        "表现手法": "高质量建筑摄影、抽象雕塑、精细线条",
+        "布局方式": "左对齐、宽边距、清晰层级",
+        "构图方案": "主视觉占据一侧，标题与报告信息分区",
+        "字体": "现代无衬线、优雅衬线",
+        "色彩": "深海军蓝、暖白、香槟金",
+        "材质": "细腻纸纹、低反光金属质感",
+        "适合方向": "年度报告、战略规划、品牌白皮书"
+      },
+      "examples": [
+        {
+          "title": "《2026 企业可持续发展报告》",
+          "desc": "建筑摄影、深蓝色标题、底部年份与机构信息。"
+        },
+        {
+          "title": "《全球产业趋势观察》",
+          "desc": "抽象金属雕塑、暖白背景、细线和编号。"
+        },
+        {
+          "title": "《未来十年的商业战略》",
+          "desc": "深蓝渐变空间、极简三维几何体、宽边距排版。"
+        }
+      ],
+      "instruction": "",
+      "ref": "",
+      "tokens": {
+        "bg": "#0E2A47",
+        "ink": "#F7F4EE",
+        "accent": "#C6A46B",
+        "sub": "#9FB0C4",
+        "accent2": "#1D3E63"
+      },
+      "fonts": {
+        "display": "serif",
+        "body": "sans",
+        "meta": "sans"
+      },
+      "texture": "paper",
+      "density": 0.5,
+      "keywords": [
+        "年报",
+        "机构",
+        "战略",
+        "白皮书",
+        "权威",
+        "可持续"
+      ],
+      "vertical": false,
+      "reference": {
+        "title": "Jefferson Scholars Foundation Annual Report — Journey Group",
+        "url": "https://images.openai.com/static-rsc-4/ib2sOqmAntpY4RYcLKbv0y3Xvoxzuq3YhntRo4c2G26rPcoQ_qHREDqZ3YWRCT-kjM5Wd85P3O1xtfyHdJs2B2cP8gBSziKksUn8UFqFmC1gMSjSQ_zxnqfSLRhzbHDCZgV2IJdeL-miivHjTW72JIUPbs5qzNBVgXusnOrmjzE?purpose=inline",
+        "file": "references/recipes/R12-Jefferson Scholars Foundation Annual Report — Journey Group.png"
+      },
+      "refAnalysis": {
+        "placement": "主视觉（建筑或雕塑）占据一侧，标题与报告信息在另一侧分区，底部是年份与机构",
+        "medium": "高质量建筑摄影、抽象雕塑、精细线条",
+        "palette": "深海军蓝、暖白、香槟金",
+        "why": "机构类封面需要可信度与精致感，深底金属色是高效方案",
+        "borrow": "宽边距与信息分区的秩序；金色只用于极小的点缀",
+        "avoid": "不要把金色用成大面积装饰——会迅速滑向地产广告"
+      }
+    },
+    {
+      "id": "R13",
+      "no": 13,
+      "name": "Financial Research",
+      "nameCn": "金融研究风格",
+      "category": "高端商业与专业出版",
+      "tag": "",
+      "positioning": "严谨、理性、专业、可信。",
+      "desc": "3. 《2026 全球投资趋势》：通过分层数据柱状结构形成视觉主体。",
+      "dims": {
+        "风格描述": "金融机构、研究机构、专业咨询",
+        "表现手法": "数据曲线、抽象图表、统计符号",
+        "布局方式": "左对齐、上下分区、模块化",
+        "构图方案": "数据图形作为辅助主视觉，标题占据清晰区域",
+        "字体": "无衬线、等宽数字字体",
+        "色彩": "藏蓝、灰白、钢蓝、少量橙色",
+        "材质": "平面图形、精细网格",
+        "适合方向": "金融、经济、市场、行业研究"
+      },
+      "examples": [
+        {
+          "title": "《全球宏观经济展望》",
+          "desc": "深蓝背景，抽象经济曲线延伸至右侧。"
+        },
+        {
+          "title": "《新能源汽车产业链研究》",
+          "desc": "将产业链节点转化为精密连接图形。"
+        },
+        {
+          "title": "《2026 全球投资趋势》",
+          "desc": "通过分层数据柱状结构形成视觉主体。"
+        }
+      ],
+      "instruction": "",
+      "ref": "",
+      "tokens": {
+        "bg": "#0B1E38",
+        "ink": "#F2F5F8",
+        "accent": "#E08A2E",
+        "sub": "#6E8AA8",
+        "accent2": "#2F5C8A"
+      },
+      "fonts": {
+        "display": "sans",
+        "body": "sans",
+        "meta": "mono"
+      },
+      "texture": "none",
+      "density": 0.7,
+      "keywords": [
+        "金融",
+        "经济",
+        "市场",
+        "投研",
+        "行业",
+        "咨询"
+      ],
+      "vertical": false,
+      "reference": {
+        "title": "Global balance sheet trends: Impact on growth and wealth | McKinsey",
+        "url": "https://images.openai.com/static-rsc-4/tPDd-GstPwzT9BZiL_fK_voU1M5uqv1Nchjboqay60JwufgtDEzNGNKkROEC1zQ3Ua9F_8KSHXkF0M2jc-Kkt9iscUMwlq3CCJfUshwbBzPo7RRdmQ4YZ-VDJYI785nvWvB4KzwhmFLOWIjc-yU826SNF10wt82_dADkw3d5HAI?purpose=inline",
+        "file": "references/recipes/R13-Global balance sheet trends- Impact on growth and wealth - McKinsey.png"
+      },
+      "refAnalysis": {
+        "placement": "数据曲线或图表作为辅助主视觉，标题占据明确的独立区域，数字信息分层",
+        "medium": "数据曲线、抽象图表、统计符号",
+        "palette": "藏蓝、灰白、钢蓝，少量橙色",
+        "why": "金融与研究类封面需要一眼看出「这是数据」，但不能喧宾夺主",
+        "borrow": "等宽数字字体的对齐；网格基准线与曲线的对应关系",
+        "avoid": "不要让图表数据看起来像真实但虚假的统计——真实研究报告不这么干"
+      }
+    },
+    {
+      "id": "R14",
+      "no": 14,
+      "name": "Technology Editorial",
+      "nameCn": "科技编辑风格",
+      "category": "高端商业与专业出版",
+      "tag": "",
+      "positioning": "现代、理性、前沿、科技感。",
+      "desc": "3. 《数字世界的底层逻辑》：由大量微型几何单元组成一个巨型抽象球体。",
+      "dims": {
+        "风格描述": "科技编辑、未来主义、数字艺术",
+        "表现手法": "3D 雕塑、透明材质、抽象数据结构",
+        "布局方式": "模块网格、对角线、标题分区",
+        "构图方案": "三维主体位于中央或右侧，标题在左侧",
+        "字体": "几何无衬线、等宽字体",
+        "色彩": "深蓝、银灰、冰白、青蓝",
+        "材质": "玻璃、金属、透明塑料",
+        "适合方向": "AI、软件、工程、技术研究、数字产品"
+      },
+      "examples": [
+        {
+          "title": "《AI Agent 时代》",
+          "desc": "多个透明玻璃结构相互连接，表达智能体协作。"
+        },
+        {
+          "title": "《下一代计算架构》",
+          "desc": "复杂三维芯片结构，局部线框与数据标记。"
+        },
+        {
+          "title": "《数字世界的底层逻辑》",
+          "desc": "由大量微型几何单元组成一个巨型抽象球体。"
+        }
+      ],
+      "instruction": "",
+      "ref": "",
+      "tokens": {
+        "bg": "#0A0E18",
+        "ink": "#EEF3F8",
+        "accent": "#4FC3F7",
+        "sub": "#8FA3B8",
+        "accent2": "#1B2C44"
+      },
+      "fonts": {
+        "display": "sans",
+        "body": "sans",
+        "meta": "mono"
+      },
+      "texture": "grain",
+      "density": 0.62,
+      "keywords": [
+        "科技",
+        "AI",
+        "软件",
+        "工程",
+        "数字",
+        "白皮书"
+      ],
+      "vertical": false,
+      "reference": {
+        "title": "EcomBos — AI Ads & UGC, Created in Minutes",
+        "url": "https://images.openai.com/static-rsc-4/AVUW4fzOztTF1uNvrWqVMi30Z6U8PAQtkLNjvoAMkKJ4a-rHRP_mm4v-YGfZA_rUVKN_B8F94pb2-WgDnx-WlgeeCD89TM6LlV1LOrIyVmuNsmK3GezU9uQG2oI6mPK-hatdNb0zCGZ-hO6daDXIPENnlcOSLq-PkSF8IrR9etc?purpose=inline",
+        "file": "references/recipes/R14-EcomBos — AI Ads & UGC, Created in Minutes.png"
+      },
+      "refAnalysis": {
+        "placement": "三维主体位于中央或右侧，左侧留给标题与说明，局部线框与数据标记穿插",
+        "medium": "3D 雕塑、透明材质、抽象数据结构",
+        "palette": "深蓝、银灰、冰白、青蓝",
+        "why": "科技类封面需要「可感知但不可解读」的先进感，透明材质最有效",
+        "borrow": "玻璃材质的层叠与高光；主体内部结构的局部可见",
+        "avoid": "不要滥用全息与粒子效果——透明和边缘高光已经足够表达科技感"
+      }
+    },
+    {
+      "id": "R15",
+      "no": 15,
+      "name": "Data Intelligence",
+      "nameCn": "数据智能风格",
+      "category": "高端商业与专业出版",
+      "tag": "",
+      "positioning": "数据化、结构化、现代、科学。",
+      "desc": "3. 《知识图谱与智能检索》：多层节点网络、关联边和局部结构放大。",
+      "dims": {
+        "风格描述": "信息可视化、数据设计",
+        "表现手法": "数据曲线、网络节点、图表、坐标",
+        "布局方式": "模块化网格、分栏、图表局部放大",
+        "构图方案": "数据结构形成视觉主体，文字在边缘组织",
+        "字体": "等宽字体、无衬线",
+        "色彩": "深蓝、荧光绿、灰白",
+        "材质": "精密线条、网格、数据点",
+        "适合方向": "大数据、AI、市场研究、行业报告"
+      },
+      "examples": [
+        {
+          "title": "《全球互联网发展报告》",
+          "desc": "世界地图与节点网络组成主视觉。"
+        },
+        {
+          "title": "《中国新能源汽车产业分析》",
+          "desc": "抽象电池结构、产业链关系和统计曲线。"
+        },
+        {
+          "title": "《知识图谱与智能检索》",
+          "desc": "多层节点网络、关联边和局部结构放大。"
+        }
+      ],
+      "instruction": "",
+      "ref": "",
+      "tokens": {
+        "bg": "#0C1220",
+        "ink": "#E8EEF6",
+        "accent": "#7CFF6B",
+        "sub": "#5C7290",
+        "accent2": "#1E3A5F"
+      },
+      "fonts": {
+        "display": "sans",
+        "body": "sans",
+        "meta": "mono"
+      },
+      "texture": "none",
+      "density": 0.78,
+      "keywords": [
+        "数据",
+        "报告",
+        "AI指数",
+        "研究",
+        "可视化",
+        "产业"
+      ],
+      "vertical": false,
+      "reference": {
+        "title": "The 2022 AI Index Report | Stanford HAI",
+        "url": "https://images.openai.com/static-rsc-4/adFpisMotI-0HJkYy1F6PNHhRz6ncc_51VhdJxORZzld4UIZLgALL8cTB3YdCEtcxmy2MDoZgIPXEUCLhu16Gi0LIoLl_E6JJ6ypshlSsb2Bnn3eKnKBhJslQCdK6nrj6Ciqr3h4Ylci99X9_UFmABgRXf6WlhWTiAljoU_Dtzo?purpose=inline",
+        "file": "references/recipes/R15-The 2022 AI Index Report - Stanford HAI.png"
+      },
+      "refAnalysis": {
+        "placement": "数据结构形成视觉主体（节点网络、坐标、曲线），文字在边缘组织",
+        "medium": "数据曲线、网络节点、图表、坐标",
+        "palette": "深蓝、荧光绿、灰白",
+        "why": "数据报告的封面必须与内文的图表语言同源，否则读者会感到割裂",
+        "borrow": "节点疏密节奏；坐标网格与背景的明度差极小",
+        "avoid": "不要把内页图表原样搬到封面——封面需要更简化的图形语言"
+      }
+    },
+    {
+      "id": "R16",
+      "no": 16,
+      "name": "Architectural Modernism",
+      "nameCn": "建筑现代主义",
+      "category": "实验艺术与先锋视觉",
+      "tag": "",
+      "positioning": "空间、秩序、结构、比例。",
+      "desc": "这一类不追求传统意义上的规整，而是通过视觉冲突、非传统布局和艺术媒介创造记忆点。",
+      "dims": {
+        "风格描述": "建筑现代主义、空间美学",
+        "表现手法": "建筑摄影、结构线、几何透视",
+        "布局方式": "分割构图、留白、边缘排版",
+        "构图方案": "建筑主体通过透视关系形成视觉引导",
+        "字体": "几何无衬线",
+        "色彩": "水泥灰、暖白、石墨黑",
+        "材质": "混凝土、石材、玻璃",
+        "适合方向": "建筑、城市、空间、工业设计"
+      },
+      "examples": [
+        {
+          "title": "《城市的未来》",
+          "desc": "仰视现代建筑，建筑线条汇聚至画面顶部。"
+        },
+        {
+          "title": "《空间的秩序》",
+          "desc": "多个混凝土几何结构相互嵌套。"
+        },
+        {
+          "title": "《建筑与光》",
+          "desc": "光线穿过建筑空间，在地面形成强烈几何阴影。"
+        }
+      ],
+      "instruction": "",
+      "ref": "",
+      "tokens": {
+        "bg": "#E9E7E3",
+        "ink": "#191919",
+        "accent": "#868078",
+        "sub": "#6E6B66",
+        "accent2": "#3D3B38"
+      },
+      "fonts": {
+        "display": "sans",
+        "body": "sans",
+        "meta": "mono"
+      },
+      "texture": "none",
+      "density": 0.4,
+      "keywords": [
+        "建筑",
+        "城市",
+        "空间",
+        "工业",
+        "设计",
+        "规划"
+      ],
+      "vertical": false,
+      "reference": {
+        "title": "Light, Space, Place: The Architecture of Robin Gibson – Bookshop by Uro",
+        "url": "https://images.openai.com/static-rsc-4/hqCwhb3j8tl04ioa_fD09_0DvqGiNpB8IOq41Mz5SP6u0SeUHl_-hY8RCTeQBuOzd7whwLHaenAObYVbGABfz3uIY4QrAhJNLWo_dmdc8HwDDdh8dH1PZF5Gx0CSd7m-h5iAesLnwJIdCSjgEd0-2vmxgVUEdk-gGL6xORvAmIA?purpose=inline",
+        "file": "references/recipes/R16-Light, Space, Place- The Architecture of Robin Gibson – Bookshop by Ur.png"
+      },
+      "refAnalysis": {
+        "placement": "建筑主体通过透视汇聚形成视觉引导，标题在画面边缘或留白区",
+        "medium": "建筑摄影、结构线、几何透视",
+        "palette": "水泥灰、暖白、石墨黑",
+        "why": "建筑与城市类封面必须让结构说话，摄影本身就是构图",
+        "borrow": "透视汇聚点的位置；大面积实墙作为留白",
+        "avoid": "不要修图过度——建筑摄影的真实性就是它的力量"
+      }
+    },
+    {
+      "id": "R17",
+      "no": 17,
+      "name": "Constructivism",
+      "nameCn": "构成主义",
+      "category": "实验艺术与先锋视觉",
+      "tag": "",
+      "positioning": "力量、运动、结构、理想主义。",
+      "desc": "3. 《未来的力量》：放射状几何结构，标题以强烈倾斜角度排列。",
+      "dims": {
+        "风格描述": "俄国构成主义、包豪斯",
+        "表现手法": "几何色块、对角线、圆形、三角形",
+        "布局方式": "对角线分割、放射布局",
+        "构图方案": "以斜向几何主体引导视线",
+        "字体": "粗体无衬线",
+        "色彩": "红、黑、米白",
+        "材质": "印刷纸、粗颗粒",
+        "适合方向": "工程、革命、教育、设计、社会议题"
+      },
+      "examples": [
+        {
+          "title": "《改变世界的技术》",
+          "desc": "红色对角线穿越黑色几何结构。"
+        },
+        {
+          "title": "《人类与机器》",
+          "desc": "人物剪影和机械结构通过三角形组合。"
+        },
+        {
+          "title": "《未来的力量》",
+          "desc": "放射状几何结构，标题以强烈倾斜角度排列。"
+        }
+      ],
+      "instruction": "",
+      "ref": "",
+      "tokens": {
+        "bg": "#F0EADD",
+        "ink": "#141414",
+        "accent": "#D32011",
+        "sub": "#4A4A4A",
+        "accent2": "#111111"
+      },
+      "fonts": {
+        "display": "heavy",
+        "body": "sans",
+        "meta": "mono"
+      },
+      "texture": "print",
+      "density": 0.9,
+      "keywords": [
+        "工程",
+        "革命",
+        "教育",
+        "设计",
+        "社会",
+        "力量"
+      ],
+      "vertical": false,
+      "reference": {
+        "title": "Aleksandr Rodchenko. L'Art Décoratif et Industriel de L' U.R.S.S. 1925 | MoMA",
+        "url": "https://images.openai.com/static-rsc-4/bct1z8BP2Xoe_H-8KLUTOAmby0vLWApV9JiAWxJj9O3w_KA9koHvjSvf0J1hMDQ_5qB7efsqRxqtcO_wX7Qj3O5UafP1z7blc-SHEtVOyBlua-D8xW5ZztdocN4k5MS6BrlMNYyndD0vXeK-UWOEih7Qan2LX6c3NJ5fHI6ZvvM?purpose=inline",
+        "file": "references/recipes/R17-Aleksandr Rodchenko. L'Art Décoratif et Industriel de L' U.R.S.S. 1925.png"
+      },
+      "refAnalysis": {
+        "placement": "斜向几何主体引导视线，标题以强烈倾斜角度排列，圆形与三角形形成基本形冲突",
+        "medium": "几何色块、对角线、圆形、三角形、粗体无衬线",
+        "palette": "红、黑、米白",
+        "why": "力量与理想主义类封面需要动势，对角线是最直接的手段",
+        "borrow": "基本形与斜线的张力关系；红黑的极端对比",
+        "avoid": "不要为了动势牺牲可读性——倾斜标题必须仍在正立视角下可快速阅读"
+      }
+    },
+    {
+      "id": "R18",
+      "no": 18,
+      "name": "Deconstructivism",
+      "nameCn": "解构主义",
+      "category": "实验艺术与先锋视觉",
+      "tag": "",
+      "positioning": "破碎、冲突、非线性、实验性。",
+      "desc": "3. 《重构现实》：几何建筑被分割成多个不连续空间。",
+      "dims": {
+        "风格描述": "解构主义、实验排版",
+        "表现手法": "文字切割、错位、重叠、局部扭曲",
+        "布局方式": "不规则分区、碎片布局",
+        "构图方案": "将完整视觉主体拆分为多个相互错位的片段",
+        "字体": "可变字体、粗体、窄体",
+        "色彩": "黑白、红、荧光绿",
+        "材质": "数字失真、纸张拼贴",
+        "适合方向": "前沿思想、文化、艺术、社会研究"
+      },
+      "examples": [
+        {
+          "title": "《秩序之外》",
+          "desc": "标题被分割为多个片段，文字之间产生明显错位。"
+        },
+        {
+          "title": "《数字时代的身份》",
+          "desc": "人物面部被拆解为多个数字化图层。"
+        },
+        {
+          "title": "《重构现实》",
+          "desc": "几何建筑被分割成多个不连续空间。"
+        }
+      ],
+      "instruction": "",
+      "ref": "",
+      "tokens": {
+        "bg": "#101012",
+        "ink": "#F2F2F2",
+        "accent": "#39FF14",
+        "sub": "#8C8C92",
+        "accent2": "#FF2D55"
+      },
+      "fonts": {
+        "display": "heavy",
+        "body": "sans",
+        "meta": "mono"
+      },
+      "texture": "print",
+      "density": 0.88,
+      "keywords": [
+        "先锋",
+        "文化",
+        "艺术",
+        "身份",
+        "数字",
+        "实验"
+      ],
+      "vertical": false,
+      "reference": {
+        "title": "Odires Mlászho - Editora Cobogó",
+        "url": "https://images.openai.com/static-rsc-4/__XisRxnRKHr6Ii6NcL0K6yFFX0Q-uETRjDHlpM7WFnwKK3IdfC9A1tHj1uFFcoCcA0BkRUfXIPzH39BHt9HE-SSfDNxvjgZQ6-vYkc1ZY8FwGRr-SeZcuvWPDVEW-cAQn4ZTTXmIWbNXkX0R6_VgZ1sf6TfvvFRKlVXijwhUGc?purpose=inline",
+        "file": "references/recipes/R18-Odires Mlászho - Editora Cobogó.png"
+      },
+      "refAnalysis": {
+        "placement": "完整视觉主体被拆分为多个错位片段，标题被切割并产生层叠",
+        "medium": "文字切割、错位、重叠、局部扭曲",
+        "palette": "黑白、红、荧光绿",
+        "why": "身份与数字时代类主题需要表达秩序的破裂，碎片化比完整更能说明问题",
+        "borrow": "碎片的错位量与基准网格的关系；断层线的位置",
+        "avoid": "不要把所有文字都打散——可读性是最后的底线，碎片要留有被读懂的顺序"
+      }
+    },
+    {
+      "id": "R19",
+      "no": 19,
+      "name": "Risograph Independent",
+      "nameCn": "独立印刷艺术",
+      "category": "实验艺术与先锋视觉",
+      "tag": "",
+      "positioning": "手工、艺术、复古、独立出版。",
+      "desc": "3. 《创造力的边界》：多个色彩鲜明的几何图形进行套色组合。",
+      "dims": {
+        "风格描述": "独立出版、复古印刷、实验艺术",
+        "表现手法": "套色、错版、半色调、剪贴",
+        "布局方式": "拼贴、自由网格、局部叠加",
+        "构图方案": "多个视觉元素在同一画面中形成层次",
+        "字体": "展示字体、复古衬线、粗体黑体",
+        "色彩": "群青、朱红、亮黄、米白",
+        "材质": "印刷颗粒、纸纹、套色偏移",
+        "适合方向": "艺术、文化、设计、独立杂志"
+      },
+      "examples": [
+        {
+          "title": "《城市观察手册》",
+          "desc": "城市照片与彩色纸片拼贴。"
+        },
+        {
+          "title": "《独立思想》",
+          "desc": "手写文字与复古图像错位叠加。"
+        },
+        {
+          "title": "《创造力的边界》",
+          "desc": "多个色彩鲜明的几何图形进行套色组合。"
+        }
+      ],
+      "instruction": "",
+      "ref": "",
+      "tokens": {
+        "bg": "#F4EFE2",
+        "ink": "#1A1A1A",
+        "accent": "#2B4C9B",
+        "sub": "#5E5648",
+        "accent2": "#E8452C"
+      },
+      "fonts": {
+        "display": "display",
+        "body": "sans",
+        "meta": "mono"
+      },
+      "texture": "print",
+      "density": 0.75,
+      "keywords": [
+        "独立出版",
+        "艺术",
+        "文化",
+        "复古",
+        "设计",
+        "杂志"
+      ],
+      "vertical": false,
+      "reference": {
+        "title": "【ARTBOOK | Risograph 】Collective of Sighs | twelvekyoto",
+        "url": "https://images.openai.com/static-rsc-4/9v1zHn2efXEEGln4R7fVMhsVg6A1mLrSDJCPCAkBa_mcG5PTalvzrV1DT3UBSodxhMHZpykZ9XnaSo4UC_IVwLaer_zNvVZS1CCIbHr0VZ8Oo05pWL4QuCG3BoirolTfwRhTnHI-9w8l4Q4tyxtUTgBnzYkayYFF4LVGzFyG4Ig?purpose=inline",
+        "file": "references/recipes/R19-【ARTBOOK - Risograph 】Collective of Sighs - twelvekyoto.png"
+      },
+      "refAnalysis": {
+        "placement": "多个视觉元素在同一画面形成层次，标题与图像套色错位叠加",
+        "medium": "套色、错版、半色调、剪贴",
+        "palette": "群青、朱红、亮黄、米白",
+        "why": "独立出版类封面追求手工感，套色错版是最直接的物性表达",
+        "borrow": "三色叠印的墨色关系；错位量控制在能看出「有意」的范围",
+        "avoid": "不要把错位做成故障——套色错位是印刷工艺，故障是技术事故"
+      }
+    },
+    {
+      "id": "R20",
+      "no": 20,
+      "name": "Digital Experimental",
+      "nameCn": "数字实验艺术",
+      "category": "摄影与视觉叙事",
+      "tag": "",
+      "positioning": "未来、数字、非传统、视觉冲击。",
+      "desc": "这一类适合需要强烈情绪、故事感和真实世界质感的出版物。",
+      "dims": {
+        "风格描述": "数字艺术、故障美学、新未来主义",
+        "表现手法": "色差、像素、液态金属、全息材质",
+        "布局方式": "非对称、重叠、动态文字",
+        "构图方案": "抽象数字主体占据视觉中心",
+        "字体": "等宽、可变、几何无衬线",
+        "色彩": "黑、银、紫、荧光青",
+        "材质": "铬金属、玻璃、噪点",
+        "适合方向": "AI、数字艺术、未来科技、互联网文化"
+      },
+      "examples": [
+        {
+          "title": "《智能的边界》",
+          "desc": "银色液态金属形成一个类似神经网络的抽象结构。"
+        },
+        {
+          "title": "《数字意识》",
+          "desc": "透明人脸与像素碎片发生融合。"
+        },
+        {
+          "title": "《未来已来》",
+          "desc": "悬浮的全息几何体，背景具有微弱的数字噪点。"
+        }
+      ],
+      "instruction": "",
+      "ref": "",
+      "tokens": {
+        "bg": "#05060A",
+        "ink": "#EDEDF2",
+        "accent": "#A970FF",
+        "sub": "#7C7C8C",
+        "accent2": "#22E3FF"
+      },
+      "fonts": {
+        "display": "sans",
+        "body": "mono",
+        "meta": "mono"
+      },
+      "texture": "print",
+      "density": 0.85,
+      "keywords": [
+        "数字艺术",
+        "未来",
+        "AI",
+        "互联网",
+        "故障",
+        "实验"
+      ],
+      "vertical": false,
+      "reference": {
+        "title": "Liquid Chrome 3d Composition Typography Art | Poster",
+        "url": "https://images.openai.com/static-rsc-4/QBRTWvH6x4-OpdnW28kujDtDiMlY_4GLcP1pa-HccOI8W6LWLXMllHiMhKgVgOeludeBi2vJswu5YD5L12LRaJY4LplCRRpRD7lPrZoLO5XV5uwDCYZvzjS7mo5WGprOdiCFK7ObH1JJa8i_BmAyKj4avL8KC6W0HXXM-NFvGGc?purpose=inline",
+        "file": "references/recipes/R20-Liquid Chrome 3d Composition Typography Art - Poster.png"
+      },
+      "refAnalysis": {
+        "placement": "抽象数字主体占据视觉中心，文字与像素发生位移与色差",
+        "medium": "色差、像素、液态金属、全息材质",
+        "palette": "黑、银、紫、荧光青",
+        "why": "数字艺术与互联网文化类封面需要技术故障的美学",
+        "borrow": "色差分离的通道错位量；扫描线的疏密",
+        "avoid": "不要把故障效果做成满屏噪声——必须有主体，否则只是乱"
+      }
+    },
+    {
+      "id": "R21",
+      "no": 21,
+      "name": "Cinematic Photography",
+      "nameCn": "电影摄影",
+      "category": "摄影与视觉叙事",
+      "tag": "",
+      "positioning": "电影感、情绪、故事、氛围。",
+      "desc": "3. 《城市不眠》：深夜城市，窗户中零星亮着灯光。",
+      "dims": {
+        "风格描述": "电影静帧、叙事摄影",
+        "表现手法": "逆光、景深、雾气、暗角",
+        "布局方式": "满版摄影、文字避开主体",
+        "构图方案": "前景、中景、远景形成纵深",
+        "字体": "现代衬线、细黑体",
+        "色彩": "深蓝、暖金、灰绿",
+        "材质": "胶片颗粒、电影调色",
+        "适合方向": "小说、历史、传记、社会、旅行"
+      },
+      "examples": [
+        {
+          "title": "《最后一班列车》",
+          "desc": "夜晚的火车站，一列列车驶向远处，人物背影位于前景。"
+        },
+        {
+          "title": "《远山之外》",
+          "desc": "雾气中的群山与一条蜿蜒道路。"
+        },
+        {
+          "title": "《城市不眠》",
+          "desc": "深夜城市，窗户中零星亮着灯光。"
+        }
+      ],
+      "instruction": "",
+      "ref": "",
+      "tokens": {
+        "bg": "#0F151B",
+        "ink": "#F3EFE6",
+        "accent": "#C9A227",
+        "sub": "#6E7B85",
+        "accent2": "#3C4A56"
+      },
+      "fonts": {
+        "display": "serif",
+        "body": "sans",
+        "meta": "sans"
+      },
+      "texture": "grain",
+      "density": 0.5,
+      "keywords": [
+        "小说",
+        "历史",
+        "传记",
+        "旅行",
+        "社会",
+        "叙事"
+      ],
+      "vertical": false,
+      "reference": {
+        "title": "Perhaps the nicest Iceland photographic book? — Bruce Percy",
+        "url": "https://images.openai.com/static-rsc-4/lMxyIaRaB1Ti4Gynj2-AuYPXQlmN368uTRsyRbB90SnclNi7HZ-Mkt4rHQCT880hvvG7G-TLey80xLpeJxrL1wE7TqOn6acukIf9Dpgqlalfe3_Ol1HjagTNUgSSYybz2phwDiqsT7U7uJcG4DY41UQ5TgXqW1IYqPI7JeMM2RI?purpose=inline",
+        "file": "references/recipes/R21-Perhaps the nicest Iceland photographic book- — Bruce Percy.png"
+      },
+      "refAnalysis": {
+        "placement": "满版摄影，前景、中景、远景形成纵深，文字避开主体置于安全区",
+        "medium": "逆光、景深、雾气、暗角",
+        "palette": "深蓝、暖金、灰绿",
+        "why": "小说与旅行类封面需要故事感，景深比构图更能把读者拉进去",
+        "borrow": "三层景深关系；暗角把视线收进画面中心",
+        "avoid": "不要用滤镜替代摄影——逆光和空气感是拍出来的"
+      }
+    },
+    {
+      "id": "R22",
+      "no": 22,
+      "name": "Fine Art Photography",
+      "nameCn": "艺术摄影",
+      "category": "摄影与视觉叙事",
+      "tag": "",
+      "positioning": "真实、艺术、细节、审美。",
+      "desc": "3. 《孤独的尺度》：一个极小的人物站在巨大的建筑空间中。",
+      "dims": {
+        "风格描述": "艺术摄影、静物摄影",
+        "表现手法": "微距、光影、景深、精致布光",
+        "布局方式": "中心主体、偏心主体、留白",
+        "构图方案": "单个物件或人物作为主要视觉焦点",
+        "字体": "现代衬线、极简无衬线",
+        "色彩": "自然色、低饱和、柔和对比",
+        "材质": "金属、玻璃、布料、木材",
+        "适合方向": "艺术、生活、文化、哲学、产品"
+      },
+      "examples": [
+        {
+          "title": "《时间的重量》",
+          "desc": "一只老旧机械钟，光线照亮表面纹理。"
+        },
+        {
+          "title": "《生命的微光》",
+          "desc": "微距拍摄露珠中的植物叶片。"
+        },
+        {
+          "title": "《孤独的尺度》",
+          "desc": "一个极小的人物站在巨大的建筑空间中。"
+        }
+      ],
+      "instruction": "",
+      "ref": "",
+      "tokens": {
+        "bg": "#F3F1EC",
+        "ink": "#24211C",
+        "accent": "#7C6A55",
+        "sub": "#8C877F",
+        "accent2": "#4A4438"
+      },
+      "fonts": {
+        "display": "serif",
+        "body": "sans",
+        "meta": "sans"
+      },
+      "texture": "paper",
+      "density": 0.38,
+      "keywords": [
+        "艺术",
+        "静物",
+        "生活",
+        "产品",
+        "美学",
+        "微距"
+      ],
+      "vertical": false,
+      "reference": {
+        "title": "Tipos Infames:  · SABER ·  CARRERA, ALESSANDRO:  ALIANZA -978-84-1148-813-6",
+        "url": "https://images.openai.com/static-rsc-4/bgfssytAoN58dC3rlU1JX_WzIHGdaKQGP6ov36hKsNNJ_RqdZqgeUOFrNw1-Soyvwv1NKnFFfIJV7EAJCP07xL2aGiK4ysmkRLbShbsBjoNIT-ajKoKrD6vapPyuyDCRHPbVSYSjK-dAw8yT8svmQdq4iN1-lVLWm-20QOuk3-o?purpose=inline",
+        "file": "references/recipes/R22-Tipos Infames-  · SABER ·  CARRERA, ALESSANDRO-  ALIANZA -978-84-1148-.png"
+      },
+      "refAnalysis": {
+        "placement": "单个物件或人物作为视觉焦点，中心或偏心，背景大面积留白或柔化",
+        "medium": "微距、光影、景深、精致布光",
+        "palette": "自然色、低饱和、柔和对比",
+        "why": "艺术与静物类封面需要把注意力交给细节，而不是信息",
+        "borrow": "布光的方向与质感的呈现角度；浅景深的使用",
+        "avoid": "不要堆砌装饰道具——一件物品就是全部"
+      }
+    },
+    {
+      "id": "R23",
+      "no": 23,
+      "name": "Archival Aesthetic",
+      "nameCn": "历史档案美学",
+      "category": "自然、科学与专业插画",
+      "tag": "",
+      "positioning": "历史、真实、资料感、时间沉淀。",
+      "desc": "3. 《被遗忘的城市》：旧地图、城市档案和年代标记组合。",
+      "dims": {
+        "风格描述": "档案美学、复古出版、历史文献",
+        "表现手法": "老照片、手稿、档案标签、印章",
+        "布局方式": "文件拼贴、编号布局、边框",
+        "构图方案": "历史照片作为主视觉，周围组织资料信息",
+        "字体": "打字机字体、古典宋体、等宽字体",
+        "色彩": "旧纸黄、棕、黑、褪色红",
+        "材质": "旧纸、折痕、磨损、印刷噪点",
+        "适合方向": "历史、传记、文化、社会研究"
+      },
+      "examples": [
+        {
+          "title": "《一个时代的记忆》",
+          "desc": "老照片与手写信件组合。"
+        },
+        {
+          "title": "《中国工业发展史》",
+          "desc": "历史工厂照片与档案编号构成封面。"
+        },
+        {
+          "title": "《被遗忘的城市》",
+          "desc": "旧地图、城市档案和年代标记组合。"
+        }
+      ],
+      "instruction": "",
+      "ref": "",
+      "tokens": {
+        "bg": "#E7DBBE",
+        "ink": "#241C12",
+        "accent": "#8C2F1F",
+        "sub": "#6E5C42",
+        "accent2": "#3C2F1E"
+      },
+      "fonts": {
+        "display": "serif",
+        "body": "serif",
+        "meta": "mono"
+      },
+      "texture": "rough",
+      "density": 0.68,
+      "keywords": [
+        "历史",
+        "档案",
+        "传记",
+        "文献",
+        "社会",
+        "工业史"
+      ],
+      "vertical": false,
+      "reference": {
+        "title": "Samuel F.B. Morse book by Samuel Finley Breese Morse",
+        "url": "https://images.openai.com/static-rsc-4/WFLcM224W1EGtNp-sNtxqBD8v5qUUKUIGvYvVgiuf2fSHHpLklYefLazXPGigxfAkICHXlKB77vwIkQ7zhoHyhHb875WLFDPNWccvQdedTam8oGlyD2ogeGSvMg_8YUzGTfu-jCKuAsB7vpoRbrvC22GXhnS25zxH2L5-vFRSNg?purpose=inline",
+        "file": "references/recipes/R23-Samuel F.B. Morse book by Samuel Finley Breese Morse.png"
+      },
+      "refAnalysis": {
+        "placement": "历史照片作为主视觉，周围组织档案标签、编号与边框",
+        "medium": "老照片、手稿、档案标签、印章",
+        "palette": "旧纸黄、棕、黑、褪色红",
+        "why": "历史与档案类封面需要「文献感」，标签与编号比插画更能建立可信度",
+        "borrow": "档案编号的排版系统；纸张做旧要均匀不脏",
+        "avoid": "不要把做旧做成脏——旧不等于脏，黄化不等于模糊"
+      }
+    },
+    {
+      "id": "R24",
+      "no": 24,
+      "name": "Scientific Illustration",
+      "nameCn": "科学插画",
+      "category": "自然、科学与专业插画",
+      "tag": "",
+      "positioning": "知识性、精确、观察、科学美学。",
+      "desc": "3. 《微观世界》：细胞结构的科学绘图，配合精细标注。",
+      "dims": {
+        "风格描述": "科学绘图、博物学、自然观察",
+        "表现手法": "解剖图、结构图、植物线稿、注释",
+        "布局方式": "中心插画、外围标注",
+        "构图方案": "单一科学对象与局部放大细节",
+        "字体": "衬线、等宽字体",
+        "色彩": "米白、墨绿、棕、暗红",
+        "材质": "铜版画、手绘纸张",
+        "适合方向": "生物、医学科普、自然、科学教育"
+      },
+      "examples": [
+        {
+          "title": "《人体的秘密》",
+          "desc": "人体肌肉结构插画，采用古典解剖学绘图形式。"
+        },
+        {
+          "title": "《植物的生命》",
+          "desc": "植物整体与叶片、根系的局部放大图。"
+        },
+        {
+          "title": "《微观世界》",
+          "desc": "细胞结构的科学绘图，配合精细标注。"
+        }
+      ],
+      "instruction": "",
+      "ref": "",
+      "tokens": {
+        "bg": "#F1EDE3",
+        "ink": "#22301F",
+        "accent": "#7A2E22",
+        "sub": "#5C6B57",
+        "accent2": "#3C4A33"
+      },
+      "fonts": {
+        "display": "serif",
+        "body": "serif",
+        "meta": "mono"
+      },
+      "texture": "paper",
+      "density": 0.62,
+      "keywords": [
+        "科普",
+        "医学",
+        "生物",
+        "科学",
+        "教育",
+        "解剖"
+      ],
+      "vertical": false,
+      "reference": {
+        "title": "Oak Spring Garden Foundation - Library",
+        "url": "https://images.openai.com/static-rsc-4/NS9moFTMGEWIQ1uPF9WgfZvZmvJ29QhQrR7-SYgTKLUPfbHRFpNthbr9TZ385eBnIP_mmofgKaI7CkBSg0M61-vLOgyv1HCKpzQ_5ohT-6b1yidaKM9B_rnHglLQsXquIXGvCGBfoSnnpIKhAhK5uFoihl_MPyKlMMA82UxqPGI?purpose=inline",
+        "file": "references/recipes/R24-Oak Spring Garden Foundation - Library.png"
+      },
+      "refAnalysis": {
+        "placement": "单一科学对象居中，外围用引线标注局部放大细节",
+        "medium": "解剖图、结构图、植物线稿、注释",
+        "palette": "米白、墨绿、棕、暗红",
+        "why": "科普类封面需要读者相信「这是精确的」，线稿与标注是精确的语言",
+        "borrow": "引线的角度与端点；线稿的疏密层次",
+        "avoid": "不要用写实渲染替代线稿——真实感不等于科学感"
+      }
+    },
+    {
+      "id": "R25",
+      "no": 25,
+      "name": "Botanical Elegance",
+      "nameCn": "植物艺术",
+      "category": "自然、科学与专业插画",
+      "tag": "",
+      "positioning": "自然、生命、优雅、温和。",
+      "desc": "3. 《自然的疗愈》：几种不同植物以植物图谱的形式组合。",
+      "dims": {
+        "风格描述": "植物艺术、自然美学、现代装帧",
+        "表现手法": "植物摄影、植物线稿、透明水彩",
+        "布局方式": "中心植物主体、边缘文字",
+        "构图方案": "一株植物或一组枝叶作为视觉主体",
+        "字体": "优雅衬线、宋体",
+        "色彩": "橄榄绿、米白、灰绿、土棕",
+        "材质": "纸张纹理、水彩颗粒",
+        "适合方向": "健康、生命、自然、生活方式、营养"
+      },
+      "examples": [
+        {
+          "title": "《生命的节律》",
+          "desc": "一株正在生长的植物，根系与枝叶同时呈现。"
+        },
+        {
+          "title": "《身体的秘密》",
+          "desc": "植物与人体轮廓形成微妙的视觉联系。"
+        },
+        {
+          "title": "《自然的疗愈》",
+          "desc": "几种不同植物以植物图谱的形式组合。"
+        }
+      ],
+      "instruction": "",
+      "ref": "",
+      "tokens": {
+        "bg": "#F4F2E9",
+        "ink": "#24301F",
+        "accent": "#6B7A3F",
+        "sub": "#7E8A73",
+        "accent2": "#3F4A2C"
+      },
+      "fonts": {
+        "display": "serif",
+        "body": "serif",
+        "meta": "sans"
+      },
+      "texture": "paper",
+      "density": 0.45,
+      "keywords": [
+        "健康",
+        "生命",
+        "自然",
+        "营养",
+        "生活方式",
+        "疗愈"
+      ],
+      "vertical": false,
+      "reference": {
+        "title": "Fourteen Leaves and a Cup of Water - Michelle Piergoelam - Earnest Paper",
+        "url": "https://images.openai.com/static-rsc-4/5N5S4RRdy5XDgv6WVg10pnyjYlwe_fkPbQL9WWZbvT7ZSUPyHZ0hy32yW8dirnIjqrUb0RhHR8nBlAXV4tVAddxU8-Ri6Lc2_AdMD2ffVVs4_bHkcv7WZfMkIQb6rA69xoYac1k2eE_whS3VLX7Jrmx3vvogz4s7eqFw5KOLPsg?purpose=inline",
+        "file": "references/recipes/R25-Fourteen Leaves and a Cup of Water - Michelle Piergoelam - Earnest Pap.png"
+      },
+      "refAnalysis": {
+        "placement": "一株植物或一组枝叶作为视觉主体，标本标签式文字排在边缘",
+        "medium": "植物摄影、植物线稿、透明水彩",
+        "palette": "橄榄绿、米白、灰绿、土棕",
+        "why": "健康与自然类封面需要温和的秩序，植物标本的形式最合适",
+        "borrow": "标本标签的排版；枝叶线条的疏密",
+        "avoid": "不要用盛放的花——那是化妆品封面，不是自然教育"
+      }
+    },
+    {
+      "id": "R26",
+      "no": 26,
+      "name": "Abstract 3D Sculpture",
+      "nameCn": "抽象三维雕塑",
+      "category": "自然、科学与专业插画",
+      "tag": "",
+      "positioning": "高级、现代、空间感、艺术性。",
+      "desc": "我的建议是：不要把这套 Skill 做成一个只会套风格的 HTML 模板生成器，而是做成一个能够理解主题、选择艺术方向、组合设计语言并自主完成视觉创作的出版物设计 Agent。",
+      "dims": {
+        "风格描述": "三维艺术、抽象雕塑、现代艺术",
+        "表现手法": "3D 建模、材质渲染、空间光影",
+        "布局方式": "中央雕塑、偏心主体、分层空间",
+        "构图方案": "一个具有复杂形态的雕塑占据画面核心",
+        "字体": "现代无衬线、精细衬线",
+        "色彩": "象牙白、银灰、深蓝、香槟金",
+        "材质": "金属、玻璃、陶瓷、液态材质",
+        "适合方向": "科技、艺术、商业、创新、未来"
+      },
+      "examples": [
+        {
+          "title": "《知识的结构》",
+          "desc": "多个透明几何体相互嵌套。"
+        },
+        {
+          "title": "《无限可能》",
+          "desc": "一条连续的金属带形成无限循环结构。"
+        },
+        {
+          "title": "《复杂性的美》",
+          "desc": "由无数细小结构构成一个完整的抽象雕塑。"
+        },
+        {
+          "title": "分析内容",
+          "desc": ""
+        },
+        {
+          "title": "选择艺术方向",
+          "desc": ""
+        },
+        {
+          "title": "确定视觉隐喻",
+          "desc": ""
+        },
+        {
+          "title": "选择构图与布局",
+          "desc": ""
+        },
+        {
+          "title": "配置视觉语言",
+          "desc": ""
+        },
+        {
+          "title": "生成三个不同方向",
+          "desc": ""
+        },
+        {
+          "title": "生成 HTML 并审查",
+          "desc": ""
+        },
+        {
+          "title": "主风格必须明确，不能把多个风格平均混合。",
+          "desc": ""
+        },
+        {
+          "title": "视觉隐喻优先于对主题的字面插画。",
+          "desc": ""
+        },
+        {
+          "title": "标题和主体必须有明确的主次关系。",
+          "desc": ""
+        },
+        {
+          "title": "字体、色彩、材质应当服从整体艺术方向。",
+          "desc": ""
+        },
+        {
+          "title": "不能为了表现设计感而添加无意义的英文、编号和装饰。",
+          "desc": ""
+        },
+        {
+          "title": "相同内容允许不同艺术方向，但不同方案必须有明显的构图差异。",
+          "desc": ""
+        },
+        {
+          "title": "不同主题不能机械套用相同布局。",
+          "desc": ""
+        },
+        {
+          "title": "设计必须考虑中文标题的实际长度。",
+          "desc": ""
+        },
+        {
+          "title": "所有图片与文字必须保持清晰的空间关系。",
+          "desc": ""
+        },
+        {
+          "title": "优先保证视觉完整性，而不是堆砌设计元素。",
+          "desc": ""
+        }
+      ],
+      "instruction": "",
+      "ref": "",
+      "tokens": {
+        "bg": "#EFEDE7",
+        "ink": "#141821",
+        "accent": "#1F2A44",
+        "sub": "#80858F",
+        "accent2": "#B08D57"
+      },
+      "fonts": {
+        "display": "sans",
+        "body": "sans",
+        "meta": "mono"
+      },
+      "texture": "none",
+      "density": 0.5,
+      "keywords": [
+        "科技",
+        "艺术",
+        "商业",
+        "创新",
+        "未来",
+        "空间"
+      ],
+      "vertical": false,
+      "reference": {
+        "title": "Bulletin          – Christchurch Art Gallery Design Store",
+        "url": "https://images.openai.com/static-rsc-4/8uXTeleIqjDJio9dBOqgTdYyp2vNC5uZP4Pu_loED4xMIlOft7KSSv8O80f_44K21WEC5xs-5oc36YLToRuKfTXfBuPhyCZWMS1p53DJ3LqCAIX3BhTzWthfrPSp2Ws-75YjZMYRZZuV7vXMF17IQGGkWkatqEUe1jJ1v2gYsrQ?purpose=inline",
+        "file": "references/recipes/R26-Bulletin          – Christchurch Art Gallery Design Store.png"
+      },
+      "refAnalysis": {
+        "placement": "一个具有复杂形态的雕塑占据画面核心，文字退到边缘",
+        "medium": "3D 建模、材质渲染、空间光影",
+        "palette": "象牙白、银灰、深蓝、香槟金",
+        "why": "创新与科技类封面需要「有质感但不可解读」的物体，抽象雕塑最安全",
+        "borrow": "多面体的明暗过渡；材质与背景的明度差",
+        "avoid": "不要把雕塑做成产品渲染——背景要足够安静"
+      }
+    }
+  ],
+  "hybrids": [
+    {
+      "no": 1,
+      "name": "Literary Science",
+      "primary": "日式文学",
+      "secondary": "科学插画",
+      "expression": "文学留白 + 精密线稿",
+      "example": {
+        "title": "《花开以前》",
+        "desc": "Literary Science。用一张具有科学绘图质感的花苞插画，搭配日式文学留白。"
+      },
+      "primaryId": "R06",
+      "secondaryId": "R24",
+      "technique": {
+        "texture": "primary",
+        "displayFont": "primary",
+        "layoutHint": "L12"
+      },
+      "use": "文学与科学的交叉读物、诗集与自然随笔"
+    },
+    {
+      "no": 2,
+      "name": "Cinematic Swiss",
+      "primary": "瑞士编辑",
+      "secondary": "电影摄影",
+      "expression": "强网格 + 电影级图像",
+      "example": {
+        "title": "《智能体的崛起》",
+        "desc": "Futuristic Editorial。以抽象 3D 智能网络为主体，使用瑞士编辑网格组织标题。"
+      },
+      "primaryId": "R01",
+      "secondaryId": "R21",
+      "technique": {
+        "texture": "primary",
+        "displayFont": "primary",
+        "layoutHint": "L05"
+      },
+      "use": "影像型深度报道、纪录片式专题"
+    },
+    {
+      "no": 3,
+      "name": "Archival Brutalism",
+      "primary": "档案美学",
+      "secondary": "粗野主义",
+      "expression": "老照片 + 超大粗体",
+      "example": {
+        "title": "《时间的另一面》",
+        "desc": "Luxury Surrealism。一个漂浮的古老钟表，搭配象牙白背景和高反差衬线标题。"
+      },
+      "primaryId": "R23",
+      "secondaryId": "R04",
+      "technique": {
+        "texture": "primary",
+        "displayFont": "secondary",
+        "layoutHint": "L03"
+      },
+      "use": "历史档案与观点评论、口述史"
+    },
+    {
+      "no": 4,
+      "name": "Luxury Surrealism",
+      "primary": "极简奢华",
+      "secondary": "超现实主义",
+      "expression": "奢华留白 + 概念摄影",
+      "example": {
+        "title": "《城市的记忆》",
+        "desc": "Archival Brutalism。老城市照片叠加超大粗体标题和档案编号。"
+      },
+      "primaryId": "R12",
+      "secondaryId": "R08",
+      "technique": {
+        "texture": "primary",
+        "displayFont": "primary",
+        "layoutHint": "L15"
+      },
+      "use": "奢华品牌画册、概念性高端刊物"
+    },
+    {
+      "no": 5,
+      "name": "Botanical Modernism",
+      "primary": "植物艺术",
+      "secondary": "现代主义",
+      "expression": "自然插画 + 几何排版",
+      "example": {
+        "title": "《自然与算法》",
+        "desc": "Conceptual Botanical。植物枝叶与数据节点融合，但保持自然摄影的质感。"
+      },
+      "primaryId": "R25",
+      "secondaryId": "R03",
+      "technique": {
+        "texture": "primary",
+        "displayFont": "secondary",
+        "layoutHint": "L07"
+      },
+      "use": "自然与设计的跨主题、自然类品牌手册"
+    },
+    {
+      "no": 6,
+      "name": "Data Art",
+      "primary": "数据智能",
+      "secondary": "抽象艺术",
+      "expression": "数据结构 + 艺术构成",
+      "primaryId": "R15",
+      "secondaryId": "R10",
+      "technique": {
+        "texture": "primary",
+        "displayFont": "primary",
+        "layoutHint": "L11"
+      },
+      "use": "数据艺术展陈、实验型数据报告"
+    },
+    {
+      "no": 7,
+      "name": "Poetic Photography",
+      "primary": "诗意极简",
+      "secondary": "艺术摄影",
+      "expression": "微小主体 + 情绪摄影",
+      "primaryId": "R11",
+      "secondaryId": "R22",
+      "technique": {
+        "texture": "primary",
+        "displayFont": "primary",
+        "layoutHint": "L15"
+      },
+      "use": "情绪摄影集、生活方式类独立刊物"
+    },
+    {
+      "no": 8,
+      "name": "Futuristic Editorial",
+      "primary": "科技编辑",
+      "secondary": "瑞士编辑",
+      "expression": "三维视觉 + 专业网格",
+      "primaryId": "R14",
+      "secondaryId": "R01",
+      "technique": {
+        "texture": "secondary",
+        "displayFont": "primary",
+        "layoutHint": "L01"
+      },
+      "use": "AI 与未来科技白皮书、技术趋势报告"
+    },
+    {
+      "no": 9,
+      "name": "Vintage Modern",
+      "primary": "档案美学",
+      "secondary": "现代主义",
+      "expression": "复古材质 + 现代排版",
+      "primaryId": "R23",
+      "secondaryId": "R03",
+      "technique": {
+        "texture": "primary",
+        "displayFont": "secondary",
+        "layoutHint": "L01"
+      },
+      "use": "复古题材的现代呈现、怀旧主题出版"
+    },
+    {
+      "no": 10,
+      "name": "Architectural Luxury",
+      "primary": "建筑现代主义",
+      "secondary": "极简奢华",
+      "expression": "空间摄影 + 高级字体",
+      "primaryId": "R16",
+      "secondaryId": "R12",
+      "technique": {
+        "texture": "primary",
+        "displayFont": "secondary",
+        "layoutHint": "L06"
+      },
+      "use": "建筑与空间类高端画册、城市形象册"
+    },
+    {
+      "no": 11,
+      "name": "Conceptual Botanical",
+      "primary": "观念艺术",
+      "secondary": "植物艺术",
+      "expression": "自然意象 + 思想隐喻",
+      "primaryId": "R10",
+      "secondaryId": "R25",
+      "technique": {
+        "texture": "primary",
+        "displayFont": "primary",
+        "layoutHint": "L15"
+      },
+      "use": "思想性自然写作、观念类随笔"
+    },
+    {
+      "no": 12,
+      "name": "Experimental Literary",
+      "primary": "文学装帧",
+      "secondary": "解构主义",
+      "expression": "文学意象 + 实验排版",
+      "primaryId": "R06",
+      "secondaryId": "R18",
+      "technique": {
+        "texture": "primary",
+        "displayFont": "secondary",
+        "layoutHint": "L14"
+      },
+      "use": "实验文学、先锋诗歌与艺术小志"
+    },
+    {
+      "no": 13,
+      "name": "Tech Poetic",
+      "primary": "科技编辑风格",
+      "secondary": "诗意极简",
+      "expression": "冷峻三维 + 疏朗留白",
+      "primaryId": "R14",
+      "secondaryId": "R11",
+      "technique": {
+        "texture": "primary",
+        "displayFont": "secondary",
+        "layoutHint": "L15"
+      },
+      "use": "AI 时代的人文观察、科技产品的手册与宣言",
+      "example": {
+        "title": "《机器之后的安静》",
+        "desc": "以诗意极简的疏朗留白承载科技编辑的冷峻三维结构，适合技术与人文交叉的主题。"
+      }
+    },
+    {
+      "no": 14,
+      "name": "Archival Architectural",
+      "primary": "历史档案美学",
+      "secondary": "建筑现代主义",
+      "expression": "老照片 + 透视结构",
+      "primaryId": "R23",
+      "secondaryId": "R16",
+      "technique": {
+        "texture": "primary",
+        "displayFont": "primary",
+        "layoutHint": "L09"
+      },
+      "use": "城市史、建筑史、纪念册与口述史",
+      "example": {
+        "title": "《城市的第二层》",
+        "desc": "档案美学的旧纸与编号，配建筑现代主义的透视结构，适合城市空间的历史叙事。"
+      }
+    },
+    {
+      "no": 15,
+      "name": "Data Documentary",
+      "primary": "数据智能风格",
+      "secondary": "电影摄影",
+      "expression": "数据曲线 + 电影级画面",
+      "primaryId": "R15",
+      "secondaryId": "R21",
+      "technique": {
+        "texture": "primary",
+        "displayFont": "primary",
+        "layoutHint": "L05"
+      },
+      "use": "数据型年度纪实、议题型报告、纪录片式专题",
+      "example": {
+        "title": "《流动的人口》",
+        "desc": "数据智能的节点网络压在电影摄影的明暗层次之下，适合既要有数据又要有人在场的内容。"
+      }
+    },
+    {
+      "no": 16,
+      "name": "Botanical Scientific",
+      "primary": "植物艺术",
+      "secondary": "科学插画",
+      "expression": "标本线稿 + 精密标注",
+      "primaryId": "R25",
+      "secondaryId": "R24",
+      "technique": {
+        "texture": "primary",
+        "displayFont": "primary",
+        "layoutHint": "L09"
+      },
+      "use": "自然科普、植物图鉴、健康与营养",
+      "example": {
+        "title": "《一株植物的档案》",
+        "desc": "植物艺术的标本线稿与科学插画的解剖标注结合，用于可被查阅的自然科普。"
+      }
+    },
+    {
+      "no": 17,
+      "name": "Brutalist Finance",
+      "primary": "瑞士粗野主义",
+      "secondary": "金融研究风格",
+      "expression": "强对比大字 + 精密图表",
+      "primaryId": "R04",
+      "secondaryId": "R13",
+      "technique": {
+        "texture": "primary",
+        "displayFont": "primary",
+        "layoutHint": "L07"
+      },
+      "use": "观点型财经内容、行业争议、财经评论",
+      "example": {
+        "title": "《谁的杠杆》",
+        "desc": "粗野主义的强对比大字压着金融研究的精密图表，适合有明确立场的数据类内容。"
+      }
+    },
+    {
+      "no": 18,
+      "name": "Risograph Scientific",
+      "primary": "独立印刷艺术",
+      "secondary": "科学插画",
+      "expression": "套色错版 + 解剖线稿",
+      "primaryId": "R19",
+      "secondaryId": "R24",
+      "technique": {
+        "texture": "secondary",
+        "displayFont": "primary",
+        "layoutHint": "L08"
+      },
+      "use": "面向年轻读者的科学传播、实验性展陈",
+      "example": {
+        "title": "《身体的折页》",
+        "desc": "独立印刷的套色错版承载科学插画的解剖线稿，用于降低科学内容的距离感。"
+      }
+    }
+  ],
+  "layouts": [
+    {
+      "id": "L01",
+      "no": 1,
+      "name": "非对称网格",
+      "desc": "标题与视觉主体分置不同区域，利用空间比例建立秩序。",
+      "reference": {
+        "title": "Please log in",
+        "url": "https://images.openai.com/static-rsc-4/NcV9SSxfZi-KUfOM3VJY7_sHwGKvT108-Ah14fozOt9rAj-tHOdL8OINRayw2FT41tXX7fcRgS_RwG3ZDEwKbXGCL9a4HzKqZxSoAZCqsjwAO2DTdmKf_L3QymHFxt8iY3vm3-4Uc0xEh-3i5mRl8tbtod85pAfblKGUEB9-6DA?purpose=inline",
+        "file": "references/layouts/L01-Please log in.png"
+      },
+      "refAnalysis": {
+        "role": "标题与视觉主体分置不同区域，利用空间比例建立秩序",
+        "borrow": "可借鉴：不对称的面积配比（标题区约 55%、主体区约 45%）建立阅读入口",
+        "avoid": "不可照搬：固定按左文右图——需按内容重心换向"
+      },
+      "baseTitle": 10.5
+    },
+    {
+      "id": "L02",
+      "no": 2,
+      "name": "中心对称",
+      "desc": "标题与核心主体沿中心轴排列，适合庄重、正式主题。",
+      "reference": {
+        "title": "Jamie Morgan 1985 Buffalo  – IDEA",
+        "url": "https://images.openai.com/static-rsc-4/8beh-xT_0i9Plby6QL_szw6vBEDjeCr3yRv6-mvdE0yoxBT4eyhdrrQD-9eTDtVGJGgKKC8G4paBrrNFzPeBz09gvg1chrSQOgqgvzPpz0wyXo6H4Aa51DkS_8NyPssfxdjR5IMsnZlB2z3qCs5RR6thencs4C3-ORDZd6vavqY?purpose=inline",
+        "file": "references/layouts/L02-Jamie Morgan 1985 Buffalo  – IDEA.png"
+      },
+      "refAnalysis": {
+        "role": "标题与核心主体沿中心轴排列，适合庄重、正式主题",
+        "borrow": "可借鉴：轴线两侧的对称留白传达仪式感",
+        "avoid": "不可照搬：严格镜像对称会失去现代感，可只保留轴线"
+      },
+      "baseTitle": 9
+    },
+    {
+      "id": "L03",
+      "no": 3,
+      "name": "超大标题",
+      "desc": "标题本身成为图形元素，允许局部裁切。",
+      "reference": {
+        "title": "Minimalism by Leo Babauta",
+        "url": "https://images.openai.com/static-rsc-4/agWR0hHfS3mxTvjfIWGlD4n7Pmyo4elt8uTqoPYsHUlo3MzFmaywXmDUg6cRDu4UpD6XxtKw6jqM28VuBV9X2IDgjNy_skX_Cl9P_cj12bL0TkUUHqOlBgY92J0NU1Wf35mYL4ECFp-qwJeypXbHvJyXYO4C7_QyewJKBYUELuo?purpose=inline",
+        "file": "references/layouts/L03-Minimalism by Leo Babauta.png"
+      },
+      "refAnalysis": {
+        "role": "标题本身成为图形元素，允许局部裁切",
+        "borrow": "可借鉴：标题字面参与构图，字号可达版面短边的 15%",
+        "avoid": "不可照搬：裁切必须与栅格对齐，否则读作事故"
+      },
+      "baseTitle": 15
+    },
+    {
+      "id": "L04",
+      "no": 4,
+      "name": "极限留白",
+      "desc": "少量元素与大面积空间形成强烈比例关系。",
+      "reference": {
+        "title": "Aperture 241 // Utopia  – Reparations Club",
+        "url": "https://images.openai.com/static-rsc-4/GL4MunaxJubDjxMSTuYFC1CfNvmqhvdUkXN22j-Qb_XZik5u3pqJwr_nJTFCTb7a1VHDeW7PZwSXbypX0lwDuZTKoMZvlhfXwihK7DShjRAv_uvDjLvCfmJDK0SaxP0pJHLhoHLhcRCbYvKwYBiG1uTLeEInCDw6UBWqWrGekAU?purpose=inline",
+        "file": "references/layouts/L04-Aperture 241 - Utopia  – Reparations Club.png"
+      },
+      "refAnalysis": {
+        "role": "少量元素与大面积空间形成强烈比例关系",
+        "borrow": "可借鉴：主体压到版面 25% 以内，标题降到 6–7cqw 仍成立",
+        "avoid": "不可照搬：极简不等于留白多——没有主体的留白是空版"
+      },
+      "baseTitle": 6.4
+    },
+    {
+      "id": "L05",
+      "no": 5,
+      "name": "满版摄影",
+      "desc": "图像占据全部画布，文字在安全区域叠加。",
+      "reference": {
+        "title": "5 boekentips van Slimste Mens-deelnemer Sheila Sitalsing - OneWorld",
+        "url": "https://images.openai.com/static-rsc-4/kW_cDuQXUy7fEUVpy4zh19w_ZuSy8SF73qT01p6NPQ6H-JZimsktUKXifpWC3tz4-lBPSdp6l14530L2yixtDGfRHhVZnnO2xGBm_RNUkjmx9DJqgcsWBBi4Fw04zjkdo2MuEr5-d9K4TI5vRENB8pcyIO8S4GYDRXsh7C6wvLo?purpose=inline",
+        "file": "references/layouts/L05-5 boekentips van Slimste Mens-deelnemer Sheila Sitalsing - OneWorld.png"
+      },
+      "refAnalysis": {
+        "role": "图像占据全部画布，文字在安全区域叠加",
+        "borrow": "可借鉴：满版图配径向渐变衬底，保证压字可读",
+        "avoid": "不可照搬：不要让主体细节落在文字区"
+      },
+      "baseTitle": 10.5
+    },
+    {
+      "id": "L06",
+      "no": 6,
+      "name": "分割布局",
+      "desc": "左右或上下分区，适合对比、分类、主题并列。",
+      "reference": {
+        "title": "Structuring Design: Graphic Grids in Theory and Practice – Draw Down",
+        "url": "https://images.openai.com/static-rsc-4/loIQopQtQbziDUEXctrBHr3HWvHJGBx28F4juE_bsd-abZzkUOdgcOPMFBLSpWLONIYbAAw04USSeO8jpfNhBfC8dosSaiCNhYAnx8h0XR-SJquJJws1WR8Q4gtX30maeHLdXhyEtouF4Re-rCHH2OnhU4Ey2p1rs1lVOwoP_JY?purpose=inline",
+        "file": "references/layouts/L06-Structuring Design- Graphic Grids in Theory and Practice – Draw Down.png"
+      },
+      "refAnalysis": {
+        "role": "左右或上下分区，适合对比、分类、主题并列",
+        "borrow": "可借鉴：分界线不必用实线，可靠版面对齐自然形成",
+        "avoid": "不可照搬：五五分最呆板，可按内容改 4:6 或 3:7"
+      },
+      "baseTitle": 9.6
+    },
+    {
+      "id": "L07",
+      "no": 7,
+      "name": "模块网格",
+      "desc": "使用规则模块分配标题、图片和信息。",
+      "reference": {
+        "title": "楽天ブックス: The Ghetto Within - Santiago H. Amigorena - 9798200975945 : 洋書",
+        "url": "https://images.openai.com/static-rsc-4/xZV6rPHQRFsIWsT665zlRl9qVcHNPP3tTtJxTNluoqx4kBFnPHBn_Hy5ePpJEHzFlTOlqMV5cC_v2aPtD-epR730-Dv47ydmtZDcS2GPb5SLWp6VWVN2FNcqK7_YDkViUSWeA2wJKsi09YKkFwPz5QrVKIjGBiQgfWK2TFtjomQ?purpose=inline",
+        "file": "references/layouts/L07-楽天ブックス- The Ghetto Within - Santiago H. Amigorena - 9798200975945 - 洋書.png"
+      },
+      "refAnalysis": {
+        "role": "使用规则模块分配标题、图片和信息",
+        "borrow": "可借鉴：12 栏网格 + 编号系统，可跨系列复用",
+        "avoid": "不可照搬：模块数量随内容增长会失效"
+      },
+      "baseTitle": 8.4
+    },
+    {
+      "id": "L08",
+      "no": 8,
+      "name": "分层拼贴",
+      "desc": "通过多层图像、纸片和文字构成空间。",
+      "reference": {
+        "title": "Padanistan, Tomaso Clavarino, Regular Edition  – Guest Editions",
+        "url": "https://images.openai.com/static-rsc-4/EIfumJmlmwajmK-bgxPLJ5u6HyWnlpIRPu_po6QuEH4zOVDvQTV4DzPKWHgZRGLLcc5imT-MK_IwkCfxpGM8JphFe9Gk5UJSnWwtNHP4cppDVSHoxkEEYurOKDxgarrZYvTEcfhMsdZH8fiD5xH2L875ebgKHeDgFr6d-KkMYII?purpose=inline",
+        "file": "references/layouts/L08-Padanistan, Tomaso Clavarino, Regular Edition  – Guest Editions.png"
+      },
+      "refAnalysis": {
+        "role": "通过多层图像、纸片和文字构成空间",
+        "borrow": "可借鉴：旋转量控制在 2–4 度，阴影跟随光源方向",
+        "avoid": "不可照搬：多层叠加必须留出层间的空白缝"
+      },
+      "baseTitle": 8.6
+    },
+    {
+      "id": "L09",
+      "no": 9,
+      "name": "框景构图",
+      "desc": "使用窗口、边框和局部框架引导视线。",
+      "reference": {
+        "title": "Dan Purdie - Typography Design",
+        "url": "https://images.openai.com/static-rsc-4/CLqIvRlpmnx-Ws7uC1KGFTsWlOaSTklfPm4lTxNZ-XvgtG8bKgqoCGNruglp31KdGdAK-ZYzr1rHALII8XWeCNqhcIatYebl2jiXt7aR2oI9mQYaYYBBRxAICDrKhCCv78_e6y9ebJbxvgnwyqZPqId8e1TXaH8mAs_C8a0N0ZQ?purpose=inline",
+        "file": "references/layouts/L09-Dan Purdie - Typography Design.png"
+      },
+      "refAnalysis": {
+        "role": "使用窗口、边框和局部框架引导视线",
+        "borrow": "可借鉴：内框与外框的双重边界建立「取景」感",
+        "avoid": "不可照搬：边框粗细要随画布比例缩放"
+      },
+      "baseTitle": 7.6
+    },
+    {
+      "id": "L10",
+      "no": 10,
+      "name": "对角线构图",
+      "desc": "利用斜线建立动势，适合科技和创新主题。",
+      "reference": {
+        "title": "Ian Stewart: Taming the Infinite  – SPR Kontti",
+        "url": "https://images.openai.com/static-rsc-4/-JrPUa4E0BO8Uj8YVH4oe4Yuu2ek1s0c1TidZQSYwiJ4XuW913U1ctErloq0OiGEfjv7ryRVPxlghqXJfUMwzQUR5wOd3TsPOBRcutuNX58TtdM7fAtxLF9MzyYttxCXGuuTOuwcZajK0ojpgl0actMg-R5GYQSWZ2DuXb97-D4?purpose=inline",
+        "file": "references/layouts/L10-Ian Stewart- Taming the Infinite  – SPR Kontti.png"
+      },
+      "refAnalysis": {
+        "role": "利用斜线建立动势，适合科技和创新主题",
+        "borrow": "可借鉴：斜切多边形裁切主体，斜率与版面对角一致",
+        "avoid": "不可照搬：斜率过大会把标题挤出安全区"
+      },
+      "baseTitle": 9
+    },
+    {
+      "id": "L11",
+      "no": 11,
+      "name": "放射式构图",
+      "desc": "以中心向四周扩散，适合系统、网络、宇宙。",
+      "reference": {
+        "title": "【満員御礼】『文（ぶん）にあたる』刊行トークイベント: ひるねこBOOKSブログ 本の紹介と本のこと",
+        "url": "https://images.openai.com/static-rsc-4/NvwCygjn-w23NPu81r4bilPGER3avSp7eXvgS9tFvGDBSpsSaR41tGXq8v3D7HNrDKimsD1ggj6JA8cDPtLY-l6ifggE2arsyXambAb2U484dnTLeXGXoMqDVAYVCixEmYGoXqNtuT53Z5V1vs8HJ_6PVAopYAbobZ2oMM33ud8?purpose=inline",
+        "file": "references/layouts/L11-【満員御礼】『文（ぶん）にあたる』刊行トークイベント- ひるねこBOOKSブログ 本の紹介と本のこと.png"
+      },
+      "refAnalysis": {
+        "role": "以中心向四周扩散，适合系统、网络、宇宙",
+        "borrow": "可借鉴：放射结构中心与标题区错开，避免互相压盖",
+        "avoid": "不可照搬：射线数量不要超过可辨读的范围"
+      },
+      "baseTitle": 10
+    },
+    {
+      "id": "L12",
+      "no": 12,
+      "name": "纵向排版",
+      "desc": "通过纵向文字、主体和空间形成阅读节奏。",
+      "reference": {
+        "title": "Overlap/Dissolve – Draw Down",
+        "url": "https://images.openai.com/static-rsc-4/iZHbpRy22KbnNFA9SekqRSYERng5eBS-nzhfKs9BNJxIrBYjhESwyvyGUoXeN_cYCE0I5_zvWotNJ2puzT5UaV6cDmietANb0AL0zSEmiy_R-teEqgHsyFnRpb1gqjMYDOZi4QsIzlJJJ3OA7L1dYdpC7tyBEjtXvOMcYnp2xq0?purpose=inline",
+        "file": "references/layouts/L12-Overlap-Dissolve – Draw Down.png"
+      },
+      "refAnalysis": {
+        "role": "通过纵向文字、主体和空间形成阅读节奏",
+        "borrow": "可借鉴：竖排标题右置，主体留出左侧整幅空间",
+        "avoid": "不可照搬：竖排长标题会折成多列，需改写或缩短"
+      },
+      "baseTitle": 7.2
+    },
+    {
+      "id": "L13",
+      "no": 13,
+      "name": "图文重叠",
+      "desc": "让文字与图像产生前后层次关系。",
+      "reference": {
+        "title": "Vendita online di DVD e libri di narrativa, tascabili, per ragazzi, professionali | Lucca Sapiens Libreria",
+        "url": "https://images.openai.com/static-rsc-4/4pWL-zhlo58G-sJmzfDZfPtkk-uNSK_V36OXWZeaWdyKM032fKEEc76cZor9ncOCD5ypcB6q11ZDhiOEWFneya9H-TEdizBvY3T7NLJnPgzjqglpVcGpo5R0LGKiLViDGAZT97rWtk-LZ4OXkLojzpd_AL3DMZCGRuYlVFGZafE?purpose=inline",
+        "file": "references/layouts/L13-Vendita online di DVD e libri di narrativa, tascabili, per ragazzi, pr.png"
+      },
+      "refAnalysis": {
+        "role": "让文字与图像产生前后层次关系",
+        "borrow": "可借鉴：压盖比例控制在 30% 以内，并加渐变衬底",
+        "avoid": "不可照搬：不要让压盖正好切在字形笔画上"
+      },
+      "baseTitle": 10.5
+    },
+    {
+      "id": "L14",
+      "no": 14,
+      "name": "碎片化构图",
+      "desc": "主体被拆分成多个不连续区域，制造视觉悬念。",
+      "reference": {
+        "title": "In Search of Appropriate Images - Mattia Balsamini (RARE) : Same Dust_kor",
+        "url": "https://images.openai.com/static-rsc-4/5GVxjG9kmSW72WMxiuGDwPf84z5Obm8lfRdEl-T3gbSPvNh87IyYGJZxmmGRCQR1SUDK77u-TOuHVXqdyJ_hKHvtTxN_eghcQ1j-I4m-hrnrhTiFNVnHuhHWxFZow0wE5_BkuN68byu3AHDH1TC_rmPqhKd9FBNBRFHum2-SDlE?purpose=inline",
+        "file": "references/layouts/L14-In Search of Appropriate Images - Mattia Balsamini (RARE) - Same Dust_.png"
+      },
+      "refAnalysis": {
+        "role": "主体被拆分成多个不连续区域，制造视觉悬念",
+        "borrow": "可借鉴：碎片之间用细色带或间隙连接",
+        "avoid": "不可照搬：碎片不要平均分布，需要有主次"
+      },
+      "baseTitle": 8
+    },
+    {
+      "id": "L15",
+      "no": 15,
+      "name": "孤立主体",
+      "desc": "通过单一物体和背景之间的关系建立视觉隐喻。",
+      "reference": {
+        "title": "Typography Posters :: Behance",
+        "url": "https://images.openai.com/static-rsc-4/Sko8AU_xanF0ecv1Hj3w8fO601mN6PtBOGBSWGS-a6UuIDB5WA8q_OTT6XkVJiiXoFGA8DRCFljKhVPE521WdanYrRIFEdlOf7juEQgdaMsmBkrad-cJKiJ7VUKsym3iWtF5Q_1CCWHU7BaP0Nc1FUMchxRb8zWahzDwTVJi_lI?purpose=inline",
+        "file": "references/layouts/L15-Typography Posters - Behance.png"
+      },
+      "refAnalysis": {
+        "role": "通过单一物体和背景之间的关系建立视觉隐喻",
+        "borrow": "可借鉴：主体尺度小、位置偏，标题留在对角",
+        "avoid": "不可照搬：孤立必须有参照物，否则只是空旷"
+      },
+      "baseTitle": 6.8
+    },
+    {
+      "id": "L16",
+      "no": 16,
+      "name": "重心偏置",
+      "desc": "将视觉主体放在顶部、底部或一侧，形成不对称张力。",
+      "reference": {
+        "title": "（源文档未提供参考图）",
+        "url": "",
+        "file": ""
+      },
+      "refAnalysis": {
+        "role": "将视觉主体放在顶部、底部或一侧，形成不对称张力",
+        "borrow": "可借鉴：重心与几何中心的错位产生张力",
+        "avoid": "不可照搬：重心偏移要与内容语义一致，不能纯为视觉"
+      },
+      "baseTitle": 9.6
+    }
+  ],
+  "mapping": [
+    {
+      "content": "文学散文",
+      "style": "Japanese Literary",
+      "layouts": [
+        "L04",
+        "L15"
+      ],
+      "mediums": "自然摄影、水彩",
+      "styleKind": "recipe",
+      "hybridId": null,
+      "styleId": "R06",
+      "layoutIds": []
+    },
+    {
+      "content": "哲学思想",
+      "style": "Conceptual Art",
+      "layouts": [
+        "L01",
+        "L15"
+      ],
+      "mediums": "隐喻、抽象物体",
+      "styleKind": "recipe",
+      "hybridId": null,
+      "styleId": "R10",
+      "layoutIds": []
+    },
+    {
+      "content": "诗歌情感",
+      "style": "Poetic Minimalism",
+      "layouts": [
+        "L04",
+        "L16"
+      ],
+      "mediums": "水彩、柔焦摄影",
+      "styleKind": "recipe",
+      "hybridId": null,
+      "styleId": "R11",
+      "layoutIds": []
+    },
+    {
+      "content": "历史传记",
+      "style": "Archival Aesthetic",
+      "layouts": [
+        "L08",
+        "L09"
+      ],
+      "mediums": "老照片、档案",
+      "styleKind": "recipe",
+      "hybridId": null,
+      "styleId": "R23",
+      "layoutIds": []
+    },
+    {
+      "content": "商业研究",
+      "style": "Swiss Editorial",
+      "layouts": [
+        "L01",
+        "L07"
+      ],
+      "mediums": "几何图形、数据",
+      "styleKind": "recipe",
+      "hybridId": null,
+      "styleId": "R01",
+      "layoutIds": []
+    },
+    {
+      "content": "行业报告",
+      "style": "Institutional Luxury",
+      "layouts": [
+        "L01",
+        "L06"
+      ],
+      "mediums": "建筑摄影、抽象雕塑",
+      "styleKind": "recipe",
+      "hybridId": null,
+      "styleId": "R12",
+      "layoutIds": []
+    },
+    {
+      "content": "科技白皮书",
+      "style": "Technology Editorial",
+      "layouts": [
+        "L06",
+        "L07"
+      ],
+      "mediums": "3D、玻璃材质",
+      "styleKind": "recipe",
+      "hybridId": null,
+      "styleId": "R14",
+      "layoutIds": []
+    },
+    {
+      "content": "AI 研究",
+      "style": "Futuristic Editorial",
+      "layouts": [
+        "L01",
+        "L11"
+      ],
+      "mediums": "数据网络、抽象 3D",
+      "styleKind": "hybrid",
+      "hybridId": 8,
+      "styleId": "R14",
+      "layoutIds": []
+    },
+    {
+      "content": "数据报告",
+      "style": "Data Intelligence",
+      "layouts": [
+        "L07",
+        "L11"
+      ],
+      "mediums": "图表、坐标、网络",
+      "styleKind": "recipe",
+      "hybridId": null,
+      "styleId": "R15",
+      "layoutIds": []
+    },
+    {
+      "content": "自然健康",
+      "style": "Botanical Elegance",
+      "layouts": [
+        "L04",
+        "L15"
+      ],
+      "mediums": "植物插画、摄影",
+      "styleKind": "recipe",
+      "hybridId": null,
+      "styleId": "R25",
+      "layoutIds": []
+    },
+    {
+      "content": "科学教育",
+      "style": "Scientific Illustration",
+      "layouts": [
+        "L07",
+        "L09"
+      ],
+      "mediums": "解剖图、标注",
+      "styleKind": "recipe",
+      "hybridId": null,
+      "styleId": "R24",
+      "layoutIds": []
+    },
+    {
+      "content": "艺术设计",
+      "style": "Independent Print",
+      "layouts": [
+        "L08",
+        "L14"
+      ],
+      "mediums": "拼贴、套色",
+      "styleKind": "recipe",
+      "hybridId": null,
+      "styleId": "R19",
+      "layoutIds": []
+    },
+    {
+      "content": "社会议题",
+      "style": "Swiss Brutalist",
+      "layouts": [
+        "L03",
+        "L10"
+      ],
+      "mediums": "大字、强对比",
+      "styleKind": "recipe",
+      "hybridId": null,
+      "styleId": "R04",
+      "layoutIds": []
+    },
+    {
+      "content": "建筑城市",
+      "style": "Architectural Modernism",
+      "layouts": [
+        "L06",
+        "L16"
+      ],
+      "mediums": "建筑摄影、透视",
+      "styleKind": "recipe",
+      "hybridId": null,
+      "styleId": "R16",
+      "layoutIds": []
+    },
+    {
+      "content": "生活方式",
+      "style": "Contemporary Editorial",
+      "layouts": [
+        "L05",
+        "L01"
+      ],
+      "mediums": "人物摄影、静物",
+      "styleKind": "recipe",
+      "hybridId": null,
+      "styleId": "R02",
+      "layoutIds": []
+    },
+    {
+      "content": "品牌与产品手册",
+      "style": "Institutional Luxury",
+      "layouts": [
+        "L01",
+        "L06"
+      ],
+      "mediums": "建筑摄影、精致排版",
+      "styleKind": "recipe",
+      "hybridId": null,
+      "styleId": "R12",
+      "layoutIds": []
+    },
+    {
+      "content": "展览与画册",
+      "style": "Contemporary Editorial",
+      "layouts": [
+        "L05",
+        "L08"
+      ],
+      "mediums": "高质量摄影、拼贴",
+      "styleKind": "recipe",
+      "hybridId": null,
+      "styleId": "R02",
+      "layoutIds": []
+    },
+    {
+      "content": "学术论文集",
+      "style": "Swiss Editorial",
+      "layouts": [
+        "L07",
+        "L01"
+      ],
+      "mediums": "网格、数据图形",
+      "styleKind": "recipe",
+      "hybridId": null,
+      "styleId": "R01",
+      "layoutIds": []
+    }
+  ],
+  "flow": [
+    {
+      "step": "分析内容",
+      "detail": ""
+    },
+    {
+      "step": "选择艺术方向",
+      "detail": ""
+    },
+    {
+      "step": "确定视觉隐喻",
+      "detail": ""
+    },
+    {
+      "step": "选择构图与布局",
+      "detail": ""
+    },
+    {
+      "step": "配置视觉语言",
+      "detail": ""
+    },
+    {
+      "step": "生成三个不同方向",
+      "detail": ""
+    },
+    {
+      "step": "生成 HTML 并审查",
+      "detail": ""
+    }
+  ],
+  "rules": [
+    "主风格必须明确，不能把多个风格平均混合。",
+    "视觉隐喻优先于对主题的字面插画。",
+    "标题和主体必须有明确的主次关系。",
+    "字体、色彩、材质应当服从整体艺术方向。",
+    "不能为了表现设计感而添加无意义的英文、编号和装饰。",
+    "相同内容允许不同艺术方向，但不同方案必须有明显的构图差异。",
+    "不同主题不能机械套用相同布局。",
+    "设计必须考虑中文标题的实际长度。",
+    "所有图片与文字必须保持清晰的空间关系。",
+    "优先保证视觉完整性，而不是堆砌设计元素。"
+  ],
+  "hasReferences": true
+}

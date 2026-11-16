@@ -1,0 +1,558 @@
+/* ============================================================
+   封面渲染引擎 —— 独立于应用界面，可随导出的 HTML 一同分发
+   坐标系统：cqw / cqh（容器查询单位），随画布尺寸等比缩放
+   ============================================================ */
+.cover{
+  position:relative;overflow:hidden;container-type:size;font-synthesis:none;width:100%;height:100%;
+  background:var(--c-bg);color:var(--c-ink);
+  font-family:var(--f-body);
+  --sx:7.5cqw; --sy:6.5cqw;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact;
+}
+.cover *{box-sizing:border-box}
+.cv-texture{position:absolute;inset:0;pointer-events:none;z-index:3;mix-blend-mode:multiply;opacity:.5}
+.cv-texture.dark{mix-blend-mode:screen;opacity:.34}
+.cv-motif{position:absolute;inset:0;z-index:0;pointer-events:none}
+.cv-motif svg{width:100%;height:100%;display:block}
+.cv-frame{position:absolute;inset:0;z-index:2;display:grid;
+  --sx:7.5cqw; --sy:6.5cqw;
+  padding:var(--sy) var(--sx);
+  grid-template-columns:1fr;grid-template-rows:1fr;}
+.cv-kicker{grid-area:kicker}
+.cv-title{grid-area:title}
+.cv-figure{grid-area:figure}
+.cv-meta{grid-area:meta}
+/* 未使用命名区域的布局：退回自动排布 */
+.lay-L05 .cv-kicker,.lay-L05 .cv-title,.lay-L05 .cv-figure,.lay-L05 .cv-meta,
+.lay-L13 .cv-kicker,.lay-L13 .cv-title,.lay-L13 .cv-figure,.lay-L13 .cv-meta{grid-area:auto}
+
+
+/* ---------- 文字层级 ---------- */
+.cv-title h1{margin:0;font-family:var(--f-display);font-size:var(--fs-title,10.5cqw);line-height:var(--tp-lh,1.03);
+  letter-spacing:var(--tp-tracking,-.022em);font-weight:var(--fw-display,700);color:var(--c-ink);text-wrap:balance;overflow-wrap:anywhere}
+.cv-title .cv-sub{margin:1.6cqh 0 0;font-size:var(--fs-sub,3.1cqw);line-height:1.42;font-family:var(--f-body);
+  color:var(--c-ink);opacity:.82;max-width:24ch;font-weight:var(--fw-body,400)}
+.cv-kicker{font-family:var(--f-meta);font-size:var(--fs-kicker,1.55cqw);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--c-accent);font-weight:var(--fw-meta,600);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cv-meta{display:flex;flex-wrap:wrap;gap:.6cqw 2.2cqw;font-family:var(--f-meta);font-size:var(--fs-meta,1.6cqw);
+  letter-spacing:.09em;color:var(--c-sub);line-height:1.6;font-weight:var(--fw-meta,400)}
+.cv-meta span{white-space:nowrap}
+.cv-meta .rule{width:6cqw;height:1px;background:var(--c-accent);align-self:center;opacity:.85}
+.cv-figure{position:relative;overflow:hidden;z-index:1}
+.cv-figure img{width:100%;height:100%;object-fit:cover;display:block}
+.cv-figure .cv-motif{position:absolute;inset:0}
+/* 主视觉调色层：把生成图统一到配方色系，避免图文两张皮 */
+.cv-hero-tone{position:absolute;inset:0;background:var(--c-hero-tone,transparent);
+  opacity:var(--c-hero-tone-op,0);mix-blend-mode:multiply;pointer-events:none}
+.cover.darkink .cv-hero-tone{mix-blend-mode:screen}
+/* 暗角：把视线收进画面中心，封面感的一半来自这里 */
+.cv-hero-vignette{position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(120% 95% at 50% 42%,transparent 42%,
+  rgba(0,0,0,var(--c-hero-vig,.32)) 100%)}
+
+/* ================= L01 非对称网格 ================= */
+.lay-L01 .cv-frame{grid-template-columns:1.12fr .88fr;grid-template-rows:auto 1fr auto;
+  grid-template-areas:"kicker ." "title figure" "meta figure";align-items:start;column-gap:4cqw}
+.lay-L01 .cv-title{align-self:center;padding-bottom:2cqh}
+.lay-L01 .cv-figure{align-self:stretch;height:auto}
+
+/* ================= L02 中心对称 ================= */
+.lay-L02 .cv-frame{grid-template-columns:1fr;grid-template-rows:auto auto auto auto;
+  grid-template-areas:"kicker" "title" "figure" "meta";justify-items:center;text-align:center;align-content:center;
+  row-gap:2.4cqh}
+.lay-L02 .cv-figure{height:38cqh;width:58cqh;justify-self:center;align-self:center}
+.lay-L02 .cv-title .cv-sub{margin-left:auto;margin-right:auto}
+.lay-L02 .cv-meta{justify-content:center}
+
+/* ================= L03 超大标题 ================= */
+.lay-L03 .cv-frame{grid-template-columns:1fr;grid-template-rows:auto auto 1fr auto;
+  grid-template-areas:"kicker" "title" "figure" "meta";row-gap:2.2cqh}
+.lay-L03 .cv-title h1{font-size:var(--fs-title,15cqw);line-height:.9;letter-spacing:-.04em;overflow-wrap:break-word}
+.lay-L03 .cv-figure{height:auto;align-self:stretch}
+
+/* ================= L04 极限留白 ================= */
+.lay-L04 .cv-frame{grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr auto auto;
+  grid-template-areas:"kicker ." "figure figure" ". title" "meta meta";align-items:end;row-gap:1.6cqh}
+.lay-L04 .cv-figure{justify-self:end;align-self:start;width:27%;height:32%;grid-area:figure}
+.lay-L04 .cv-title{grid-column:1/3;justify-self:start;max-width:62%}
+.lay-L04 .cv-title h1{font-size:var(--fs-title,6.4cqw);line-height:1.1}
+.lay-L04 .cv-title .cv-sub{font-size:var(--fs-sub,2.4cqw)}
+
+/* ================= L05 满版摄影 ================= */
+.lay-L05 .cv-frame{grid-template-columns:1fr;grid-template-rows:auto 1fr auto;padding:0;position:absolute;inset:0}
+.lay-L05 .cv-figure{position:absolute;inset:0;z-index:0}
+.lay-L05 .cv-kicker{position:relative;z-index:2;padding:var(--sy) var(--sx) 0}
+.lay-L05 .cv-title{position:relative;z-index:2;align-self:end;padding:var(--sy) var(--sx) 0;max-width:76%}
+.lay-L05 .cv-meta{position:relative;z-index:2;align-self:end;padding:1.6cqh var(--sx) var(--sy)}
+.lay-L05 .cv-title h1{color:var(--c-ink)}
+
+/* ================= L06 分割布局 ================= */
+.lay-L06 .cv-frame{grid-template-columns:1fr 1fr;grid-template-rows:1fr auto;grid-template-areas:"figure title" "figure meta";padding:0}
+.lay-L06 .cv-figure{align-self:stretch;height:auto}
+.lay-L06 .cv-title{align-self:end;padding:0 var(--sx) 0 var(--sx);max-width:44cqw}
+.lay-L06 .cv-meta{align-self:start;padding:var(--sy) var(--sx) var(--sy) var(--sx)}
+.lay-L06 .cv-kicker{position:absolute;right:var(--sx);top:var(--sy)}
+
+/* ================= L07 模块网格 ================= */
+.lay-L07 .cv-frame{grid-template-columns:repeat(12,1fr);grid-template-rows:auto 1fr auto;
+  grid-template-areas:"kicker kicker kicker kicker kicker kicker kicker kicker kicker kicker kicker kicker"
+                   "title title title title title title figure figure figure figure figure figure"
+                   "meta  meta  meta  meta  meta  meta  meta  meta  meta  meta  meta  meta";
+  column-gap:2.4cqw;row-gap:2cqh;align-items:start}
+.lay-L07 .cv-figure{height:100%}
+.lay-L07 .cv-title{align-self:center}
+.lay-L07 .cv-title h1{font-size:var(--fs-title,8.4cqw)}
+.lay-L07 .cv-title .cv-sub{font-size:var(--fs-sub,2.5cqw)}
+
+/* ================= L08 分层拼贴 ================= */
+.lay-L08 .cv-frame{grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr auto;
+  grid-template-areas:"kicker ." "title figure" "meta meta";column-gap:3cqw;align-items:start}
+.lay-L08 .cv-figure{height:88%;transform:rotate(-3.2deg) translate(4%,3%);
+  box-shadow:0 2.2cqw 4cqw -1.8cqw rgba(0,0,0,.55)}
+.lay-L08 .cv-title{position:relative;z-index:3;align-self:center;margin-top:6cqh}
+.lay-L08 .cv-title h1{font-size:var(--fs-title,8.6cqw)}
+
+/* ================= L09 框景构图 ================= */
+.lay-L09 .cv-frame{grid-template-columns:1fr;grid-template-rows:auto auto 1fr auto;
+  grid-template-areas:"kicker" "title" "figure" "meta";justify-items:start;align-items:start;
+  border:1px solid var(--c-ink);padding:calc(var(--sy)*2.1) calc(var(--sx)*2.1);row-gap:1.8cqh}
+.lay-L09 .cv-figure{height:100%;width:100%;align-self:stretch}
+.lay-L09 .cv-title h1{font-size:var(--fs-title,7.6cqw)}
+.lay-L09 .cv-title .cv-sub{font-size:var(--fs-sub,2.4cqw)}
+
+/* ================= L10 对角线构图 ================= */
+.lay-L10 .cv-frame{grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr auto;
+  grid-template-areas:"kicker ." "title figure" "meta meta";column-gap:3cqw;align-items:start}
+.lay-L10 .cv-figure{height:100%;clip-path:polygon(14% 0,100% 0,86% 100%,0 100%)}
+.lay-L10 .cv-title{align-self:center;padding-top:4cqh}
+.lay-L10 .cv-title h1{font-size:var(--fs-title,9cqw)}
+
+/* ================= L11 放射式构图 ================= */
+.lay-L11 .cv-frame{grid-template-columns:1fr;grid-template-rows:auto 1fr auto;
+  grid-template-areas:"kicker" "title" "meta";justify-items:center;text-align:center;padding:0}
+.lay-L11 .cv-kicker{position:absolute;top:var(--sy);left:var(--sx);z-index:3}
+.lay-L11 .cv-figure{position:absolute;left:50%;top:40%;transform:translate(-50%,-50%);
+  width:min(58cqw,58%);height:auto;aspect-ratio:1;z-index:1}
+.lay-L11 .cv-title{position:relative;z-index:3;align-self:end;max-width:84%;padding-bottom:13cqh}
+.lay-L11 .cv-title h1{font-size:var(--fs-title,10cqw)}
+.lay-L11 .cv-meta{position:absolute;bottom:var(--sy);left:var(--sx);right:var(--sx);z-index:3;justify-content:center;width:auto}
+.lay-L11 .cv-title .cv-sub{margin-left:auto;margin-right:auto}
+
+/* ================= L12 纵向排版 ================= */
+.lay-L12 .cv-frame{grid-template-columns:1fr auto;grid-template-rows:1fr;
+  grid-template-areas:"figure title";padding:var(--sy) var(--sx);column-gap:3cqw}
+.lay-L12 .cv-figure{height:100%}
+.lay-L12 .cv-title{writing-mode:vertical-rl;text-orientation:upright;justify-self:end;align-self:stretch;
+  height:100%;max-height:100%;display:flex;flex-direction:row-reverse;gap:1.4cqh}
+.lay-L12 .cv-title h1{font-size:var(--fs-title,7.2cqw);letter-spacing:.06em;line-height:1.12;writing-mode:vertical-rl;max-height:100%}
+.lay-L12 .cv-title .cv-sub{writing-mode:vertical-rl;font-size:var(--fs-sub,2.1cqw);margin:0}
+.lay-L12 .cv-kicker{position:absolute;left:var(--sx);bottom:var(--sy)}
+.lay-L12 .cv-meta{position:absolute;left:var(--sx);top:var(--sy)}
+
+/* ================= L13 图文重叠 ================= */
+.lay-L13 .cv-frame{grid-template-columns:1fr;grid-template-rows:auto 1fr auto;padding:0;position:absolute;inset:0}
+.lay-L13 .cv-figure{position:absolute;inset:0;z-index:0}
+.lay-L13 .cv-kicker{position:relative;z-index:2;padding:var(--sy) var(--sx) 0}
+.lay-L13 .cv-title{position:relative;z-index:2;align-self:center;padding:0 var(--sx);max-width:82%}
+.lay-L13 .cv-meta{position:relative;z-index:2;align-self:end;padding:1.6cqh var(--sx) var(--sy)}
+.lay-L13 .cv-title h1{text-shadow:0 .2cqw 2.2cqw rgba(0,0,0,.28)}
+/* 标题压在主视觉上时加衬底。
+   旧做法把 radial 画在标题盒子上，边缘就是一块方白卡；改为整宽底部渐变，
+   让压暗从画面底部连续升起，文字落在渐变里而不是落在卡片上。 */
+.lay-L05 .cv-title,.lay-L13 .cv-title{background:none}
+.lay-L05 .cv-figure::after,.lay-L13 .cv-figure::after{content:"";position:absolute;
+  left:0;right:0;bottom:0;height:58%;pointer-events:none;z-index:1;
+  background:linear-gradient(to top,var(--c-scrim-strong,rgba(6,9,15,.96)) 0%,
+    var(--c-scrim,rgba(6,9,15,.62)) 38%,transparent 100%)}
+
+/* ================= L14 碎片化构图 ================= */
+.lay-L14 .cv-frame{grid-template-columns:repeat(3,1fr);grid-template-rows:auto 1fr auto;
+  grid-template-areas:"kicker kicker kicker" "title title figure" "meta meta meta";
+  column-gap:2.6cqw;align-items:start}
+.lay-L14 .cv-figure{height:100%;clip-path:polygon(0 7%,100% 0,100% 93%,0 100%)}
+.lay-L14 .cv-title{align-self:center}
+.lay-L14 .cv-title h1{font-size:var(--fs-title,8cqw)}
+.lay-L14 .cv-frame::after{content:"";position:absolute;left:0;right:0;top:44%;height:.28cqh;
+  background:var(--c-accent);opacity:.55}
+
+/* ================= L15 孤立主体 ================= */
+.lay-L15 .cv-frame{grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr auto auto;
+  grid-template-areas:"kicker ." "figure figure" "title ." "meta .";align-items:start;row-gap:1.4cqh}
+.lay-L15 .cv-figure{justify-self:center;align-self:center;width:33%;height:38%}
+.lay-L15 .cv-title{grid-column:1/3;align-self:end}
+.lay-L15 .cv-title h1{font-size:var(--fs-title,6.8cqw)}
+.lay-L15 .cv-title .cv-sub{font-size:var(--fs-sub,2.4cqw)}
+.lay-L15 .cv-meta{grid-column:1/3;align-self:start}
+
+/* ================= L16 重心偏置 ================= */
+.lay-L16 .cv-frame{grid-template-columns:1fr;grid-template-rows:auto 1fr auto;
+  grid-template-areas:"kicker" "title" "meta";align-content:end;justify-items:end;text-align:right;padding:0}
+.lay-L16 .cv-kicker{position:absolute;left:var(--sx);top:var(--sy)}
+.lay-L16 .cv-figure{position:absolute;left:var(--sx);top:var(--sy);width:26%;height:24cqh;z-index:1}
+.lay-L16 .cv-title{position:relative;z-index:2;align-self:end;padding:0 var(--sx) 1cqh;max-width:78%}
+.lay-L16 .cv-meta{position:relative;z-index:2;align-self:end;padding:0 var(--sx) var(--sy);justify-content:flex-end}
+.lay-L16 .cv-title h1{font-size:var(--fs-title,9.6cqw)}
+
+/* ---------- 深底反白修正 ---------- */
+.cover.darkink .cv-title h1{color:#F7F5F0}
+.cover.darkink .cv-title .cv-sub{color:#E4E0D8}
+.cover.darkink .cv-kicker{color:var(--c-accent)}
+.cover.darkink .cv-meta{color:#A9A49B}
+
+/* ---------- 竖排封面（配方级开关） ---------- */
+.cover.vertical-main .cv-title h1{writing-mode:vertical-rl;text-orientation:upright;letter-spacing:.08em}
+
+/* ---------- 导出时的安全参考线 ---------- */
+.cover .cv-guide{position:absolute;inset:0;z-index:9;pointer-events:none}
+.cover .cv-guide i{position:absolute;border:1px dashed rgba(220,40,60,.85)}
+.cover .cv-guide i.g1{inset:6%}
+.cover .cv-guide i.g2{inset:12%;border-color:rgba(220,40,60,.45)}
+
+/* ============================================================
+   字体组合（32 组）—— 见 knowledge/type-pairings.md 与 dataset/fonts-online.json
+   字体家族走在线字体变量，由 tools/generate_cover.py 注入；
+   这里只负责字重、字距、行高。单字重字体不合成伪粗。
+   ============================================================ */
+.cover.tp-T01 .cv-title h1{font-family:var(--f-display);font-weight:var(--fw-display,900);letter-spacing:-0.03em;line-height:0.92}
+.cover.tp-T01 .cv-sub{font-family:var(--f-body);font-weight:var(--fw-body,400);letter-spacing:.04em}
+.cover.tp-T01 .cv-kicker{font-family:var(--f-meta);font-weight:var(--fw-meta,500);letter-spacing:.16em}
+.cover.tp-T01 .cv-meta{font-family:var(--f-meta);font-weight:var(--fw-meta,500);letter-spacing:.1em}
+
+.cover.tp-T02 .cv-title h1{font-family:var(--f-display);font-weight:var(--fw-display,600);letter-spacing:0.05em;line-height:1.14}
+.cover.tp-T02 .cv-sub{font-family:var(--f-body);font-weight:var(--fw-body,300);letter-spacing:.04em}
+.cover.tp-T02 .cv-kicker{font-family:var(--f-meta);font-weight:var(--fw-meta,500);letter-spacing:.16em}
+.cover.tp-T02 .cv-meta{font-family:var(--f-meta);font-weight:var(--fw-meta,500);letter-spacing:.1em}
+
+.cover.tp-T03 .cv-title h1{font-family:var(--f-display);font-weight:var(--fw-display,200);letter-spacing:0.08em;line-height:1.08}
+.cover.tp-T03 .cv-sub{font-family:var(--f-body);font-weight:var(--fw-body,300);letter-spacing:.04em}
+.cover.tp-T03 .cv-kicker{font-family:var(--f-meta);font-weight:var(--fw-meta,300);letter-spacing:.16em}
+.cover.tp-T03 .cv-meta{font-family:var(--f-meta);font-weight:var(--fw-meta,300);letter-spacing:.1em}
+
+.cover.tp-T04 .cv-title h1{font-family:var(--f-display);font-weight:var(--fw-display,900);letter-spacing:-0.055em;line-height:0.86}
+.cover.tp-T04 .cv-sub{font-family:var(--f-body);font-weight:var(--fw-body,700);letter-spacing:.04em}
+.cover.tp-T04 .cv-kicker{font-family:var(--f-meta);font-weight:var(--fw-meta,700);letter-spacing:.16em}
+.cover.tp-T04 .cv-meta{font-family:var(--f-meta);font-weight:var(--fw-meta,700);letter-spacing:.1em}
+
+.cover.tp-T05 .cv-title h1{font-family:var(--f-display);font-weight:var(--fw-display,700);letter-spacing:0.005em;line-height:1.0}
+.cover.tp-T05 .cv-sub{font-family:var(--f-body);font-weight:var(--fw-body,300);letter-spacing:.04em}
+.cover.tp-T05 .cv-kicker{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.16em}
+.cover.tp-T05 .cv-meta{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.1em}
+
+.cover.tp-T06 .cv-title h1{font-family:var(--f-display);font-weight:var(--fw-display,600);letter-spacing:0.08em;line-height:1.22}
+.cover.tp-T06 .cv-sub{font-family:var(--f-body);font-weight:var(--fw-body,400);letter-spacing:.04em}
+.cover.tp-T06 .cv-kicker{font-family:var(--f-meta);font-weight:var(--fw-meta,500);letter-spacing:.16em}
+.cover.tp-T06 .cv-meta{font-family:var(--f-meta);font-weight:var(--fw-meta,500);letter-spacing:.1em}
+
+.cover.tp-T07 .cv-title h1{font-family:var(--f-display);font-weight:var(--fw-display,700);letter-spacing:0.02em;line-height:1.0}
+.cover.tp-T07 .cv-sub{font-family:var(--f-body);font-weight:var(--fw-body,400);letter-spacing:.04em}
+.cover.tp-T07 .cv-kicker{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.16em}
+.cover.tp-T07 .cv-meta{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.1em}
+
+.cover.tp-T08 .cv-title h1{font-family:var(--f-display);font-weight:var(--fw-display,600);letter-spacing:0.02em;line-height:1.1}
+.cover.tp-T08 .cv-sub{font-family:var(--f-body);font-weight:var(--fw-body,300);letter-spacing:.04em}
+.cover.tp-T08 .cv-kicker{font-family:var(--f-meta);font-weight:var(--fw-meta,500);letter-spacing:.16em}
+.cover.tp-T08 .cv-meta{font-family:var(--f-meta);font-weight:var(--fw-meta,500);letter-spacing:.1em}
+
+.cover.tp-T09 .cv-title h1{font-family:var(--f-display);font-weight:var(--fw-display,200);letter-spacing:0.08em;line-height:1.1}
+.cover.tp-T09 .cv-sub{font-family:var(--f-body);font-weight:var(--fw-body,300);letter-spacing:.04em}
+.cover.tp-T09 .cv-kicker{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.16em}
+.cover.tp-T09 .cv-meta{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.1em}
+
+.cover.tp-T10 .cv-title h1{font-family:var(--f-display);font-weight:var(--fw-display,400);letter-spacing:0.06em;line-height:1.2}
+.cover.tp-T10 .cv-sub{font-family:var(--f-body);font-weight:var(--fw-body,400);letter-spacing:.04em}
+.cover.tp-T10 .cv-kicker{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.16em}
+.cover.tp-T10 .cv-meta{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.1em}
+
+.cover.tp-T11 .cv-title h1{font-family:var(--f-display);font-weight:var(--fw-display,700);letter-spacing:0.01em;line-height:0.95}
+.cover.tp-T11 .cv-sub{font-family:var(--f-body);font-weight:var(--fw-body,400);letter-spacing:.04em}
+.cover.tp-T11 .cv-kicker{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.16em}
+.cover.tp-T11 .cv-meta{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.1em}
+
+.cover.tp-T12 .cv-title h1{font-family:var(--f-display);font-weight:var(--fw-display,700);letter-spacing:0em;line-height:1.05}
+.cover.tp-T12 .cv-sub{font-family:var(--f-body);font-weight:var(--fw-body,400);letter-spacing:.04em}
+.cover.tp-T12 .cv-kicker{font-family:var(--f-meta);font-weight:var(--fw-meta,500);letter-spacing:.16em}
+.cover.tp-T12 .cv-meta{font-family:var(--f-meta);font-weight:var(--fw-meta,500);letter-spacing:.1em}
+
+.cover.tp-T13 .cv-title h1{font-family:var(--f-display);font-weight:var(--fw-display,400);letter-spacing:0.03em;line-height:1.16}
+.cover.tp-T13 .cv-sub{font-family:var(--f-body);font-weight:var(--fw-body,400);letter-spacing:.04em}
+.cover.tp-T13 .cv-kicker{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.16em}
+.cover.tp-T13 .cv-meta{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.1em}
+
+.cover.tp-T14 .cv-title h1{font-family:var(--f-display);font-weight:var(--fw-display,400);letter-spacing:0.06em;line-height:1.12}
+.cover.tp-T14 .cv-sub{font-family:var(--f-body);font-weight:var(--fw-body,400);letter-spacing:.04em}
+.cover.tp-T14 .cv-kicker{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.16em}
+.cover.tp-T14 .cv-meta{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.1em}
+
+.cover.tp-T15 .cv-title h1{font-family:var(--f-display);font-weight:var(--fw-display,400);letter-spacing:0.03em;line-height:1.05}
+.cover.tp-T15 .cv-sub{font-family:var(--f-body);font-weight:var(--fw-body,400);letter-spacing:.04em}
+.cover.tp-T15 .cv-kicker{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.16em}
+.cover.tp-T15 .cv-meta{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.1em}
+
+.cover.tp-T16 .cv-title h1{font-family:var(--f-display);font-weight:var(--fw-display,400);letter-spacing:0.02em;line-height:1.12}
+.cover.tp-T16 .cv-sub{font-family:var(--f-body);font-weight:var(--fw-body,400);letter-spacing:.04em}
+.cover.tp-T16 .cv-kicker{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.16em}
+.cover.tp-T16 .cv-meta{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.1em}
+
+.cover.tp-T17 .cv-title h1{font-family:var(--f-display);font-weight:var(--fw-display,400);letter-spacing:0.04em;line-height:1.18}
+.cover.tp-T17 .cv-sub{font-family:var(--f-body);font-weight:var(--fw-body,400);letter-spacing:.04em}
+.cover.tp-T17 .cv-kicker{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.16em}
+.cover.tp-T17 .cv-meta{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.1em}
+
+.cover.tp-T18 .cv-title h1{font-family:var(--f-display);font-weight:var(--fw-display,400);letter-spacing:0.03em;line-height:1.2}
+.cover.tp-T18 .cv-sub{font-family:var(--f-body);font-weight:var(--fw-body,400);letter-spacing:.04em}
+.cover.tp-T18 .cv-kicker{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.16em}
+.cover.tp-T18 .cv-meta{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.1em}
+
+.cover.tp-T19 .cv-title h1{font-family:var(--f-display);font-weight:var(--fw-display,400);letter-spacing:0.02em;line-height:1.22}
+.cover.tp-T19 .cv-sub{font-family:var(--f-body);font-weight:var(--fw-body,400);letter-spacing:.04em}
+.cover.tp-T19 .cv-kicker{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.16em}
+.cover.tp-T19 .cv-meta{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.1em}
+
+.cover.tp-T20 .cv-title h1{font-family:var(--f-display);font-weight:var(--fw-display,900);letter-spacing:-0.02em;line-height:0.94}
+.cover.tp-T20 .cv-sub{font-family:var(--f-body);font-weight:var(--fw-body,300);letter-spacing:.04em}
+.cover.tp-T20 .cv-kicker{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.16em}
+.cover.tp-T20 .cv-meta{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.1em}
+
+.cover.tp-T21 .cv-title h1{font-family:var(--f-display);font-weight:var(--fw-display,600);letter-spacing:0.05em;line-height:1.14}
+.cover.tp-T21 .cv-sub{font-family:var(--f-body);font-weight:var(--fw-body,400);letter-spacing:.04em}
+.cover.tp-T21 .cv-kicker{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.16em}
+.cover.tp-T21 .cv-meta{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.1em}
+
+.cover.tp-T22 .cv-title h1{font-family:var(--f-display);font-weight:var(--fw-display,400);letter-spacing:0.04em;line-height:1.12}
+.cover.tp-T22 .cv-sub{font-family:var(--f-body);font-weight:var(--fw-body,400);letter-spacing:.04em}
+.cover.tp-T22 .cv-kicker{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.16em}
+.cover.tp-T22 .cv-meta{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.1em}
+
+.cover.tp-T23 .cv-title h1{font-family:var(--f-display);font-weight:var(--fw-display,700);letter-spacing:-0.01em;line-height:1.02}
+.cover.tp-T23 .cv-sub{font-family:var(--f-body);font-weight:var(--fw-body,400);letter-spacing:.04em}
+.cover.tp-T23 .cv-kicker{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.16em}
+.cover.tp-T23 .cv-meta{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.1em}
+
+.cover.tp-T24 .cv-title h1{font-family:var(--f-display);font-weight:var(--fw-display,500);letter-spacing:0.03em;line-height:1.1}
+.cover.tp-T24 .cv-sub{font-family:var(--f-body);font-weight:var(--fw-body,400);letter-spacing:.04em}
+.cover.tp-T24 .cv-kicker{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.16em}
+.cover.tp-T24 .cv-meta{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.1em}
+
+.cover.tp-T25 .cv-title h1{font-family:var(--f-display);font-weight:var(--fw-display,400);letter-spacing:0.04em;line-height:1.18}
+.cover.tp-T25 .cv-sub{font-family:var(--f-body);font-weight:var(--fw-body,400);letter-spacing:.04em}
+.cover.tp-T25 .cv-kicker{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.16em}
+.cover.tp-T25 .cv-meta{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.1em}
+
+.cover.tp-T26 .cv-title h1{font-family:var(--f-display);font-weight:var(--fw-display,400);letter-spacing:0.02em;line-height:1.06}
+.cover.tp-T26 .cv-sub{font-family:var(--f-body);font-weight:var(--fw-body,400);letter-spacing:.04em}
+.cover.tp-T26 .cv-kicker{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.16em}
+.cover.tp-T26 .cv-meta{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.1em}
+
+.cover.tp-T27 .cv-title h1{font-family:var(--f-display);font-weight:var(--fw-display,400);letter-spacing:-0.02em;line-height:0.92}
+.cover.tp-T27 .cv-sub{font-family:var(--f-body);font-weight:var(--fw-body,400);letter-spacing:.04em}
+.cover.tp-T27 .cv-kicker{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.16em}
+.cover.tp-T27 .cv-meta{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.1em}
+
+.cover.tp-T28 .cv-title h1{font-family:var(--f-display);font-weight:var(--fw-display,400);letter-spacing:0.01em;line-height:1.02}
+.cover.tp-T28 .cv-sub{font-family:var(--f-body);font-weight:var(--fw-body,400);letter-spacing:.04em}
+.cover.tp-T28 .cv-kicker{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.16em}
+.cover.tp-T28 .cv-meta{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.1em}
+
+.cover.tp-T29 .cv-title h1{font-family:var(--f-display);font-weight:var(--fw-display,400);letter-spacing:0.02em;line-height:1.0}
+.cover.tp-T29 .cv-sub{font-family:var(--f-body);font-weight:var(--fw-body,400);letter-spacing:.04em}
+.cover.tp-T29 .cv-kicker{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.16em}
+.cover.tp-T29 .cv-meta{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.1em}
+
+.cover.tp-T30 .cv-title h1{font-family:var(--f-display);font-weight:var(--fw-display,600);letter-spacing:0.04em;line-height:1.08}
+.cover.tp-T30 .cv-sub{font-family:var(--f-body);font-weight:var(--fw-body,400);letter-spacing:.04em}
+.cover.tp-T30 .cv-kicker{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.16em}
+.cover.tp-T30 .cv-meta{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.1em}
+
+.cover.tp-T31 .cv-title h1{font-family:var(--f-display);font-weight:var(--fw-display,700);letter-spacing:-0.01em;line-height:1.0}
+.cover.tp-T31 .cv-sub{font-family:var(--f-body);font-weight:var(--fw-body,400);letter-spacing:.04em}
+.cover.tp-T31 .cv-kicker{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.16em}
+.cover.tp-T31 .cv-meta{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.1em}
+
+.cover.tp-T32 .cv-title h1{font-family:var(--f-display);font-weight:var(--fw-display,700);letter-spacing:0.02em;line-height:1.05}
+.cover.tp-T32 .cv-sub{font-family:var(--f-body);font-weight:var(--fw-body,400);letter-spacing:.04em}
+.cover.tp-T32 .cv-kicker{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.16em}
+.cover.tp-T32 .cv-meta{font-family:var(--f-meta);font-weight:var(--fw-meta,400);letter-spacing:.1em}
+
+/* 中文书名逐字光学微调工具类：套在窄字上 */
+.cover .tight{display:inline-block;margin-left:-.045em}
+.cover .tight-2{display:inline-block;margin-left:-.08em}
+.cover .loose{display:inline-block;margin-left:.04em}
+
+/* ============================================================
+   构图原型（8 套）—— 见 knowledge/composition-prototypes.md
+   写在所有 L 布局之后，叠加时以 .cp- 为准
+   ============================================================ */
+
+/* C01 满版出血 */
+.cover.cp-C01 .cv-frame{grid-template-columns:1fr;grid-template-rows:auto 1fr auto;
+  grid-template-areas:"kicker" "title" "meta";position:relative;z-index:2}
+.cover.cp-C01 .cv-figure{position:absolute;inset:-5% -6%;z-index:0;height:auto;width:auto;grid-area:auto}
+.cover.cp-C01 .cv-title{position:relative;align-self:end;z-index:2;padding:0 0 4cqh;max-width:88%}
+.cover.cp-C01 .cv-title h1{text-shadow:0 .2cqw 2cqw rgba(0,0,0,.38)}
+.cover.cp-C01 .cv-kicker,.cover.cp-C01 .cv-meta{position:relative;z-index:2}
+
+/* C02 对角切割 */
+.cover.cp-C02 .cv-frame{grid-template-columns:1fr;grid-template-rows:1fr auto;
+  grid-template-areas:"figure" "title";padding:0;position:absolute;inset:0}
+.cover.cp-C02 .cv-figure{position:absolute;inset:0;z-index:0;grid-area:auto;
+  clip-path:polygon(0 0,100% 0,100% 72%,0 100%);height:auto;width:auto}
+.cover.cp-C02 .cv-title{position:relative;z-index:2;align-self:end;padding:0 7.5cqw 6cqh;
+  transform:rotate(-2deg);max-width:82%}
+.cover.cp-C02 .cv-kicker{position:absolute;right:7.5cqw;bottom:calc(6cqh + 30cqw);z-index:3;grid-area:auto}
+.cover.cp-C02 .cv-meta{position:absolute;right:7.5cqw;bottom:2.4cqh;z-index:3;justify-content:flex-end;grid-area:auto}
+
+/* C03 错位三栏 */
+.cover.cp-C03 .cv-frame{grid-template-columns:repeat(12,1fr);grid-template-rows:auto 1fr auto;
+  grid-template-areas:"kicker kicker kicker kicker kicker kicker kicker kicker kicker kicker kicker kicker"
+                   "title title title title figure figure figure figure figure figure figure figure"
+                   "meta meta meta meta meta meta meta meta meta meta meta meta";column-gap:2cqw;row-gap:2cqh}
+.cover.cp-C03 .cv-title{grid-column:1/6;align-self:center;transform:translateY(-5cqh);z-index:2}
+.cover.cp-C03 .cv-title h1{font-size:8.6cqw}
+.cover.cp-C03 .cv-figure{grid-column:6/13;align-self:center;margin-top:11cqh;height:84%}
+.cover.cp-C03 .cv-meta{align-self:end}
+
+/* C04 压边标题 */
+.cover.cp-C04 .cv-frame{grid-template-columns:1fr;grid-template-rows:1fr auto;
+  grid-template-areas:"figure" "title";padding:0;position:absolute;inset:0}
+.cover.cp-C04 .cv-figure{position:absolute;right:0;bottom:6cqh;width:56%;height:46%;z-index:1;grid-area:auto}
+.cover.cp-C04 .cv-title{position:absolute;left:-1cqw;top:10cqh;z-index:2;width:100cqw;grid-area:auto}
+.cover.cp-C04 .cv-title h1{font-size:23cqw;white-space:nowrap;letter-spacing:-.05em;line-height:.88}
+.cover.cp-C04 .cv-title .cv-sub{margin-top:2.4cqh;max-width:54cqw;margin-left:10.5cqw;font-size:3.1cqw;line-height:1.35}
+.cover.cp-C04 .cv-kicker{position:absolute;left:7.5cqw;bottom:19cqh;z-index:3;grid-area:auto}
+.cover.cp-C04 .cv-meta{position:absolute;left:7.5cqw;bottom:6.5cqh;z-index:3;max-width:44cqw;grid-area:auto}
+
+/* C05 层叠纸片 */
+.cover.cp-C05 .cv-frame{grid-template-columns:1fr;grid-template-rows:auto 1fr auto;
+  grid-template-areas:"kicker" "figure" "title";row-gap:1.4cqh}
+.cover.cp-C05 .cv-figure{width:70%;height:56%;justify-self:end;align-self:start;
+  transform:rotate(-4deg);box-shadow:0 3cqw 5cqw -2cqw rgba(0,0,0,.45);z-index:1}
+.cover.cp-C05 .cv-figure::after{content:"";position:absolute;inset:7% -7% -7% 7%;
+  background:var(--c-accent);z-index:-1;opacity:.9}
+.cover.cp-C05 .cv-title{align-self:end;z-index:2;max-width:84%}
+.cover.cp-C05 .cv-meta{position:absolute;left:var(--sx);bottom:var(--sy);grid-area:auto}
+
+/* C06 框中框 */
+.cover.cp-C06 .cv-frame{grid-template-columns:1fr;grid-template-rows:auto auto 1fr;
+  grid-template-areas:"kicker" "figure" "title";row-gap:2.6cqh;
+  padding:calc(var(--sy)*1.6) calc(var(--sx)*1.6)}
+.cover.cp-C06 .cv-figure{border:2px solid var(--c-ink);padding:2.2cqw;height:54cqh;width:68%;justify-self:center;margin:0}
+.cover.cp-C06 .cv-title{align-self:start;padding-top:1cqh;max-width:72%}
+.cover.cp-C06 .cv-title h1{font-size:10.5cqw;line-height:1.12}
+.cover.cp-C06 .cv-kicker{position:absolute;left:calc(var(--sx)*1.6);top:calc(var(--sy)*0.7)}
+.cover.cp-C06 .cv-meta{position:absolute;right:calc(var(--sx)*1.6);bottom:calc(var(--sy)*0.8)}
+
+/* C07 纵向阅读流 */
+.cover.cp-C07 .cv-frame{grid-template-columns:1fr auto;grid-template-rows:1fr auto;
+  grid-template-areas:"figure title" "figure meta";column-gap:4cqw;row-gap:2cqh;align-items:start}
+.cover.cp-C07 .cv-figure{height:100%;grid-row:1/3}
+.cover.cp-C07 .cv-title{writing-mode:vertical-rl;justify-self:end;align-self:start;
+  height:78%;display:flex;flex-direction:row-reverse;gap:1.5cqw;z-index:2}
+.cover.cp-C07 .cv-title h1{writing-mode:vertical-rl;text-orientation:upright;
+  font-size:7.4cqw;letter-spacing:.08em;line-height:1.14}
+.cover.cp-C07 .cv-sub{writing-mode:vertical-rl;font-size:var(--fs-sub,2.2cqw);margin:0;max-height:100%}
+.cover.cp-C07 .cv-kicker{position:absolute;left:var(--sx);bottom:var(--sy);grid-area:auto}
+.cover.cp-C07 .cv-meta{position:absolute;left:var(--sx);top:var(--sy);max-width:52cqw;grid-area:auto}
+
+/* C08 极端偏心 */
+.cover.cp-C08 .cv-frame{grid-template-columns:1fr;grid-template-rows:1fr auto;
+  grid-template-areas:"figure" "title";padding:0;position:absolute;inset:0}
+.cover.cp-C08 .cv-title{position:absolute;right:7cqw;bottom:15cqh;z-index:2;grid-area:auto;
+  text-align:right;max-width:82%}
+.cover.cp-C08 .cv-title h1{font-size:15.5cqw;line-height:1}
+.cover.cp-C08 .cv-title .cv-sub{margin-left:auto;max-width:26ch}
+.cover.cp-C08 .cv-figure{position:absolute;left:7cqw;top:8cqh;width:34%;height:30%;z-index:1;grid-area:auto}
+.cover.cp-C08 .cv-kicker{position:absolute;left:7cqw;top:6cqh;z-index:3;grid-area:auto}
+.cover.cp-C08 .cv-meta{position:absolute;left:7cqw;bottom:6.5cqh;z-index:3;max-width:52cqw;justify-content:flex-start;grid-area:auto}
+
+
+
+
+
+
+
+/* ---------- 书籍封面扩展槽位 ---------- */
+.cv-tagline{position:absolute;left:var(--sx);right:var(--sx);top:calc(var(--sy)*0.78);z-index:6;
+  font-family:var(--f-meta);font-size:var(--fs-kicker,1.55cqw);letter-spacing:.2em;
+  color:var(--c-accent);font-weight:600;text-transform:none;white-space:nowrap}
+.cv-bookfoot{position:absolute;left:var(--sx);right:var(--sx);bottom:calc(var(--sy)*1.15);z-index:6;
+  display:flex;align-items:flex-end;justify-content:space-between;gap:3cqw}
+.cv-byline{display:flex;align-items:baseline;gap:2cqw;font-family:var(--f-body);color:var(--c-sub)}
+.cv-byline .person{display:inline-flex;align-items:baseline}
+.cv-byline .name{font-size:1.9cqw;font-weight:700;color:var(--c-ink);letter-spacing:.04em}
+.cv-byline .role{font-size:.78em;font-weight:400;color:var(--c-sub);letter-spacing:.14em;margin-left:.45em}
+.cv-byline .org{font-size:1.45cqw;letter-spacing:.04em}
+.cv-byline .sep{width:4.5cqw;height:1px;background:var(--c-accent);align-self:center;opacity:.8}
+.cv-press{text-align:right;color:var(--c-sub)}
+.cv-press img{display:block;height:4.4cqh;width:auto;margin-left:auto}
+.cv-press .cn{display:block;font-size:1.45cqw;letter-spacing:.08em;color:var(--c-ink)}
+.cv-press .en{display:block;font-size:1cqw;letter-spacing:.18em;margin-top:.6cqh;text-transform:uppercase}
+
+/* ---------- 署名与出版信息原型 A01–A05 ----------
+   A01 底栏 = 上面的 .cv-bookfoot 基础规则（作者左、社标右）。
+   每个原型都对应一种结构关系，不做单纯位移。选型见 knowledge/credits-system.md。 */
+
+/* A02 标题同轴：作者 · 机构 · 出版社合成一行，与标题共轴 */
+.cover.cr-A02 .cv-bookfoot{justify-content:center;align-items:center;gap:1.6cqw;bottom:calc(var(--sy)*1.2)}
+.cover.cr-A02 .cv-byline{gap:1.2cqw}
+.cover.cr-A02 .cv-byline .name{font-size:1.35cqw;font-weight:500;letter-spacing:.1em}
+.cover.cr-A02 .cv-byline .role{font-size:.82em;letter-spacing:.12em;margin-left:.4em}
+.cover.cr-A02 .cv-byline .org{font-size:1.15cqw;letter-spacing:.06em}
+.cover.cr-A02 .cv-byline .sep{width:2.2cqw;opacity:.6}
+.cover.cr-A02 .cv-press{text-align:left}
+.cover.cr-A02 .cv-press .cn{font-size:1.15cqw;display:inline;letter-spacing:.06em}
+.cover.cr-A02 .cv-press .en{display:none}
+.cover.cr-A02 .cv-press img{height:2.8cqh;margin-left:0}
+
+/* A03 图文咬合：署名承接主视觉下缘，整宽 scrim 过渡 */
+.cover.cr-A03 .cv-bookfoot{bottom:0;align-items:flex-end;
+  padding:8cqh var(--sx) calc(var(--sy)*1.2);
+  background:linear-gradient(to top,var(--crf-scrim,rgba(8,8,10,.58)),transparent)}
+.cover.cr-A03 .cv-byline .name{font-size:2.05cqw}
+.cover.cr-A03 .cv-press img{height:4.6cqh}
+.cover.cr-A03 .cv-byline,.cover.cr-A03 .cv-press{color:var(--crf-ink,var(--c-sub))}
+.cover.cr-A03 .cv-byline .name,.cover.cr-A03 .cv-press .cn{color:var(--crf-ink,var(--c-ink))}
+
+/* A04 书脊竖排：署名列与标题边缘平行，社标保持水平 */
+.cover.cr-A04 .cv-bookfoot{left:auto;right:calc(var(--sx)*1.1);bottom:calc(var(--sy)*1.2);top:auto;
+  display:flex;flex-direction:column;align-items:center;gap:3.2cqh;width:auto}
+.cover.cr-A04 .cv-byline{display:block;writing-mode:vertical-rl;text-orientation:upright;
+  letter-spacing:.14em;text-align:left}
+.cover.cr-A04 .cv-byline .person{display:inline-block}
+.cover.cr-A04 .cv-byline .role{display:inline-block;margin-left:0;margin-top:.6em;font-size:.8em}
+.cover.cr-A04 .cv-byline .org{display:inline-block;margin-top:1.2em;font-size:1.25cqw}
+.cover.cr-A04 .cv-byline .sep{display:none}
+.cover.cr-A04 .cv-press{text-align:center;writing-mode:horizontal-tb}
+.cover.cr-A04 .cv-press .cn{font-size:1.1cqw;letter-spacing:.12em}
+.cover.cr-A04 .cv-press .en{display:none}
+.cover.cr-A04 .cv-press img{margin:0 auto;height:3.4cqh}
+
+/* A05 题签印戳：小竖块，实底、边框，贴边不悬浮 */
+.cover.cr-A05 .cv-bookfoot{left:auto;right:calc(var(--sx)*1.1);bottom:calc(var(--sy)*1.25);top:auto;
+  display:flex;flex-direction:column;align-items:flex-start;gap:2.4cqh;width:auto;
+  padding:3.2cqh 1.8cqw;border:1px solid var(--c-sub);
+  background:var(--crf-scrim,transparent)}
+.cover.cr-A05 .cv-byline{display:block;writing-mode:vertical-rl;text-orientation:upright;
+  letter-spacing:.22em;text-align:left}
+.cover.cr-A05 .cv-byline .person{display:inline-block}
+.cover.cr-A05 .cv-byline .name{font-size:1.55cqw;font-weight:500}
+.cover.cr-A05 .cv-byline .role{display:inline-block;margin-left:0;margin-top:.5em;font-size:.8em}
+.cover.cr-A05 .cv-byline .org{display:inline-block;margin-top:1em;font-size:1.1cqw}
+.cover.cr-A05 .cv-byline .sep{display:none}
+.cover.cr-A05 .cv-press{text-align:center}
+.cover.cr-A05 .cv-press .cn{font-size:1cqw;letter-spacing:.1em}
+.cover.cr-A05 .cv-press .en{display:none}
+.cover.cr-A05 .cv-press img{margin:0 auto;height:2.6cqh}
+
+/* ---------- 题眉位置变体 ck-* ---------- */
+.cover.ck-side .cv-kicker{position:absolute;left:auto;right:calc(var(--sx)*1.1);top:calc(var(--sy)*1.2);
+  bottom:auto;z-index:7;grid-area:auto;writing-mode:vertical-rl;text-orientation:upright;
+  letter-spacing:.32em;text-align:left}
+.cover.ck-topright .cv-kicker{position:absolute;left:auto;right:var(--sx);top:calc(var(--sy)*.85);
+  bottom:auto;z-index:7;grid-area:auto;text-align:right}
+.cover.ck-inline .cv-kicker{position:absolute;left:var(--sx);right:var(--sx);top:auto;
+  bottom:calc(var(--sy)*2.15);z-index:7;grid-area:auto;letter-spacing:.3em;color:var(--c-sub)}
+/* 题眉随署名原型归位，不单独占角 */
+.cover.cr-A02.ck-inline .cv-kicker{left:0;right:0;text-align:center;bottom:calc(var(--sy)*2.05)}
+.cover.cr-A04.ck-inline .cv-kicker,
+.cover.cr-A05.ck-inline .cv-kicker{left:auto;right:calc(var(--sx)*1.1);top:calc(var(--sy)*1.35);
+  bottom:auto;writing-mode:vertical-rl;text-orientation:upright;letter-spacing:.32em;text-align:left}

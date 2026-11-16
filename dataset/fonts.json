@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "note": "本地兜底字体（仅 --font-mode local 使用）。封面默认使用 dataset/fonts-online.json 的在线字体，不下载、不内嵌本地 TTF。",
+  "fonts": [
+    {
+      "id": "smiley",
+      "name": "得意黑",
+      "file": "fonts/SmileySans-Oblique.ttf",
+      "family": "Smiley Sans Oblique",
+      "license": "SIL OFL 1.1",
+      "source": "https://github.com/atelier-anchor/smiley-sans",
+      "role": "display",
+      "use": "现代斜黑。货架大字、海报、破局/增长/青年文化",
+      "weight": 400
+    },
+    {
+      "id": "xiaowei",
+      "name": "站酷小薇",
+      "file": "fonts/ZCOOLXiaoWei-Regular.ttf",
+      "family": "ZCOOL XiaoWei",
+      "license": "SIL OFL 1.1",
+      "source": "https://fonts.google.com/specimen/ZCOOL+XiaoWei",
+      "role": "display",
+      "use": "高对比美术宋。机构、文化、文学、高端报告",
+      "weight": 400
+    },
+    {
+      "id": "qingke",
+      "name": "站酷庆科黄油",
+      "file": "fonts/ZCOOLQingKeHuangYou-Regular.ttf",
+      "family": "ZCOOL QingKe HuangYou",
+      "license": "SIL OFL 1.1",
+      "source": "https://fonts.google.com/specimen/ZCOOL+QingKe+HuangYou",
+      "role": "display",
+      "use": "粗圆黑。大众商业、品牌、轻松但有分量",
+      "weight": 400
+    },
+    {
+      "id": "mashan",
+      "name": "马善政楷书",
+      "file": "fonts/MaShanZheng-Regular.ttf",
+      "family": "Ma Shan Zheng",
+      "license": "SIL OFL 1.1",
+      "source": "https://fonts.google.com/specimen/Ma+Shan+Zheng",
+      "role": "display",
+      "use": "毛笔楷。东方、文化、宣言、手写感",
+      "weight": 400
+    },
+    {
+      "id": "kuaile",
+      "name": "站酷快乐体",
+      "file": "fonts/ZCOOLKuaiLe.ttf",
+      "family": "ZCOOL KuaiLe",
+      "license": "SIL OFL 1.1",
+      "source": "https://fonts.google.com/specimen/ZCOOL+KuaiLe",
+      "role": "display",
+      "use": "轻松、儿童、生活方式。正式商业书慎用",
+      "weight": 400
+    }
+  ],
+  "typepairs": {
+    "T01": { "name": "硬朗黑", "display": "smiley", "body": "smiley", "meta": "smiley", "note": "单字族，最强首读" },
+    "T02": { "name": "文学宋", "display": "xiaowei", "body": "smiley", "meta": "smiley", "note": "宋题黑副，书卷与当代" },
+    "T03": { "name": "细黑 × 宋", "display": "smiley", "body": "xiaowei", "meta": "smiley", "note": "斜黑大字 + 宋体说明，货架稳" },
+    "T04": { "name": "粗野宣言", "display": "smiley", "body": "smiley", "meta": "smiley", "note": "海报、活动、限定版" },
+    "T05": { "name": "现代宋", "display": "xiaowei", "body": "xiaowei", "meta": "smiley", "note": "机构高端，单字族宋 + 小字斜黑" },
+    "T06": { "name": "机构衬线", "display": "xiaowei", "body": "xiaowei", "meta": "xiaowei", "note": "全宋，安静、档案感" },
+    "T07": { "name": "数据黑", "display": "smiley", "body": "smiley", "meta": "smiley", "note": "理工/数据，配等宽数字" },
+    "T08": { "name": "宋 × 圆", "display": "xiaowei", "body": "qingke", "meta": "qingke", "note": "宋题圆副，文化但亲和" },
+    "T09": { "name": "人文黑", "display": "smiley", "body": "xiaowei", "meta": "xiaowei", "note": "黑题宋文，现代人文" },
+    "T10": { "name": "毛笔宋", "display": "mashan", "body": "xiaowei", "meta": "xiaowei", "note": "东方/文化，商业书慎用" },
+    "T11": { "name": "圆体海报", "display": "qingke", "body": "smiley", "meta": "smiley", "note": "大众、品牌、活动" },
+    "T12": { "name": "宋黑对位", "display": "xiaowei", "body": "smiley", "meta": "xiaowei", "note": "宋题黑副宋元信息，层级最细" }
+  }
+}
